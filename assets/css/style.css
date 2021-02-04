@@ -1,5 +1,12 @@
 /* ----- import fonts ----- */
 
+/* ----- color options ----- */
+/*
+#f1e128;
+#211f22;
+#ff4040;
+*/
+
 /* ------ set clean elements styling by removing default margins and paddings ----- */
 * {
   margin: 0;
@@ -15,29 +22,192 @@ html {
 body {
   font-family: "calibri", sans-serif;
   font-size: 1.6rem;
-  background-color: #f1e128;
+  background-color: #f1e128; /* ---- remove later ---- */
 }
 
 /* ----- navbar ----- */
+
 nav {
   width: 100%;
-  position: fixed;
+  position: sticky;
+  top: 0px;
   z-index: 2;
   height: 60px;
-  background-color: #52b0fd;
-  color: #000000;
+  background-color: #211f22;
+  color: #ffc929;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #ffc929;
 }
 
 nav h1 {
   font-size: 3rem;
 }
 
-/* ----- frontpage content ----- */
+/* ----- frontpage containers ----- */
 
-#homepage-container {
-  height: 800px;
-  background-color: #fd9f52;
+#main__homepage__container {
+  /*height: 950px;*/ /* ---- remove laterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr ---- */
+  /*background-color: #ffc929; ---- remove later ---- */
+  /* background-color: #211f22; ---- remove later ---- */
+  background-color: #ff4040;
+  display: flex;
+}
+
+#race__calendar__container {
+  background-color: #40e2ff;
+  color: black;
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px; /* ---- remove later ---- */
+}
+
+/* ----- race calendar container ----- */
+
+.race__events {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+#bahrein__event {
+  background: blue;
+}
+
+#monza__event {
+  background: #ffe600;
+}
+
+#suzuka__event {
+  background: #12db6c;
+}
+
+/* ----- all info container ----- */
+
+#all__info__container {
+  background-color: #50ff40;
+  color: black;
+  flex: 1 1 auto;
+  margin: 5px 5px 5px 0; /* ---- remove later ---- */
+}
+
+/* ----- race countdown timer container ----- */
+
+#race__countdown__timer__container {
+  height: 40px;
+  background: #ff8513;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  margin: 5px;
+}
+
+/* ----- button dashboard container ----- */
+
+#button__dashboard__container {
+  height: 60px;
+  background: #1fbcfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  margin: 5px;
+  /*display: none;*/
+}
+
+/* ----- track & time & 3 hour weather info container ----- */
+
+#track__time__weather__info__container {
+  height: 400px;
+  background: #fa1fd5;
+  margin: 5px;
+  display: flex;
+}
+
+/* ----- 24 hour & 7 day weather info container ----- */
+
+#_24H__7D__weather__info__container {
+  height: 400px;
+  background: #ebfa1f;
+  margin: 5px;
+  display: flex;
+}
+
+/* ----- track & time info container ----- */
+
+#track__time__info__container {
+  flex: 0 1 50%;
+  background: #26fa1f;
+  margin: 5px;
+  min-width: 530px;
+  display: flex;
+}
+
+/* ----- track info container ----- */
+
+#track__info__container {
+  background: #ee4062;
+  flex: 1 1 auto;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+/* ----- time info container ----- */
+
+#time__info__container {
+  background: #ffe600;
+  flex: 0 0 200px;
+  margin: 5px 5px 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+/* ----- 3 hour weather info container ----- */
+
+#_3H__weather__info__container {
+  flex: 0 1 50%;
+  background: #ffa938;
+  margin: 5px 5px 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  min-width: 530px;
+}
+
+/* ----- 24 hour weather info container ----- */
+
+#_24H__weather__info__container {
+  flex: 0 1 50%;
+  background: #6338ff;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  min-width: 530px;
+}
+
+/* ----- 7 day weather info container ----- */
+
+#_7D__weather__info__container {
+  flex: 0 1 50%;
+  background: #12dbc0;
+  margin: 5px 5px 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  min-width: 530px;
 }
