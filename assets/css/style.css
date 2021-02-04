@@ -1,0 +1,43 @@
+/* ----- import fonts ----- */
+
+/* ------ set clean elements styling by removing default margins and paddings ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------ set easy unit conversion for REM font size (1 REM = 10px) that still allows font scaling in browser ----- */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "calibri", sans-serif;
+  font-size: 1.6rem;
+  background-color: #f1e128;
+}
+
+/* ----- navbar ----- */
+nav {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  height: 60px;
+  background-color: #52b0fd;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav h1 {
+  font-size: 3rem;
+}
+
+/* ----- frontpage content ----- */
+
+#homepage-container {
+  height: 800px;
+  background-color: #fd9f52;
+}
