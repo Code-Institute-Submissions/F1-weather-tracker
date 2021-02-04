@@ -103,6 +103,8 @@ Users can click on a race calendar event to display information relevant to that
 
 On bigger screen sizes the entire race calendar will be positioned on the left of the page. On the right side of the page all the information for the selected race event will be displayed. On the top of the right side is a race countdown timer. Below that are the track information, track sessions schedule and the 3 hour weather forecast displayed side by side. Below that the 24 hour weather forecast and 7 day weather forecast are displayed. On smaller screen sizes only the selected calendar event is displayed. Below it is the race countdown timer. Below that are the track information and track sessions schedule side by side. Below that several buttons are displayed to switch between the various weather forecasts. On even smaller screen sizes the track information and track sessions schedule are below all the other mentioned content.
 
+Before starting to code I decided to create a quick skeleton mock-up which you can see by [clicking here](wireframes/skeleton-mockup.png)
+
 #### Wireframes
 
 To see all the wireframes in a single PDF [click here](wireframes/f1weather-ALL-wireframes-PDF.pdf).
