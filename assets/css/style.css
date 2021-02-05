@@ -217,11 +217,3 @@ nav h1 {
   min-width: 530px;
   height: 400px;
 }
-
-/* ----- media queries ----- */
-
-@media (max-width: 1025px) and (orientation: portrait) {
-  #race__calendar__container {
-    display: none;
-  }
-}
