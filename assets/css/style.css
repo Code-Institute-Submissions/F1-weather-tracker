@@ -1,5 +1,6 @@
 /* ----- import fonts ----- */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
 
 /* ----- color options ----- */
 /*
@@ -23,7 +24,7 @@ html {
 body {
   font-family: "calibri", sans-serif;
   font-size: 1.6rem;
-  background-color: #f1e128; /* ---- remove later ---- */
+  background-color: #ff31cb; /* ---- remove later ---- */
 }
 
 /* ----- navbar ----- */
@@ -33,7 +34,7 @@ nav {
   position: sticky;
   top: 0px;
   z-index: 2;
-  height: 60px;
+  height: 50px;
   background-color: #211f22;
   color: #ffc929;
   display: flex;
@@ -43,28 +44,24 @@ nav {
 }
 
 nav h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 
 /* ----- frontpage containers ----- */
 
-#main__homepage__container {
-  /*height: 950px;*/ /* ---- remove laterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr ---- */
-  /*background-color: #ffc929; ---- remove later ---- */
-  /* background-color: #211f22; ---- remove later ---- */
-  background-color: #ff4040;
+.main__homepage__container {
   display: flex;
 }
 
-#race__calendar__container {
-  background-color: #40e2ff;
-  color: black;
+.race__calendar__container {
   flex: 0 0 320px;
   display: flex;
   flex-direction: column;
 }
 
-/* ----- race calendar container ----- */
+/* ----- race calendar ----- */
 
 .race__events {
   background: #211f22;
@@ -105,86 +102,56 @@ nav h1 {
   white-space: pre-line;
 }
 
-#bahrein__event {
-}
-
-#monza__event {
-}
-
-#suzuka__event {
-}
-
 /* ----- all info container ----- */
 
-#all__info__container {
-  background-color: #50ff40;
-  color: black;
+.all__info__container {
   flex: 1 1 auto;
-  margin: 5px 5px 5px 0; /* ---- remove later ---- */
 }
 
 /* ----- race countdown timer container ----- */
 
-#race__countdown__timer__container {
+.race__countdown__timer__container {
   height: 40px;
-  background: #ff8513;
+  background: #27ff56;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
-  margin: 5px;
 }
 
 /* ----- button dashboard container ----- */
 
-#button__dashboard__container {
+.button__dashboard__container {
   height: 60px;
   background: #1fbcfa;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
-  margin: 5px;
-  /*display: none;*/
+  /*display: none; ----- add later  */
 }
 
 /* ----- track & time & 3 hour weather info container ----- */
 
-#track__time__weather__info__container {
-  /*height: 400px;*/
-  background: #fa1fd5;
-  margin: 5px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* ----- 24 hour & 7 day weather info container ----- */
-
-#_24H__7D__weather__info__container {
-  height: 400px;
-  background: #ebfa1f;
-  margin: 5px;
+.track__time__weather__info__container {
   display: flex;
   flex-wrap: wrap;
 }
 
 /* ----- track & time info container ----- */
 
-#track__time__info__container {
-  flex: 1 0 45%;
-  background: #26fa1f;
-  margin: 5px;
-  min-width: 530px;
+.track__time__info__container {
+  flex: 1 0 50%;
+  min-width: 530px; /* --- change later --- */
   display: flex;
-  height: 400px;
+  height: 400px; /* --- change later --- */
 }
 
 /* ----- track info container ----- */
 
-#track__info__container {
+.track__info__container {
   background: #ee4062;
   flex: 1 1 auto;
-  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,10 +160,9 @@ nav h1 {
 
 /* ----- time info container ----- */
 
-#time__info__container {
+.time__info__container {
   background: #ffe600;
   flex: 0 0 200px;
-  margin: 5px 5px 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,42 +171,46 @@ nav h1 {
 
 /* ----- 3 hour weather info container ----- */
 
-#_3H__weather__info__container {
-  flex: 1 0 45%;
+._3H__weather__info__container {
+  flex: 1 0 50%;
   background: #ffa938;
-  margin: 5px 5px 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
-  min-width: 530px;
-  height: 400px;
+  min-width: 530px; /* --- change later --- */
+  height: 400px; /* --- change later --- */
+}
+
+/* ----- 24 hour & 7 day weather info container ----- */
+
+._24H__7D__weather__info__container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* ----- 24 hour weather info container ----- */
 
-#_24H__weather__info__container {
-  flex: 1 0 49%;
+._24H__weather__info__container {
+  flex: 1 0 50%;
   background: #6338ff;
-  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
-  min-width: 530px;
-  height: 400px;
+  min-width: 530px; /* --- change later --- */
+  height: 400px; /* --- change later --- */
 }
 
 /* ----- 7 day weather info container ----- */
 
-#_7D__weather__info__container {
-  flex: 1 0 49%;
+._7D__weather__info__container {
+  flex: 1 0 50%;
   background: #12dbc0;
-  margin: 5px 5px 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
-  min-width: 530px;
-  height: 400px;
+  min-width: 530px; /* --- change later --- */
+  height: 400px; /* --- change later --- */
 }
