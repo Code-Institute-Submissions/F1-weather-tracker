@@ -153,9 +153,62 @@ nav h1 {
   background: #ee4062;
   flex: 1 1 auto;
   display: flex;
+  flex-direction: column;
+  font-size: 2.6rem;
+}
+
+.track__name__container {
+  width: 100%;
+  height: 10%;
+  background: #211f22;
+  border-bottom: 1px solid #ffc929;
+  border-right: 1px solid #ffc929;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
+}
+
+.track__name {
+  color: #ffc929;
+  padding: 5px;
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+.track__map_container {
+  flex: 1 0 80%;
+  height: 100%;
+  display: flex;
+}
+
+.track__map {
+  flex: 1 0 75%;
+  background: rgb(255, 255, 236);
+  display: block;
+}
+
+.circuit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.track__stats {
+  color: #ffc929;
+  background: #211f22;
+  border-right: 1px solid #ffc929;
+  flex: 1 0 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.track__stats__content {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  white-space: pre-line;
+  text-align: center;
 }
 
 /* ----- time info container ----- */
