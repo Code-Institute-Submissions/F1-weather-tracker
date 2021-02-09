@@ -182,7 +182,7 @@ nav h1 {
 }
 
 .track__map {
-  flex: 1 0 75%;
+  flex: 1 0 80%;
   background: rgb(255, 255, 236);
 }
 
@@ -197,7 +197,7 @@ nav h1 {
   color: #ffc929;
   background: #211f22;
   border-right: 1px solid #ffc929;
-  flex: 1 0 25%;
+  flex: 1 0 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
