@@ -144,7 +144,7 @@ nav h1 {
   flex: 1 0 50%;
   min-width: 530px; /* --- change later --- */
   display: flex;
-  min-height: 670px; /* --- change later --- */
+  /*min-height: 670px;*/ /* --- change later --- */
 }
 
 /* ----- track info container ----- */
@@ -226,7 +226,7 @@ nav h1 {
   font-family: "Inter", sans-serif;
   font-size: 2.6rem;
   min-width: 530px;
-  min-height: 670px;
+  /*min-height: 670px;*/
 }
 
 #schedule {
@@ -236,6 +236,7 @@ nav h1 {
 }
 
 #schedule__title {
+  padding-top: 5px;
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
@@ -257,6 +258,10 @@ nav h1 {
   width: 80%;
 }
 
+#race__time {
+  margin-bottom: 20px;
+}
+
 .session__title {
   font-weight: 400;
 }
@@ -274,12 +279,13 @@ nav h1 {
   background: #211f22;
   display: flex;
   flex-direction: column;
-  min-height: 670px; /* --- change later --- */
+  /*min-height: 670px;*/ /* --- change later --- */
 }
 
 /* ----- weather title container ----- */
 
 .weather__title__container {
+  color: #ff4040;
   flex: 1 0 10%;
   display: flex;
   align-items: center;
@@ -360,11 +366,14 @@ nav h1 {
   border: 2px solid #ffc929;
   margin: 50px;
   height: 300px;
-  min-width: 200px;
+  min-width: 250px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  font-family: "Inter", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
 }
 
 .weather__info__time {
