@@ -124,7 +124,7 @@ nav h1 {
 .button__dashboard__container {
   height: 60px;
   background: #1fbcfa;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
@@ -144,7 +144,7 @@ nav h1 {
   flex: 1 0 50%;
   min-width: 530px; /* --- change later --- */
   display: flex;
-  height: 400px; /* --- change later --- */
+  height: 670px; /* --- change later --- */
 }
 
 /* ----- track info container ----- */
@@ -264,7 +264,7 @@ nav h1 {
   justify-content: center;
   font-size: 2.6rem;
   min-width: 530px; /* --- change later --- */
-  height: 400px; /* --- change later --- */
+  height: 670px; /* --- change later --- */
 }
 
 /* ----- 24 hour & 7 day weather info container ----- */
@@ -284,7 +284,7 @@ nav h1 {
   justify-content: center;
   font-size: 2.6rem;
   min-width: 530px; /* --- change later --- */
-  height: 400px; /* --- change later --- */
+  height: 670px; /* --- change later --- */
 }
 
 /* ----- 7 day weather info container ----- */
@@ -297,5 +297,14 @@ nav h1 {
   justify-content: center;
   font-size: 2.6rem;
   min-width: 530px; /* --- change later --- */
-  height: 400px; /* --- change later --- */
+  height: 670px; /* --- change later --- */
+}
+
+@media (max-width: 1397px) {
+  .track__time__info__container,
+  ._3H__weather__info__container,
+  ._24H__weather__info__container,
+  ._7D__weather__info__container {
+    height: 335px;
+  }
 }
