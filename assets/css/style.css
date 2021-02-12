@@ -103,6 +103,10 @@ nav h1 {
   white-space: pre-line;
 }
 
+.active__event {
+  color: #ff4040;
+}
+
 /* ----- all info container ----- */
 
 .all__info__container {
