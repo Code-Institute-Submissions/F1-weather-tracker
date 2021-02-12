@@ -376,7 +376,8 @@ nav h1 {
   font-weight: 600;
 }
 
-.weather__info__time {
+.weather__info__time,
+.weather__info__date {
   color: #ffc929;
 }
 

@@ -51,7 +51,7 @@ const melbourne__race__start = new Date(Date.UTC(2021, 10, 21, 5, 0, 0));
 const jeddah__race__start = new Date(Date.UTC(2021, 11, 5, 15, 0, 0));
 const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 12, 0, 0));
 
-// races unix timestamp and days until calculation
+// races unix timestamp and days until race start calculation
 let current__date = new Date(); // get current date
 console.log(current__date);
 let days__until__bahrain = Math.trunc((((((bahrain__race__start - current__date)/1000)/60)/60)/24));
