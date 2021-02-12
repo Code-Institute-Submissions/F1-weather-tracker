@@ -77,3 +77,28 @@ let days__until__interlagos = Math.trunc((((((interlagos__race__start - current_
 let days__until__melbourne = Math.trunc((((((melbourne__race__start - current__date)/1000)/60)/60)/24));
 let days__until__jeddah = Math.trunc((((((jeddah__race__start - current__date)/1000)/60)/60)/24));
 let days__until__UAE = Math.trunc((((((UAE__race__start - current__date)/1000)/60)/60)/24));
+
+// weather container 1 selectors
+const weather__1__date = document.querySelector("#weather__info--1__date");
+const weather__1__time = document.querySelector("#weather__info--1__time");
+const weather__1__temp = document.querySelector("#weather__info--1__temp");
+const weather__1__precip = document.querySelector("#weather__info--1__precip");
+const weather__1__rain = document.querySelector("#weather__info--1__rain");
+// weather container 2 selectors
+const weather__2__date = document.querySelector("#weather__info--2__date");
+const weather__2__time = document.querySelector("#weather__info--2__time");
+const weather__2__temp = document.querySelector("#weather__info--2__temp");
+const weather__2__precip = document.querySelector("#weather__info--2__precip");
+const weather__2__rain = document.querySelector("#weather__info--2__rain");
+// weather container 3 selectors
+const weather__3__date = document.querySelector("#weather__info--3__date");
+const weather__3__time = document.querySelector("#weather__info--3__time");
+const weather__3__temp = document.querySelector("#weather__info--3__temp");
+const weather__3__precip = document.querySelector("#weather__info--3__precip");
+const weather__3__rain = document.querySelector("#weather__info--3__rain");
+// weather container 4 selectors
+const weather__4__date = document.querySelector("#weather__info--4__date");
+const weather__4__time = document.querySelector("#weather__info--4__time");
+const weather__4__temp = document.querySelector("#weather__info--4__temp");
+const weather__4__precip = document.querySelector("#weather__info--4__precip");
+const weather__4__rain = document.querySelector("#weather__info--4__rain");
