@@ -7,6 +7,7 @@
 #f1e128;
 #211f22;
 #ff4040;
+#509cff;
 */
 
 /* ------ set clean elements styling by removing default margins and paddings ----- */
@@ -128,28 +129,28 @@ nav h1 {
   align-items: center;
   justify-content: center;
   font-size: 2.6rem;
-  /*display: none; ----- add later  */
-}
-
-/* ----- track & time & 3 hour weather info container ----- */
-
-.track__time__weather__info__container {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* ----- track & time info container ----- */
 
 .track__time__info__container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+/* ----- track & time info container ----- */
+
+.track__info__container {
   flex: 1 0 50%;
   min-width: 530px; /* --- change later --- */
   display: flex;
-  height: 670px; /* --- change later --- */
+  min-height: 670px; /* --- change later --- */
 }
 
 /* ----- track info container ----- */
 
-.track__info__container {
+.track__info {
+  border-bottom: 1px solid #ffc929;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -175,7 +176,7 @@ nav h1 {
   font-weight: 400;
 }
 
-.track__map_container {
+.track__map__stats__container {
   flex: 1 0 80%;
   height: 100%;
   display: flex;
@@ -214,16 +215,18 @@ nav h1 {
 /* ----- time info container ----- */
 
 .time__info__container {
-  flex: 1 0 20%;
+  flex: 1 0 50%;
   color: #ffc929;
   background: #211f22;
-  border-right: 1px solid #ffc929;
-  height: 100%;
-  font-family: "Inter", sans-serif;
+  border-bottom: 1px solid #ffc929;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  font-family: "Inter", sans-serif;
+  font-size: 2.6rem;
+  min-width: 530px;
+  min-height: 670px;
 }
 
 #schedule {
@@ -233,13 +236,13 @@ nav h1 {
 }
 
 #schedule__title {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 3rem;
+  font-weight: 600;
   text-align: center;
 }
 
 #schedule__subtitle {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: lighter;
   text-align: center;
   padding-bottom: 5px;
@@ -249,57 +252,137 @@ nav h1 {
 .schedule__times {
   text-align: center;
   white-space: pre-line;
-  line-height: 2.4rem;
+  line-height: 1.5rem;
   border-bottom: 1px solid #ffc929;
-  width: 90%;
+  width: 80%;
 }
 
-/* ----- 3 hour weather info container ----- */
+.session__title {
+  font-weight: 400;
+}
 
-._3H__weather__info__container {
-  flex: 1 0 50%;
-  background: #ffa938;
+.time {
+  font-size: 2.4rem;
+  font-weight: 300;
+  padding: 5px;
+}
+
+/* ---------- weather & location info container ---------- */
+
+.weather__location__info__container {
+  color: #ffc929;
+  background: #211f22;
+  display: flex;
+  flex-direction: column;
+  min-height: 670px; /* --- change later --- */
+}
+
+/* ----- weather title container ----- */
+
+.weather__title__container {
+  flex: 1 0 10%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
-  min-width: 530px; /* --- change later --- */
-  height: 670px; /* --- change later --- */
+  border-bottom: 1px solid #ffc929;
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
-/* ----- 24 hour & 7 day weather info container ----- */
+/* ----- location info container ----- */
 
-._24H__7D__weather__info__container {
-  display: flex;
+.location__info__container {
   flex-wrap: wrap;
+  flex: 1 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #ffc929;
 }
 
-/* ----- 24 hour weather info container ----- */
+/* ----- location time container ----- */
 
-._24H__weather__info__container {
+.location__time__container {
+  height: 100%;
   flex: 1 0 50%;
-  background: #6338ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#location {
+  flex: 1 0 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
-  min-width: 530px; /* --- change later --- */
-  height: 670px; /* --- change later --- */
+  font-family: "Inter", sans-serif;
+  font-size: 2.7rem;
+  font-weight: 500;
 }
 
-/* ----- 7 day weather info container ----- */
-
-._7D__weather__info__container {
+#local__time {
   flex: 1 0 50%;
-  background: #12dbc0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
-  min-width: 530px; /* --- change later --- */
-  height: 670px; /* --- change later --- */
+  font-family: "Inter", sans-serif;
+  font-size: 2.7rem;
+  font-weight: 500;
 }
 
+/* ----- race start time container ----- */
+
+.start__time__container {
+  height: 100%;
+  min-width: 490px;
+  flex: 1 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 2.7rem;
+  font-weight: 500;
+}
+
+/* ----- weather info container ----- */
+
+.weather__info__container {
+  flex-wrap: wrap;
+  flex: 1 0 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather__info {
+  border-radius: 10px;
+  border: 2px solid #ffc929;
+  margin: 50px;
+  height: 300px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.weather__info__time {
+  color: #ffc929;
+}
+
+.weather__info__temp {
+  color: #ff4040;
+}
+
+.weather__info__precip,
+.weather__info__rain {
+  color: #509cff;
+}
+
+/* --------------- media queries --------------- */
+
+/*
 @media (max-width: 1397px) {
   .track__time__info__container,
   ._3H__weather__info__container,
@@ -307,4 +390,4 @@ nav h1 {
   ._7D__weather__info__container {
     height: 335px;
   }
-}
+}*/

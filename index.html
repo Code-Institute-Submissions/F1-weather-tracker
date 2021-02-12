@@ -207,17 +207,23 @@
                 <div class="event__date">Dec 10-12</div>
             </div>
         </div>
+        <!-- All info -->
         <div class="all__info__container">
+            <!-- Race countdown timer -->
             <div class="race__countdown__timer__container">race countdown timer</div>
+            <!-- Button dashboard -->
             <div class="button__dashboard__container">button dashboard</div>
-            <div class="track__time__weather__info__container">
-                <div class="track__time__info__container">
-                    <div class="track__info__container">
+            <!-- Track & time info -->
+            <div class="track__time__info__container">
+                <!-- Track info -->
+                <div class="track__info__container">
+                    <div class="track__info">
                         <div class="track__name__container">
                             <h3 class="track__name">Bahrain international circuit</h3>
                         </div>
-                        <div class="track__map_container">
-                            <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/bahrain-trackmap.png"></div>
+                        <div class="track__map__stats__container">
+                            <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/bahrain-trackmap.png">
+                            </div>
                             <div class="track__stats">
                                 <div class="track__stats__content">Laps:
                                     57
@@ -231,33 +237,71 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="time__info__container">
-                        <div id="schedule">
-                            <div id="schedule__title">Time schedule</div>
-                            <div id="schedule__subtitle">(your timezone)</div>
-                        </div>
-                        <div class="schedule__times" id="practice--1">Practice 1:
-                            12:30 - 13:30
-                        </div>
-                        <div class="schedule__times" id="practice--2">Practice 2:
-                            16:00 - 17:00
-                        </div>
-                        <div class="schedule__times" id="practice--3">Practice 3:
-                            13:00 - 14:00
-                        </div>
-                        <div class="schedule__times" id="qualifying">Qualifying:
-                            16:00 - 17:00
-                        </div>
-                        <div class="schedule__times" id="race">Race:
-                            17:00 - 19:00
-                        </div>
-                    </div> -->
                 </div>
-                <div class="_3H__weather__info__container">3 hour weather info</div>
+                <!-- Time info -->
+                <div class="time__info__container">
+                    <div id="schedule">
+                        <div id="schedule__title">Time schedule</div>
+                        <div id="schedule__subtitle">(local timezone)</div>
+                    </div>
+                    <div class="schedule__times">
+                        <div class="session__title">Practice 1:</div>
+                        <div class="time">12:30 - 13:30</div>
+                    </div>
+                    <div class="schedule__times">
+                        <div class="session__title">Practice 2:</div>
+                        <div class="time">16:00 - 17:00</div>
+                    </div>
+                    <div class="schedule__times">
+                        <div class="session__title"">Practice 3:</div>
+                        <div class="time">13:00 - 14:00</div>
+                    </div>
+                    <div class="schedule__times">
+                        <div class="session__title">Qualifying:</div>
+                        <div class="time">16:00 - 17:00</div>
+                    </div>
+                    <div class="schedule__times">
+                        <div class="session__title">Race:</div>
+                        <div class="time">17:00 - 19:00</div>
+                    </div>
+                </div>
             </div>
-            <div class="_24H__7D__weather__info__container">
-                <div class="_24H__weather__info__container">24 hour weather info</div>
-                <div class="_7D__weather__info__container">7 day weather info</div>
+            <!-- Weather & location info -->
+            <div class="weather__location__info__container">
+                <div class="weather__title__container">4 hour local weather forecast</div>
+                <div class="location__info__container">
+                    <div class="location__time__container">
+                        <div id="location">Location: Bahrain</div>
+                        <div id="local__time">Local time: 13:37</div>
+                    </div>
+                    <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>
+                </div>
+                <div class="weather__info__container">
+                    <div class="weather__info" id="weather__info--1">
+                        <div class="weather__info__time" id="weather__info--1__time">16:00</div>
+                        <div class="weather__info__temp" id="weather__info--1__temp">16°C</div>
+                        <div class="weather__info__precip" id="weather__info--1__precip">1.3mm</div>
+                        <div class="weather__info__rain" id="weather__info--1__rain">87%</div>
+                    </div>
+                    <div class="weather__info" id="weather__info--2">
+                        <div class="weather__info__time" id="weather__info--2__time">17:00</div>
+                        <div class="weather__info__temp" id="weather__info--2__temp">15°C</div>
+                        <div class="weather__info__precip" id="weather__info--2__precip">1.3mm</div>
+                        <div class="weather__info__rain" id="weather__info--2__rain">87%</div>
+                    </div>
+                    <div class="weather__info" id="weather__info--3">
+                        <div class="weather__info__time" id="weather__info--3__time">18:00</div>
+                        <div class="weather__info__temp" id="weather__info--3__temp">16°C</div>
+                        <div class="weather__info__precip" id="weather__info--3__precip">1.3mm</div>
+                        <div class="weather__info__rain" id="weather__info--3__rain">87%</div>
+                    </div>
+                    <div class="weather__info" id="weather__info--4">
+                        <div class="weather__info__time" id="weather__info--4__time">19:00</div>
+                        <div class="weather__info__temp" id="weather__info--4__temp">16°C</div>
+                        <div class="weather__info__precip" id="weather__info--4__precip">1.3mm</div>
+                        <div class="weather__info__rain" id="weather__info--4__rain">87%</div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
