@@ -27,7 +27,7 @@ const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
 // weather API
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${monza__coordinates};${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${spielberg__coordinates};${spa__coordinates};${singapore__coordinates};${barcelona__coordinates};${monaco__coordinates};${austin__coordinates};${budapest__coordinates};${silverstone__coordinates};${suzuka__coordinates};${montreal__coordinates};${baku__coordinates};${castellet__coordinates};${zandvoort__coordinates};${sochi__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
@@ -207,29 +207,29 @@ const displayActiveEventData = function() {
     </div>
     <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
         // change weather div 1 contents
-        weather__1__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__1__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
         weather__1__time.textContent = `16:00`;
-        weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempC}°C`;
-        weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
+        weather__1__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].tempC}°C`;
+        weather__1__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].precipMM}mm`;
+        weather__1__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
-        weather__2__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__2__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
         weather__2__time.textContent = `17:00`;
-        weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempC}°C`;
-        weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
+        weather__2__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].tempC}°C`;
+        weather__2__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].precipMM}mm`;
+        weather__2__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
-        weather__3__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__3__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
         weather__3__time.textContent = `18:00`;
-        weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[18].tempC}°C`;
-        weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[18].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[18].chanceofrain}%`;
+        weather__3__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].tempC}°C`;
+        weather__3__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].precipMM}mm`;
+        weather__3__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
-        weather__4__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__4__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
         weather__4__time.textContent = `19:00`;
-        weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[19].tempC}°C`;
-        weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[19].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[19].chanceofrain}%`;
+        weather__4__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].tempC}°C`;
+        weather__4__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].precipMM}mm`;
+        weather__4__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].chanceofrain}%`;
 
     } else if (imola__event.classList.contains("active__event")) {
         console.log("imola has active class");
@@ -283,29 +283,29 @@ location__info__container.innerHTML = `<div class="location__time__container">
     </div>
     <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
         // change weather div 1 contents
-        weather__1__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__1__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
         weather__1__time.textContent = `14:00`;
-        weather__1__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].tempC}°C`;
-        weather__1__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].tempC}°C`;
+        weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].precipMM}mm`;
+        weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
-        weather__2__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__2__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
         weather__2__time.textContent = `15:00`;
-        weather__2__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].tempC}°C`;
-        weather__2__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].tempC}°C`;
+        weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].precipMM}mm`;
+        weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
-        weather__3__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__3__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
         weather__3__time.textContent = `16:00`;
-        weather__3__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].tempC}°C`;
-        weather__3__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempC}°C`;
+        weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
+        weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
-        weather__4__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__4__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
         weather__4__time.textContent = `17:00`;
-        weather__4__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].tempC}°C`;
-        weather__4__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].chanceofrain}%`;
+        weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempC}°C`;
+        weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
+        weather__4__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
 
     } else {
         console.log("error: no active event");
