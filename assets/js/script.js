@@ -33,12 +33,9 @@ const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx
 const getWeatherData = async function() {
     const response = await fetch(weather__API);
     const weatherData = await response.json();
+    // store weather data in local storage converted to a string
     /* credits #? */
     localStorage.setItem("weatherData", JSON.stringify(weatherData));
-
-    // link variable to local storage data and convert back to JSON
-    // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can limit the amount of API calls to stay under the limit 
-    const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
 };
 
 
@@ -143,6 +140,165 @@ const interlagos__event = document.querySelector("#interlagos__event");
 const melbourne__event = document.querySelector("#melbourne__event");
 const jeddah__event = document.querySelector("#jeddah__event");
 const emirates__event = document.querySelector("#emirates__event");
+
+// track info selectors
+const track__info__container = document.querySelector(".track__info__container");
+// time info selectors  
+const time__info__container = document.querySelector(".time__info__container");
+
+// display active event data
+const displayActiveEventData = function() { 
+    // get data from local storage and convert back to JSON
+    // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can reduce the amount of API calls to stay under the limit
+    /* credits #? */
+    const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
+
+    if (bahrain__event.classList.contains("active__event")) {
+        console.log("bahrain has active class");
+        track__info__container.innerHTML = `<div class="track__info">
+        <div class="track__name__container">
+            <h3 class="track__name">Bahrain international circuit</h3>
+        </div>
+        <div class="track__map__stats__container">
+            <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/bahrain-trackmap.png">
+            </div>
+            <div class="track__stats">
+                <div class="track__stats__content">Laps:
+                    57
+                </div>
+                <div class="track__stats__content">Length:
+                    5.412 km
+                </div>
+                <div class="track__stats__content">Track record:
+                    1:31.447
+                </div>
+            </div>
+        </div>
+    </div>`;
+        time__info__container.innerHTML = `<div id="schedule">
+        <div id="schedule__title">Time schedule</div>
+        <div id="schedule__subtitle">(local timezone)</div>
+    </div>
+    <div class="schedule__times">
+        <div class="session__title">Practice 1:</div>
+        <div class="time">12:30 - 13:30</div>
+    </div>
+    <div class="schedule__times">
+        <div class="session__title">Practice 2:</div>
+        <div class="time">16:00 - 17:00</div>
+    </div>
+    <div class="schedule__times">
+        <div class="session__title"">Practice 3:</div>
+        <div class="time">13:00 - 14:00</div>
+    </div>
+    <div class="schedule__times">
+        <div class="session__title">Qualifying:</div>
+        <div class="time">16:00 - 17:00</div>
+    </div>
+    <div class="schedule__times"  id="race__time">
+        <div class="session__title">Race:</div>
+        <div class="time">17:00 - 19:00</div>
+    </div>`;
+        // change weather div 1 contents
+        weather__1__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__1__time.textContent = `16:00`;
+        weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempC}°C`;
+        weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
+        weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
+        // change weather div 2 contents
+        weather__2__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__2__time.textContent = `17:00`;
+        weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempC}°C`;
+        weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
+        weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
+        // change weather div 3 contents
+        weather__3__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__3__time.textContent = `18:00`;
+        weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[18].tempC}°C`;
+        weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[18].precipMM}mm`;
+        weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[18].chanceofrain}%`;
+        // change weather div 4 contents
+        weather__4__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__4__time.textContent = `19:00`;
+        weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[19].tempC}°C`;
+        weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[19].precipMM}mm`;
+        weather__4__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[19].chanceofrain}%`;
+
+    } else if (imola__event.classList.contains("active__event")) {
+        console.log("imola has active class");
+        track__info__container.innerHTML = `<div class="track__info">
+        <div class="track__name__container">
+            <h3 class="track__name">Autodromo Enzo e Dino Ferrari</h3>
+        </div>
+        <div class="track__map__stats__container">
+            <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/imola-trackmap.png">
+            </div>
+            <div class="track__stats">
+                <div class="track__stats__content">Laps:
+                    63
+                </div>
+                <div class="track__stats__content">Length:
+                    4.909 km
+                </div>
+                <div class="track__stats__content">Track record:
+                    1:15.484
+                </div>
+            </div>
+        </div>
+    </div>`;
+    time__info__container.innerHTML = `<div id="schedule">
+    <div id="schedule__title">Time schedule</div>
+    <div id="schedule__subtitle">(local timezone)</div>
+</div>
+<div class="schedule__times">
+    <div class="session__title">Practice 1:</div>
+    <div class="time">11:30 - 12:30</div>
+</div>
+<div class="schedule__times">
+    <div class="session__title">Practice 2:</div>
+    <div class="time">15:00 - 16:00</div>
+</div>
+<div class="schedule__times">
+    <div class="session__title"">Practice 3:</div>
+    <div class="time">12:00 - 13:00</div>
+</div>
+<div class="schedule__times">
+    <div class="session__title">Qualifying:</div>
+    <div class="time">15:00 - 16:00</div>
+</div>
+<div class="schedule__times"  id="race__time">
+    <div class="session__title">Race:</div>
+    <div class="time">15:00 - 17:00</div>
+</div>`;
+        // change weather div 1 contents
+        weather__1__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__1__time.textContent = `14:00`;
+        weather__1__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].tempC}°C`;
+        weather__1__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].precipMM}mm`;
+        weather__1__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].chanceofrain}%`;
+        // change weather div 2 contents
+        weather__2__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__2__time.textContent = `15:00`;
+        weather__2__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].tempC}°C`;
+        weather__2__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].precipMM}mm`;
+        weather__2__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].chanceofrain}%`;
+        // change weather div 3 contents
+        weather__3__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__3__time.textContent = `16:00`;
+        weather__3__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].tempC}°C`;
+        weather__3__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].precipMM}mm`;
+        weather__3__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].chanceofrain}%`;
+        // change weather div 4 contents
+        weather__4__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
+        weather__4__time.textContent = `17:00`;
+        weather__4__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].tempC}°C`;
+        weather__4__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].precipMM}mm`;
+        weather__4__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].chanceofrain}%`;
+
+    } else {
+        console.log("error: no active event");
+    }
+};
 
 // check the closest race to give active class and grey out past races
 const checkClosestRace = function() {
@@ -752,4 +908,5 @@ const checkClosestRace = function() {
 window.addEventListener("load", () => {
     getWeatherData();
     checkClosestRace();
+    displayActiveEventData();
 });
