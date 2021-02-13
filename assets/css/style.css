@@ -4,7 +4,7 @@
 
 /* ----- color options ----- */
 /*
-#f1e128;
+#ffc929;
 #211f22;
 #ff4040;
 #509cff;
@@ -26,6 +26,7 @@ body {
   font-family: "calibri", sans-serif;
   font-size: 1.6rem;
   background-color: #ff31cb; /* ---- remove later ---- */
+  /*background-color: #211f22;*/
 }
 
 /* ----- navbar ----- */
@@ -62,7 +63,7 @@ nav h1 {
   flex-direction: column;
 }
 
-/* ----- race calendar ----- */
+/* ---------- race calendar ---------- */
 
 .race__events {
   background: #211f22;
@@ -107,7 +108,7 @@ nav h1 {
   color: #ff4040;
 }
 
-/* ----- all info container ----- */
+/* --------------- all info container --------------- */
 
 .all__info__container {
   flex: 1 1 auto;
@@ -116,8 +117,12 @@ nav h1 {
 /* ----- race countdown timer container ----- */
 
 .race__countdown__timer__container {
-  height: 40px;
-  background: #27ff56;
+  min-height: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: #211f22;
+  color: #ffc929;
+  border-bottom: 2px solid #ff4040;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +159,8 @@ nav h1 {
 /* ----- track info container ----- */
 
 .track__info {
-  border-bottom: 1px solid #ffc929;
+  border-bottom: 2px solid #ff4040;
+  border-right: 2px solid #ff4040;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -167,7 +173,6 @@ nav h1 {
   height: 10%;
   background: #211f22;
   border-bottom: 1px solid #ffc929;
-  border-right: 1px solid #ffc929;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +206,6 @@ nav h1 {
 .track__stats {
   color: #ffc929;
   background: #211f22;
-  border-right: 1px solid #ffc929;
   flex: 1 0 20%;
   display: flex;
   flex-direction: column;
@@ -222,7 +226,7 @@ nav h1 {
   flex: 1 0 50%;
   color: #ffc929;
   background: #211f22;
-  border-bottom: 1px solid #ffc929;
+  border-bottom: 2px solid #ff4040;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -289,7 +293,9 @@ nav h1 {
 /* ----- weather title container ----- */
 
 .weather__title__container {
-  color: #ff4040;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  color: #ffc929;
   flex: 1 0 10%;
   display: flex;
   align-items: center;
@@ -303,6 +309,8 @@ nav h1 {
 /* ----- location info container ----- */
 
 .location__info__container {
+  padding-bottom: 12px;
+  padding-top: 12px;
   flex-wrap: wrap;
   flex: 1 0 10%;
   display: flex;
