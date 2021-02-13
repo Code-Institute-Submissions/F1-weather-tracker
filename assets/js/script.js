@@ -26,6 +26,22 @@ const melbourne__coordinates = `-37.851, 144.97`;
 const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
+// weather API
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${monza__coordinates};${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${spielberg__coordinates};${spa__coordinates};${singapore__coordinates};${barcelona__coordinates};${monaco__coordinates};${austin__coordinates};${budapest__coordinates};${silverstone__coordinates};${suzuka__coordinates};${montreal__coordinates};${baku__coordinates};${castellet__coordinates};${zandvoort__coordinates};${sochi__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+
+// fetch weather data & store locally
+const getWeatherData = async function() {
+    const response = await fetch(weather__API);
+    const weatherData = await response.json();
+    /* credits #? */
+    localStorage.setItem("weatherData", JSON.stringify(weatherData));
+
+    // link variable to local storage data and convert back to JSON
+    // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can limit the amount of API calls to stay under the limit 
+    const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
+};
+
+
 // races starting date & time
 const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 13, 0, 0));
 const imola__race__start = new Date(Date.UTC(2021, 3, 18, 11, 0, 0));
@@ -731,6 +747,9 @@ const checkClosestRace = function() {
         emirates__event.style.backgroundColor = "#4e4e4e";
         bahrain__event.classList.add("active__event");
     }
-}
+};
 
-checkClosestRace();
+window.addEventListener("load", () => {
+    getWeatherData();
+    checkClosestRace();
+});
