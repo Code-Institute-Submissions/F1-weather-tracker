@@ -145,6 +145,8 @@ const emirates__event = document.querySelector("#emirates__event");
 const track__info__container = document.querySelector(".track__info__container");
 // time info selectors  
 const time__info__container = document.querySelector(".time__info__container");
+// location info selectors
+const location__info__container = document.querySelector(".location__info__container");
 
 // display active event data
 const displayActiveEventData = function() { 
@@ -199,6 +201,11 @@ const displayActiveEventData = function() {
         <div class="session__title">Race:</div>
         <div class="time">17:00 - 19:00</div>
     </div>`;
+        location__info__container.innerHTML = `<div class="location__time__container">
+        <div id="location">Location: Bahrain</div>
+        <div id="local__time">Local time: LT_bahrain</div>
+    </div>
+    <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
         // change weather div 1 contents
         weather__1__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
         weather__1__time.textContent = `16:00`;
@@ -270,6 +277,11 @@ const displayActiveEventData = function() {
     <div class="session__title">Race:</div>
     <div class="time">15:00 - 17:00</div>
 </div>`;
+location__info__container.innerHTML = `<div class="location__time__container">
+        <div id="location">Location: Imola</div>
+        <div id="local__time">Local time: LT_imola</div>
+    </div>
+    <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
         // change weather div 1 contents
         weather__1__date.textContent = `${weatherDataSet.data.area[2].weather[0].date}`;
         weather__1__time.textContent = `14:00`;
