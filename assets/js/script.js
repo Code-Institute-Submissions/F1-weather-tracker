@@ -917,8 +917,61 @@ const checkClosestRace = function() {
     }
 };
 
+const removeActiveEventClass = function() { 
+    bahrain__event.classList.remove("active__event");
+    imola__event.classList.remove("active__event");
+    portimao__event.classList.remove("active__event");
+    barcelona__event.classList.remove("active__event");
+    monaco__event.classList.remove("active__event");
+    baku__event.classList.remove("active__event");
+    montreal__event.classList.remove("active__event");
+    castellet__event.classList.remove("active__event");
+    spielberg__event.classList.remove("active__event");
+    silverstone__event.classList.remove("active__event");
+    budapest__event.classList.remove("active__event");
+    spa__event.classList.remove("active__event");
+    zandvoort__event.classList.remove("active__event");
+    monza__event.classList.remove("active__event");
+    sochi__event.classList.remove("active__event");
+    singapore__event.classList.remove("active__event");
+    suzuka__event.classList.remove("active__event");
+    austin__event.classList.remove("active__event");
+    mexico__event.classList.remove("active__event");
+    interlagos__event.classList.remove("active__event");
+    melbourne__event.classList.remove("active__event");
+    jeddah__event.classList.remove("active__event");
+    emirates__event.classList.remove("active__event");
+};
+
 window.addEventListener("load", () => {
     getWeatherData();
     checkClosestRace();
     displayActiveEventData();
+});
+
+
+bahrain__event.addEventListener("click", function(){
+    if (bahrain__event.classList.contains("active__event")) {
+        console.log("bahrain already is the active event");
+        return;
+    } else {
+        removeActiveEventClass();
+        console.log("removed all active event classses");
+        bahrain__event.classList.add("active__event");
+        console.log("added active class to bahrain event");
+        displayActiveEventData();
+    }
+});
+
+imola__event.addEventListener("click", function(){
+    if (imola__event.classList.contains("active__event")) {
+        console.log("imola already is the active event");
+        return;
+    } else {
+        removeActiveEventClass();
+        console.log("removed all active event classses");
+        imola__event.classList.add("active__event");
+        console.log("added active class to imola event");
+        displayActiveEventData();
+    }
 });
