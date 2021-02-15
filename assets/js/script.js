@@ -157,55 +157,57 @@ const displayActiveEventData = function() {
 
     if (bahrain__event.classList.contains("active__event")) {
         console.log("bahrain has active class");
-        track__info__container.innerHTML = `<div class="track__info">
-        <div class="track__name__container">
-            <h3 class="track__name">Bahrain international circuit</h3>
-        </div>
-        <div class="track__map__stats__container">
-            <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/bahrain-trackmap.png">
+        track__info__container.innerHTML = 
+        `<div class="track__info">
+            <div class="track__name__container">
+                <h3 class="track__name">Bahrain international circuit</h3>
             </div>
-            <div class="track__stats">
-                <div class="track__stats__content">Laps:
-                    57
-                </div>
-                <div class="track__stats__content">Length:
-                    5.412 km
-                </div>
-                <div class="track__stats__content">Track record:
-                    1:31.447
+            <div class="track__map__stats__container">
+                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/bahrain-trackmap.png"></div>
+                <div class="track__stats">
+                    <div class="track__stats__content">Laps:
+                        57
+                    </div>
+                    <div class="track__stats__content">Length:
+                        5.412 km
+                    </div>
+                    <div class="track__stats__content">Track record:
+                        1:31.447
+                    </div>
                 </div>
             </div>
+        </div>`;
+        time__info__container.innerHTML = 
+        `<div id="schedule">
+            <div id="schedule__title">Time schedule</div>
+            <div id="schedule__subtitle">(local timezone)</div>
         </div>
-    </div>`;
-        time__info__container.innerHTML = `<div id="schedule">
-        <div id="schedule__title">Time schedule</div>
-        <div id="schedule__subtitle">(local timezone)</div>
-    </div>
-    <div class="schedule__times">
-        <div class="session__title">Practice 1:</div>
-        <div class="time">12:30 - 13:30</div>
-    </div>
-    <div class="schedule__times">
-        <div class="session__title">Practice 2:</div>
-        <div class="time">16:00 - 17:00</div>
-    </div>
-    <div class="schedule__times">
-        <div class="session__title"">Practice 3:</div>
-        <div class="time">13:00 - 14:00</div>
-    </div>
-    <div class="schedule__times">
-        <div class="session__title">Qualifying:</div>
-        <div class="time">16:00 - 17:00</div>
-    </div>
-    <div class="schedule__times"  id="race__time">
-        <div class="session__title">Race:</div>
-        <div class="time">17:00 - 19:00</div>
-    </div>`;
-        location__info__container.innerHTML = `<div class="location__time__container">
-        <div id="location">Location: Bahrain</div>
-        <div id="local__time">Local time: LT_bahrain</div>
-    </div>
-    <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
+        <div class="schedule__times">
+            <div class="session__title">Practice 1:</div>
+            <div class="time">12:30 - 13:30</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Practice 2:</div>
+            <div class="time">16:00 - 17:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title"">Practice 3:</div>
+            <div class="time">13:00 - 14:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Qualifying:</div>
+            <div class="time">16:00 - 17:00</div>
+        </div>
+        <div class="schedule__times"  id="race__time">
+            <div class="session__title">Race:</div>
+            <div class="time">17:00 - 19:00</div>
+        </div>`;
+        location__info__container.innerHTML = 
+        `<div class="location__time__container">
+            <div id="location">Location: Bahrain</div>
+            <div id="local__time">Local time: LT_bahrain</div>
+        </div>
+        <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
         // change the date format for the weather elements
         const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
         // change weather div 1 contents
@@ -235,55 +237,57 @@ const displayActiveEventData = function() {
 
     } else if (imola__event.classList.contains("active__event")) {
         console.log("imola has active class");
-        track__info__container.innerHTML = `<div class="track__info">
-        <div class="track__name__container">
-            <h3 class="track__name">Autodromo Enzo e Dino Ferrari</h3>
-        </div>
-        <div class="track__map__stats__container">
-            <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/imola-trackmap.png">
+        track__info__container.innerHTML = 
+        `<div class="track__info">
+            <div class="track__name__container">
+                <h3 class="track__name">Autodromo Enzo e Dino Ferrari</h3>
             </div>
-            <div class="track__stats">
-                <div class="track__stats__content">Laps:
-                    63
-                </div>
-                <div class="track__stats__content">Length:
-                    4.909 km
-                </div>
-                <div class="track__stats__content">Track record:
-                    1:15.484
+            <div class="track__map__stats__container">
+                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/imola-trackmap.png"></div>
+                <div class="track__stats">
+                    <div class="track__stats__content">Laps:
+                        63
+                    </div>
+                    <div class="track__stats__content">Length:
+                        4.909 km
+                    </div>
+                    <div class="track__stats__content">Track record:
+                        1:15.484
+                    </div>
                 </div>
             </div>
+        </div>`;
+        time__info__container.innerHTML = 
+        `<div id="schedule">
+            <div id="schedule__title">Time schedule</div>
+            <div id="schedule__subtitle">(local timezone)</div>
         </div>
-    </div>`;
-    time__info__container.innerHTML = `<div id="schedule">
-    <div id="schedule__title">Time schedule</div>
-    <div id="schedule__subtitle">(local timezone)</div>
-</div>
-<div class="schedule__times">
-    <div class="session__title">Practice 1:</div>
-    <div class="time">11:30 - 12:30</div>
-</div>
-<div class="schedule__times">
-    <div class="session__title">Practice 2:</div>
-    <div class="time">15:00 - 16:00</div>
-</div>
-<div class="schedule__times">
-    <div class="session__title"">Practice 3:</div>
-    <div class="time">12:00 - 13:00</div>
-</div>
-<div class="schedule__times">
-    <div class="session__title">Qualifying:</div>
-    <div class="time">15:00 - 16:00</div>
-</div>
-<div class="schedule__times"  id="race__time">
-    <div class="session__title">Race:</div>
-    <div class="time">15:00 - 17:00</div>
-</div>`;
-location__info__container.innerHTML = `<div class="location__time__container">
-        <div id="location">Location: Imola</div>
-        <div id="local__time">Local time: LT_imola</div>
-    </div>
-    <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
+        <div class="schedule__times">
+            <div class="session__title">Practice 1:</div>
+            <div class="time">11:30 - 12:30</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Practice 2:</div>
+            <div class="time">15:00 - 16:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title"">Practice 3:</div>
+            <div class="time">12:00 - 13:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Qualifying:</div>
+        <div class="time">15:00 - 16:00</div>
+        </div>
+        <div class="schedule__times"  id="race__time">
+            <div class="session__title">Race:</div>
+            <div class="time">15:00 - 17:00</div>
+        </div>`;
+        location__info__container.innerHTML = 
+        `<div class="location__time__container">
+            <div id="location">Location: Imola</div>
+            <div id="local__time">Local time: LT_imola</div>
+        </div>
+        <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
         // change the date format for the weather elements
         const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
         // change weather div 1 contents
