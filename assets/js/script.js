@@ -28,7 +28,8 @@ const UAE__coordinates = `24.467,54.603`;
 
 // weather API
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
@@ -95,6 +96,12 @@ let days__until__melbourne = Math.trunc((((((melbourne__race__start - current__d
 let days__until__jeddah = Math.trunc((((((jeddah__race__start - current__date)/1000)/60)/60)/24));
 let days__until__UAE = Math.trunc((((((UAE__race__start - current__date)/1000)/60)/60)/24));
 
+// weather container elements selectors
+const weather__1 = document.querySelector("#weather__info--1");
+const weather__2 = document.querySelector("#weather__info--2");
+const weather__3 = document.querySelector("#weather__info--3");
+const weather__4 = document.querySelector("#weather__info--4");
+
 // weather container 1 selectors
 const weather__1__date = document.querySelector("#weather__info--1__date");
 const weather__1__time = document.querySelector("#weather__info--1__time");
@@ -151,6 +158,9 @@ const track__info__container = document.querySelector(".track__info__container")
 const time__info__container = document.querySelector(".time__info__container");
 // location info selectors
 const location__info__container = document.querySelector(".location__info__container");
+
+// set boolean value for celcius/fahrenheit switch
+let tempUnitsCelsius = true;
 
 // display active event data
 const displayActiveEventData = function() { 
@@ -219,25 +229,49 @@ const displayActiveEventData = function() {
         // change weather div 1 contents
         weather__1__date.textContent = bahrain__weather__date;
         weather__1__time.textContent = `16:00`;
-        weather__1__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].tempF}°F`;
+        } else {
+            return;
+        };
         weather__1__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = bahrain__weather__date;
         weather__2__time.textContent = `17:00`;
-        weather__2__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].tempF}°F`;
+        } else {
+            return;
+        };
         weather__2__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = bahrain__weather__date;
         weather__3__time.textContent = `18:00`;
-        weather__3__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].tempF}°F`;
+        } else {
+            return;
+        };
         weather__3__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = bahrain__weather__date;
         weather__4__time.textContent = `19:00`;
-        weather__4__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].tempF}°F`;
+        } else {
+            return;
+        };
         weather__4__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].chanceofrain}%`;
 
@@ -300,25 +334,49 @@ const displayActiveEventData = function() {
         // change weather div 1 contents
         weather__1__date.textContent = imola__weather__date;
         weather__1__time.textContent = `14:00`;
-        weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].tempF}°F`;
+        } else {
+            return;
+        };
         weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = imola__weather__date;
         weather__2__time.textContent = `15:00`;
-        weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].tempF}°F`;
+        } else {
+            return;
+        };
         weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = imola__weather__date;
         weather__3__time.textContent = `16:00`;
-        weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempF}°F`;
+        } else {
+            return;
+        };
         weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = imola__weather__date;
         weather__4__time.textContent = `17:00`;
-        weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempC}°C`;
+        if (tempUnitsCelsius === true) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempF}°F`;
+        } else {
+            return;
+        };
         weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
 
@@ -1081,3 +1139,32 @@ const DateFormatter = {
     });
   },
 };
+
+// function that switches between temperature units Celcius and Fahrenheit
+const switchTempUnits = function() { 
+    if (tempUnitsCelsius === true) {
+        // change to Fahrenheit
+        tempUnitsCelsius = false;
+        displayActiveEventData();
+    } else if (tempUnitsCelsius === false) {
+        // change to Celcius
+        tempUnitsCelsius = true;
+        displayActiveEventData();
+    } else {
+        return;
+    };
+};
+
+// event listeners that switch temperature units on click
+weather__1.addEventListener("click", function(){
+    switchTempUnits();
+});
+weather__2.addEventListener("click", function(){
+    switchTempUnits();
+});
+weather__3.addEventListener("click", function(){
+    switchTempUnits();
+});
+weather__4.addEventListener("click", function(){
+    switchTempUnits();
+});
