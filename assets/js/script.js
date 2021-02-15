@@ -27,7 +27,8 @@ const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
 // weather API
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
@@ -36,11 +37,14 @@ const getWeatherData = async function() {
     // store weather data in local storage converted to a string
     /* credits #? */
     localStorage.setItem("weatherData", JSON.stringify(weatherData));
+    console.log("added weatherdata to local storage");
+    checkClosestRace();
+    displayActiveEventData();
 };
 
-
 // races starting date & time
-const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 13, 0, 0));
+const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 15, 0, 0));
+console.log(`${bahrain__race__start} bahrain race start`);
 const imola__race__start = new Date(Date.UTC(2021, 3, 18, 11, 0, 0));
 const portimao__race__start = new Date(Date.UTC(2021, 4, 2, 11, 0, 0));
 const barcelona__race__start = new Date(Date.UTC(2021, 4, 9, 11, 0, 0));
@@ -66,7 +70,7 @@ const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 12, 0, 0));
 
 // races unix timestamp and days until race start calculation
 let current__date = new Date(); // get current date
-console.log(current__date);
+console.log(`${current__date} is the current date`);
 let days__until__bahrain = Math.trunc((((((bahrain__race__start - current__date)/1000)/60)/60)/24));
 let days__until__imola = Math.trunc((((((imola__race__start - current__date)/1000)/60)/60)/24));
 let days__until__portimao = Math.trunc((((((portimao__race__start - current__date)/1000)/60)/60)/24));
@@ -154,6 +158,7 @@ const displayActiveEventData = function() {
     // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can reduce the amount of API calls to stay under the limit
     /* credits #? */
     const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
+    console.log(`grabbed weatherdata from localstorage`);
 
     if (bahrain__event.classList.contains("active__event")) {
         console.log("bahrain has active class");
@@ -210,6 +215,7 @@ const displayActiveEventData = function() {
         <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
         // change the date format for the weather elements
         const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
+        console.log("changed weather date format for bahrain");
         // change weather div 1 contents
         weather__1__date.textContent = bahrain__weather__date;
         weather__1__time.textContent = `16:00`;
@@ -290,6 +296,7 @@ const displayActiveEventData = function() {
         <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
         // change the date format for the weather elements
         const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
+        console.log("changed weather date format for imola");
         // change weather div 1 contents
         weather__1__date.textContent = imola__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -955,8 +962,6 @@ const removeActiveEventClass = function() {
 // event listener that performs functions when the page loads
 window.addEventListener("load", () => {
     getWeatherData();
-    checkClosestRace();
-    displayActiveEventData();
 });
 
 // event listener that makes bahrain the active event and displays its data on click
