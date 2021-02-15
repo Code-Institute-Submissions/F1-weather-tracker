@@ -206,26 +206,28 @@ const displayActiveEventData = function() {
         <div id="local__time">Local time: LT_bahrain</div>
     </div>
     <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
+        // change the date format for the weather elements
+        const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
         // change weather div 1 contents
-        weather__1__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
+        weather__1__date.textContent = bahrain__weather__date;
         weather__1__time.textContent = `16:00`;
         weather__1__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].tempC}°C`;
         weather__1__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
-        weather__2__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
+        weather__2__date.textContent = bahrain__weather__date;
         weather__2__time.textContent = `17:00`;
         weather__2__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].tempC}°C`;
         weather__2__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
-        weather__3__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
+        weather__3__date.textContent = bahrain__weather__date;
         weather__3__time.textContent = `18:00`;
         weather__3__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].tempC}°C`;
         weather__3__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
-        weather__4__date.textContent = `${weatherDataSet.data.area[0].weather[0].date}`;
+        weather__4__date.textContent = bahrain__weather__date;
         weather__4__time.textContent = `19:00`;
         weather__4__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].tempC}°C`;
         weather__4__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].precipMM}mm`;
@@ -282,26 +284,28 @@ location__info__container.innerHTML = `<div class="location__time__container">
         <div id="local__time">Local time: LT_imola</div>
     </div>
     <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
+        // change the date format for the weather elements
+        const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
         // change weather div 1 contents
-        weather__1__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__1__date.textContent = imola__weather__date;
         weather__1__time.textContent = `14:00`;
         weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].tempC}°C`;
         weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
-        weather__2__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__2__date.textContent = imola__weather__date;
         weather__2__time.textContent = `15:00`;
         weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].tempC}°C`;
         weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
-        weather__3__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__3__date.textContent = imola__weather__date;
         weather__3__time.textContent = `16:00`;
         weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempC}°C`;
         weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
-        weather__4__date.textContent = `${weatherDataSet.data.area[1].weather[0].date}`;
+        weather__4__date.textContent = imola__weather__date;
         weather__4__time.textContent = `17:00`;
         weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempC}°C`;
         weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
@@ -917,6 +921,7 @@ const checkClosestRace = function() {
     }
 };
 
+// function that removes the active class from all event elements
 const removeActiveEventClass = function() { 
     bahrain__event.classList.remove("active__event");
     imola__event.classList.remove("active__event");
@@ -943,13 +948,14 @@ const removeActiveEventClass = function() {
     emirates__event.classList.remove("active__event");
 };
 
+// event listener that performs functions when the page loads
 window.addEventListener("load", () => {
     getWeatherData();
     checkClosestRace();
     displayActiveEventData();
 });
 
-
+// event listener that makes bahrain the active event and displays its data on click
 bahrain__event.addEventListener("click", function(){
     if (bahrain__event.classList.contains("active__event")) {
         console.log("bahrain already is the active event");
@@ -963,6 +969,7 @@ bahrain__event.addEventListener("click", function(){
     }
 });
 
+// event listener that makes imola the active event and displays its data on click
 imola__event.addEventListener("click", function(){
     if (imola__event.classList.contains("active__event")) {
         console.log("imola already is the active event");
@@ -975,3 +982,93 @@ imola__event.addEventListener("click", function(){
         displayActiveEventData();
     }
 });
+
+// function that allows you to change a date to the prefered date format
+/* credits #? */
+const DateFormatter = {
+  monthNames: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ],
+  dayNames: [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ],
+  formatDate: function (date, format) {
+    var self = this;
+    format = self.getProperDigits(format, /d+/gi, date.getDate());
+    format = self.getProperDigits(format, /M+/g, date.getMonth() + 1);
+    format = format.replace(/y+/gi, function (y) {
+      var len = y.length;
+      var year = date.getFullYear();
+      if (len == 2) return (year + "").slice(-2);
+      else if (len == 4) return year;
+      return y;
+    });
+    format = self.getProperDigits(format, /H+/g, date.getHours());
+    format = self.getProperDigits(
+      format,
+      /h+/g,
+      self.getHours12(date.getHours())
+    );
+    format = self.getProperDigits(format, /m+/g, date.getMinutes());
+    format = self.getProperDigits(format, /s+/gi, date.getSeconds());
+    format = format.replace(/a/gi, function (a) {
+      var amPm = self.getAmPm(date.getHours());
+      if (a === "A") return amPm.toUpperCase();
+      return amPm;
+    });
+    format = self.getFullOr3Letters(
+      format,
+      /d+/gi,
+      self.dayNames,
+      date.getDay()
+    );
+    format = self.getFullOr3Letters(
+      format,
+      /M+/g,
+      self.monthNames,
+      date.getMonth()
+    );
+    return format;
+  },
+  getProperDigits: function (format, regex, value) {
+    return format.replace(regex, function (m) {
+      var length = m.length;
+      if (length == 1) return value;
+      else if (length == 2) return ("0" + value).slice(-2);
+      return m;
+    });
+  },
+  getHours12: function (hours) {
+    // https://stackoverflow.com/questions/10556879/changing-the-1-24-hour-to-1-12-hour-for-the-gethours-method
+    return (hours + 24) % 12 || 12;
+  },
+  getAmPm: function (hours) {
+    // https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
+    return hours >= 12 ? "pm" : "am";
+  },
+  getFullOr3Letters: function (format, regex, nameArray, value) {
+    return format.replace(regex, function (s) {
+      var len = s.length;
+      if (len == 3) return nameArray[value].substr(0, 3);
+      else if (len == 4) return nameArray[value];
+      return s;
+    });
+  },
+};
