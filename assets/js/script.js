@@ -29,7 +29,8 @@ const UAE__coordinates = `24.467,54.603`;
 // weather API
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=26.032,50.511;44.3435,11.707;37.233,-8.629&format=json&num_of_days=1&tp=1`;
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
@@ -151,6 +152,12 @@ const interlagos__event = document.querySelector("#interlagos__event");
 const melbourne__event = document.querySelector("#melbourne__event");
 const jeddah__event = document.querySelector("#jeddah__event");
 const emirates__event = document.querySelector("#emirates__event");
+
+// dashboard button selectors
+const weather__button = document.querySelector(".weather__button");
+const track__button = document.querySelector(".track__button");
+const schedule__button = document.querySelector(".schedule__button");
+const temp__button = document.querySelector("#temp__button");
 
 // track info selectors
 const track__info__container = document.querySelector(".track__info__container");
@@ -1155,6 +1162,13 @@ const switchTempUnits = function() {
     };
 };
 
+// function that removes the active button ID
+const removeActiveButton = function() { 
+    weather__button.removeAttribute('id');
+    track__button.removeAttribute('id');
+    schedule__button.removeAttribute('id');
+}
+
 // event listeners that switch temperature units on click
 weather__1.addEventListener("click", function(){
     switchTempUnits();
@@ -1167,4 +1181,33 @@ weather__3.addEventListener("click", function(){
 });
 weather__4.addEventListener("click", function(){
     switchTempUnits();
+});
+temp__button.addEventListener("click", function(){
+    switchTempUnits();
+});
+
+// event listeners for the dashboard buttons that switch display data on click
+weather__button.addEventListener("click", function(){
+    if (weather__button.hasAttribute('id')) {
+        return;
+    } else {
+        removeActiveButton();
+        weather__button.id = "active__button";
+    }
+});
+track__button.addEventListener("click", function(){
+    if (track__button.hasAttribute('id')) {
+        return;
+    } else {
+        removeActiveButton();
+        track__button.id = "active__button";
+    }
+});
+schedule__button.addEventListener("click", function(){
+    if (schedule__button.hasAttribute('id')) {
+        return;
+    } else {
+        removeActiveButton();
+        schedule__button.id = "active__button";
+    }
 });

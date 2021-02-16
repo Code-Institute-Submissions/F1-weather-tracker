@@ -176,6 +176,11 @@ nav h1 {
   cursor: pointer;
 }
 
+#active__button {
+  background: #509cff;
+  color: #211f22;
+}
+
 /* ----- track & time info container ----- */
 
 .track__time__info__container {
