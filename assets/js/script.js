@@ -159,6 +159,8 @@ const track__button = document.querySelector(".track__button");
 const schedule__button = document.querySelector(".schedule__button");
 const temp__button = document.querySelector("#temp__button");
 
+// weather & location info container
+const weather__location__info__container = document.querySelector(".weather__location__info__container");
 // track info selectors
 const track__info__container = document.querySelector(".track__info__container");
 // time info selectors  
@@ -3685,28 +3687,68 @@ temp__button.addEventListener("click", function(){
     switchTempUnits();
 });
 
+// function to select what data to display at smaller screen sizes
+const displayActiveEventDataMobile = function() { 
+    if (weather__location__info__container.classList.contains("weather__data__active")) {
+        track__info__container.style.display = "none";
+        time__info__container.style.display = "none";
+        weather__location__info__container.style.display = "flex";
+    } else if (track__info__container.classList.contains("track__data__active")) {
+        time__info__container.style.display = "none";
+        weather__location__info__container.style.display = "none";
+        track__info__container.style.display = "flex";
+    } else if (time__info__container.classList.contains("schedule__data__active")) {
+        track__info__container.style.display = "none";
+        weather__location__info__container.style.display = "none";
+        time__info__container.style.display = "flex";
+    } else {
+        console.log("error: no active mobile data display classes");
+    }
+}
+
 // event listeners for the dashboard buttons that switch display data on click
 weather__button.addEventListener("click", function(){
-    if (weather__button.hasAttribute('id')) {
+    if (weather__location__info__container.classList.contains("weather__data__active")) {
+        console.log("weather location info container already has weather__data__active class");
         return;
     } else {
         removeActiveButton();
         weather__button.id = "active__button";
+        track__info__container.classList.remove("track__data__active");
+        time__info__container.classList.remove("schedule__data__active");
+        console.log("removed track__data__active & schedule__data__active classes");
+        weather__location__info__container.classList.add("weather__data__active");
+        console.log("added weather__data__active class to weathercontainer");
+        displayActiveEventDataMobile();
     }
 });
 track__button.addEventListener("click", function(){
-    if (track__button.hasAttribute('id')) {
+    if (track__info__container.classList.contains("track__data__active")) {
+        console.log("track info container already has track__data__active class");
         return;
     } else {
         removeActiveButton();
         track__button.id = "active__button";
+        time__info__container.classList.remove("schedule__data__active");
+        weather__location__info__container.classList.remove("weather__data__active");
+        console.log("removed schedule__data__active & weather__data__active classes");
+        track__info__container.classList.add("track__data__active");
+        console.log("added track__data__active class to trackinfocontainer");
+        displayActiveEventDataMobile();
     }
 });
 schedule__button.addEventListener("click", function(){
-    if (schedule__button.hasAttribute('id')) {
+    if (time__info__container.classList.contains("schedule__data__active")) {
+        console.log("time info container already has schedule__data__active class");
         return;
     } else {
         removeActiveButton();
         schedule__button.id = "active__button";
+        track__info__container.classList.remove("track__data__active");
+        weather__location__info__container.classList.remove("weather__data__active");
+        console.log("removed track__data__active & weather__data__active classes");
+        time__info__container.classList.add("schedule__data__active");
+        console.log("added schedule__data__active class to timeinfocontainer");
+        displayActiveEventDataMobile();
     }
 });
