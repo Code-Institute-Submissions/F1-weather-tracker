@@ -30,7 +30,7 @@ const UAE__coordinates = `24.467,54.603`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
@@ -596,6 +596,216 @@ const displayActiveEventData = function() {
         };
         weather__4__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].chanceofrain}%`;
+    
+    } else if (monaco__event.classList.contains("active__event")) {
+        console.log("monaco has active class");
+        track__info__container.innerHTML = 
+        `<div class="track__info">
+            <div class="track__name__container">
+                <h3 class="track__name">Circuit de Monaco</h3>
+            </div>
+            <div class="track__map__stats__container">
+                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/monaco-trackmap.png"></div>
+                <div class="track__stats">
+                    <div class="track__stats__content">Laps:
+                        78
+                    </div>
+                    <div class="track__stats__content">Length:
+                        3.337 km
+                    </div>
+                    <div class="track__stats__content">Track record:
+                        1:14.260
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        time__info__container.innerHTML = 
+        `<div id="schedule">
+            <div id="schedule__title">Time schedule</div>
+            <div id="schedule__subtitle">(local timezone)</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Practice 1:</div>
+            <div class="time">11:30 - 12:30</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Practice 2:</div>
+            <div class="time">15:00 - 16:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title"">Practice 3:</div>
+            <div class="time">12:00 - 13:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Qualifying:</div>
+        <div class="time">15:00 - 16:00</div>
+        </div>
+        <div class="schedule__times"  id="race__time">
+            <div class="session__title">Race:</div>
+            <div class="time">15:00 - 17:00</div>
+        </div>`;
+        location__info__container.innerHTML = 
+        `<div class="location__time__container">
+            <div id="location">Location: Monte Carlo</div>
+            <div id="local__time">Local time: -</div>
+        </div>
+        <div class="start__time__container">Start time: 15:00 @ 23 May 2021</div>`;
+        // change the date format for the weather elements
+        const monaco__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[4].weather[0].date), 'DD MMMM YYYY');
+        console.log("changed weather date format for portimao");
+        // change weather div 1 contents
+        weather__1__date.textContent = monaco__weather__date;
+        weather__1__time.textContent = `14:00`;
+        if (tempUnitsCelsius === true) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__1__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].precipMM}mm`;
+        weather__1__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].chanceofrain}%`;
+        // change weather div 2 contents
+        weather__2__date.textContent = monaco__weather__date;
+        weather__2__time.textContent = `15:00`;
+        if (tempUnitsCelsius === true) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__2__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].precipMM}mm`;
+        weather__2__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].chanceofrain}%`;
+        // change weather div 3 contents
+        weather__3__date.textContent = monaco__weather__date;
+        weather__3__time.textContent = `16:00`;
+        if (tempUnitsCelsius === true) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__3__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].precipMM}mm`;
+        weather__3__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].chanceofrain}%`;
+        // change weather div 4 contents
+        weather__4__date.textContent = monaco__weather__date;
+        weather__4__time.textContent = `17:00`;
+        if (tempUnitsCelsius === true) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__4__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].precipMM}mm`;
+        weather__4__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].chanceofrain}%`;
+    
+    } else if (baku__event.classList.contains("active__event")) {
+        console.log("baku has active class");
+        track__info__container.innerHTML = 
+        `<div class="track__info">
+            <div class="track__name__container">
+                <h3 class="track__name">Baku City Circuit</h3>
+            </div>
+            <div class="track__map__stats__container">
+                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/baku-trackmap.png"></div>
+                <div class="track__stats">
+                    <div class="track__stats__content">Laps:
+                        51
+                    </div>
+                    <div class="track__stats__content">Length:
+                        6.003 km
+                    </div>
+                    <div class="track__stats__content">Track record:
+                        1:43.009
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        time__info__container.innerHTML = 
+        `<div id="schedule">
+            <div id="schedule__title">Time schedule</div>
+            <div id="schedule__subtitle">(local timezone)</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Practice 1:</div>
+            <div class="time">13:30 - 14:30</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Practice 2:</div>
+            <div class="time">17:00 - 18:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title"">Practice 3:</div>
+            <div class="time">14:00 - 15:00</div>
+        </div>
+        <div class="schedule__times">
+            <div class="session__title">Qualifying:</div>
+        <div class="time">17:00 - 18:00</div>
+        </div>
+        <div class="schedule__times"  id="race__time">
+            <div class="session__title">Race:</div>
+            <div class="time">16:00 - 18:00</div>
+        </div>`;
+        location__info__container.innerHTML = 
+        `<div class="location__time__container">
+            <div id="location">Location: Baku</div>
+            <div id="local__time">Local time: -</div>
+        </div>
+        <div class="start__time__container">Start time: 16:00 @ 6 June 2021</div>`;
+        // change the date format for the weather elements
+        const baku__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[5].weather[0].date), 'DD MMMM YYYY');
+        console.log("changed weather date format for baku");
+        // change weather div 1 contents
+        weather__1__date.textContent = baku__weather__date;
+        weather__1__time.textContent = `15:00`;
+        if (tempUnitsCelsius === true) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[14].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__1__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[14].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__1__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[14].precipMM}mm`;
+        weather__1__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[14].chanceofrain}%`;
+        // change weather div 2 contents
+        weather__2__date.textContent = baku__weather__date;
+        weather__2__time.textContent = `16:00`;
+        if (tempUnitsCelsius === true) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__2__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__2__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].precipMM}mm`;
+        weather__2__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].chanceofrain}%`;
+        // change weather div 3 contents
+        weather__3__date.textContent = baku__weather__date;
+        weather__3__time.textContent = `17:00`;
+        if (tempUnitsCelsius === true) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__3__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__3__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].precipMM}mm`;
+        weather__3__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].chanceofrain}%`;
+        // change weather div 4 contents
+        weather__4__date.textContent = baku__weather__date;
+        weather__4__time.textContent = `18:00`;
+        if (tempUnitsCelsius === true) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].tempC}°C`;
+        } else if (tempUnitsCelsius === false) {
+            weather__4__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].tempF}°F`;
+        } else {
+            return;
+        };
+        weather__4__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].precipMM}mm`;
+        weather__4__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].chanceofrain}%`;
     
     } else {
         console.log("error: no active event");
@@ -1291,6 +1501,34 @@ barcelona__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         barcelona__event.classList.add("active__event");
         console.log("added active class to barcelona event");
+        displayActiveEventData();
+    }
+});
+
+// event listener that makes monaco the active event and displays its data on click
+monaco__event.addEventListener("click", function(){
+    if (monaco__event.classList.contains("active__event")) {
+        console.log("monaco already is the active event");
+        return;
+    } else {
+        removeActiveEventClass();
+        console.log("removed all active event classses");
+        monaco__event.classList.add("active__event");
+        console.log("added active class to monaco event");
+        displayActiveEventData();
+    }
+});
+
+// event listener that makes baku the active event and displays its data on click
+baku__event.addEventListener("click", function(){
+    if (baku__event.classList.contains("active__event")) {
+        console.log("baku already is the active event");
+        return;
+    } else {
+        removeActiveEventClass();
+        console.log("removed all active event classses");
+        baku__event.classList.add("active__event");
+        console.log("added active class to baku event");
         displayActiveEventData();
     }
 });
