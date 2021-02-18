@@ -34,14 +34,20 @@ const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
+    /* credits #? */
+    try {
     const response = await fetch(weather__API);
     const weatherData = await response.json();
+    
     // store weather data in local storage converted to a string
     /* credits #? */
     localStorage.setItem("weatherData", JSON.stringify(weatherData));
     console.log("added weatherdata to local storage");
     checkClosestRace();
     displayActiveEventData();
+    } catch(err) { 
+        alert(err);
+    }
 };
 
 // races starting date & time
