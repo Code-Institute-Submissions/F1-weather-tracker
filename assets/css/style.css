@@ -467,6 +467,10 @@ nav h1 {
     flex-direction: column;
   }
 
+  .race__calendar__container {
+    flex: 0 0 0px;
+  }
+
   .button__dashboard__container {
     flex-wrap: wrap;
     display: flex;

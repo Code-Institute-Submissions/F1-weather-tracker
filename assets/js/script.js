@@ -165,13 +165,15 @@ const track__button = document.querySelector(".track__button");
 const schedule__button = document.querySelector(".schedule__button");
 const temp__button = document.querySelector("#temp__button");
 
-// weather & location info container
+// main homepage selector
+const main__homepage__container = document.querySelector(".main__homepage__container");
+// weather & location info selector
 const weather__location__info__container = document.querySelector(".weather__location__info__container");
-// track info selectors
+// track info selector
 const track__info__container = document.querySelector(".track__info__container");
-// time info selectors  
+// time info selector
 const time__info__container = document.querySelector(".time__info__container");
-// location info selectors
+// location info selector
 const location__info__container = document.querySelector(".location__info__container");
 
 // set boolean value for celcius/fahrenheit switch
@@ -3676,6 +3678,60 @@ const removeActiveButton = function() {
     schedule__button.removeAttribute('id');
 }
 
+// function that hides all events
+const hideAllEvents = function() { 
+    bahrain__event.style.display = "none";
+    imola__event.style.display = "none";
+    portimao__event.style.display = "none";
+    barcelona__event.style.display = "none";
+    monaco__event.style.display = "none";
+    baku__event.style.display = "none";
+    montreal__event.style.display = "none";
+    castellet__event.style.display = "none";
+    spielberg__event.style.display = "none";
+    silverstone__event.style.display = "none";
+    budapest__event.style.display = "none";
+    spa__event.style.display = "none";
+    zandvoort__event.style.display = "none";
+    monza__event.style.display = "none";
+    sochi__event.style.display = "none";
+    singapore__event.style.display = "none";
+    suzuka__event.style.display = "none";
+    austin__event.style.display = "none";
+    mexico__event.style.display = "none";
+    interlagos__event.style.display = "none";
+    melbourne__event.style.display = "none";
+    jeddah__event.style.display = "none";
+    emirates__event.style.display = "none";
+}
+
+// function that lets all the events be displayed
+const showAllEvents = function() { 
+    bahrain__event.style.display = "flex";
+    imola__event.style.display = "flex";
+    portimao__event.style.display = "flex";
+    barcelona__event.style.display = "flex";
+    monaco__event.style.display = "flex";
+    baku__event.style.display = "flex";
+    montreal__event.style.display = "flex";
+    castellet__event.style.display = "flex";
+    spielberg__event.style.display = "flex";
+    silverstone__event.style.display = "flex";
+    budapest__event.style.display = "flex";
+    spa__event.style.display = "flex";
+    zandvoort__event.style.display = "flex";
+    monza__event.style.display = "flex";
+    sochi__event.style.display = "flex";
+    singapore__event.style.display = "flex";
+    suzuka__event.style.display = "flex";
+    austin__event.style.display = "flex";
+    mexico__event.style.display = "flex";
+    interlagos__event.style.display = "flex";
+    melbourne__event.style.display = "flex";
+    jeddah__event.style.display = "flex";
+    emirates__event.style.display = "flex";
+}
+
 // event listeners that switch temperature units on click
 weather__1.addEventListener("click", function(){
     switchTempUnits();
@@ -3758,3 +3814,88 @@ schedule__button.addEventListener("click", function(){
         displayActiveEventDataMobile();
     }
 });
+
+// function that only lets the active event be displayed
+const showActiveEventOnly = function() { 
+	if (bahrain__event.classList.contains("active__event")) {
+        hideAllEvents();
+        bahrain__event.style.display = "flex";
+    } else if (imola__event.classList.contains("active__event")) {
+        hideAllEvents();
+        imola__event.style.display = "flex";
+    } else if (portimao__event.classList.contains("active__event")) {
+        hideAllEvents();
+        portimao__event.style.display = "flex";
+    } else if (barcelona__event.classList.contains("active__event")) {
+        hideAllEvents();
+        barcelona__event.style.display = "flex";
+    } else if (monaco__event.classList.contains("active__event")) {
+        baku__event.classList.contains("active__event")
+        monaco__event.style.display = "flex";
+    } else if (baku__event.classList.contains("active__event")) {
+        hideAllEvents();
+        baku__event.style.display = "flex";
+    } else if (montreal__event.classList.contains("active__event")) {
+        hideAllEvents();
+        montreal__event.style.display = "flex";
+    } else if (castellet__event.classList.contains("active__event")) {
+        hideAllEvents();
+        castellet__event.style.display = "flex";
+    } else if (spielberg__event.classList.contains("active__event")) {
+        hideAllEvents();
+        spielberg__event.style.display = "flex";
+    } else if (silverstone__event.classList.contains("active__event")) {
+        hideAllEvents();
+        silverstone__event.style.display = "flex";
+    } else if (budapest__event.classList.contains("active__event")) {
+        hideAllEvents();
+        budapest__event.style.display = "flex";
+    } else if (spa__event.classList.contains("active__event")) {
+        hideAllEvents();
+        spa__event.style.display = "flex";
+    } else if (zandvoort__event.classList.contains("active__event")) {
+        hideAllEvents();
+        zandvoort__event.style.display = "flex";
+    } else if (monza__event.classList.contains("active__event")) {
+        hideAllEvents();
+        monza__event.style.display = "flex";
+    } else if (sochi__event.classList.contains("active__event")) {
+        hideAllEvents();
+        sochi__event.style.display = "flex";
+    } else if (singapore__event.classList.contains("active__event")) {
+        hideAllEvents();
+        singapore__event.style.display = "flex";
+    } else if (suzuka__event.classList.contains("active__event")) {
+        hideAllEvents();
+        suzuka__event.style.display = "flex";
+    } else if (austin__event.classList.contains("active__event")) {
+        hideAllEvents();
+        austin__event.style.display = "flex";
+    } else if (mexico__event.classList.contains("active__event")) {
+        hideAllEvents();
+        mexico__event.style.display = "flex";
+    } else if (interlagos__event.classList.contains("active__event")) {
+        hideAllEvents();
+        interlagos__event.style.display = "flex";
+    } else if (melbourne__event.classList.contains("active__event")) {
+        hideAllEvents();
+        melbourne__event.style.display = "flex";
+    } else if (jeddah__event.classList.contains("active__event")) {
+        hideAllEvents();
+        jeddah__event.style.display = "flex";
+    } else if (emirates__event.classList.contains("active__event")) {
+        hideAllEvents();
+        emirates__event.style.display = "flex";
+    } else {
+        console.log("error: no active event for showActiveEventOnly to target");
+        return;
+    }
+}
+
+const checkMainFlexDirection = setInterval(function() {
+    if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
+        showAllEvents();
+    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column") {
+        showActiveEventOnly();
+        }        
+}, 200);
