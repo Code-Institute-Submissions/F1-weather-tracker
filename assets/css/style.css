@@ -94,6 +94,10 @@ nav h1 {
   white-space: pre-line;
 }
 
+.hamburger__icon {
+  display: none;
+}
+
 .flags {
   max-height: 46px;
   max-width: 46px;
@@ -466,6 +470,26 @@ nav h1 {
 
   .race__calendar__container {
     flex: 0 0 0px;
+  }
+
+  .hamburger__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #509cff;
+    padding: 0;
+    margin-left: 10%;
+    margin-right: 50px;
+    font-size: 2.6rem;
+    cursor: pointer;
+  }
+
+  .event__location {
+    white-space: normal;
+  }
+
+  .event__date {
+    white-space: normal;
   }
 
   .button__dashboard__container {
