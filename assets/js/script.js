@@ -4218,12 +4218,22 @@ const showActiveEventOnly = function() {
     }
 }
 
+// function that gives track info container & time info container & weather location info container their visibility back
+const allDataContainersVisible = function() { 
+    weather__location__info__container.style.display = "flex";
+    track__info__container.style.display = "flex";
+    time__info__container.style.display = "flex";
+}
+
+
 // function that checks whether to display the whole race calendar or just a single event
 const checkMainFlexDirection = function() { 
     if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
         showAllEvents();
+        allDataContainersVisible();
     } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column") {
         showActiveEventOnly();
+        displayActiveEventDataMobile();
     }  else {
         console.log("error in checkMainFlexDirection function");
     }
