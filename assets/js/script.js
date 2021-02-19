@@ -4586,6 +4586,9 @@ const changeCountdownTimer = function () {
     // set the initial text content of the countdown timer element without delay
     setInitialCountdown();
 
+    // clear any interval timer that's already running
+    clearInterval(countdown__timer);
+
     // timer that calculates the days, hours and minutes until a race start and updates it every 20 seconds
     /* credits #? */
     const countdown__timer = setInterval(function () {
