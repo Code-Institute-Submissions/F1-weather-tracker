@@ -28,8 +28,8 @@ const UAE__coordinates = `24.467,54.603`;
 
 // weather API
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // fetch weather data & store locally
@@ -176,6 +176,8 @@ const track__info__container = document.querySelector(".track__info__container")
 const time__info__container = document.querySelector(".time__info__container");
 // location info selector
 const location__info__container = document.querySelector(".location__info__container");
+// countdown timer selector
+const race__countdown__timer = document.querySelector(".race__countdown__timer__container");
 
 // set boolean value for celcius/fahrenheit switch
 let tempUnitsCelsius = true;
@@ -190,6 +192,8 @@ const displayActiveEventData = function() {
     /* credits #? */
     const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
     console.log(`grabbed weatherdata from localstorage`);
+    changeCountdownTimer();
+    console.log(`set countdown timer to active race event`);
 
     if (bahrain__event.classList.contains("active__event")) {
         console.log("bahrain has active class");
@@ -4243,3 +4247,676 @@ const checkMainFlexDirection = function() {
 window.onresize = function(){
     checkMainFlexDirection();
 }
+
+// function that sets the initial text content of the countdown timer element without delay
+const setInitialCountdown = function() { 
+    // Get today's date and time
+    let current__date__time = new Date();
+    
+    if (bahrain__event.classList.contains("active__event")) {
+        let distance = bahrain__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Bahrain race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+            
+    } else if (imola__event.classList.contains("active__event")) {
+        let distance = imola__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Imola race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (portimao__event.classList.contains("active__event")) {
+        let distance = portimao__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Portimão race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (barcelona__event.classList.contains("active__event")) {
+        let distance = barcelona__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Barcelona race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (monaco__event.classList.contains("active__event")) {
+        let distance = monaco__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Monaco race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (baku__event.classList.contains("active__event")) {
+        let distance = baku__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Baku race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (montreal__event.classList.contains("active__event")) {
+        let distance = montreal__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Montreal race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (castellet__event.classList.contains("active__event")) {
+        let distance = castellet__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Castellet race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (spielberg__event.classList.contains("active__event")) {
+        let distance = spielberg__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Spielberg race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (silverstone__event.classList.contains("active__event")) {
+        let distance = silverstone__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Silverstone race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (budapest__event.classList.contains("active__event")) {
+        let distance = budapest__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Budapest race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (spa__event.classList.contains("active__event")) {
+        let distance = spa__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Spa-Francorchamps race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (zandvoort__event.classList.contains("active__event")) {
+        let distance = zandvoort__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Zandvoort race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (monza__event.classList.contains("active__event")) {
+        let distance = monza__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Monza race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (sochi__event.classList.contains("active__event")) {
+        let distance = sochi__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Sochi race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (singapore__event.classList.contains("active__event")) {
+        let distance = singapore__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Singapore race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (suzuka__event.classList.contains("active__event")) {
+        let distance = suzuka__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Suzuka race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (austin__event.classList.contains("active__event")) {
+        let distance = austin__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Austin race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (mexico__event.classList.contains("active__event")) {
+        let distance = mexico__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Mexico race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (interlagos__event.classList.contains("active__event")) {
+        let distance = interlagos__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Interlagos race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (melbourne__event.classList.contains("active__event")) {
+        let distance = melbourne__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Melbourne race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (jeddah__event.classList.contains("active__event")) {
+        let distance = jeddah__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Jeddah race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else if (emirates__event.classList.contains("active__event")) {
+        let distance = UAE__race__start - current__date__time;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        race__countdown__timer.textContent = `Abu Dhabi race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+        
+        if (distance < 0) {
+            clearInterval(countdown__timer);
+            race__countdown__timer.textContent = "Countdown has expired.";
+            };
+
+    } else {
+        console.log("changeCountdownTimer is broken");
+        race__countdown__timer.textContent = `Error: could not start a countdown timer.`;
+    };
+}
+
+// function that changes the content in the countdown timer element based on the active event
+const changeCountdownTimer = function () {
+    // set the initial text content of the countdown timer element without delay
+    setInitialCountdown();
+
+    // timer that calculates the days, hours and minutes until a race start and updates it every 20 seconds
+    /* credits #? */
+    const countdown__timer = setInterval(function () {
+        // Get today's date and time
+        let current__date__time = new Date();
+        
+        if (bahrain__event.classList.contains("active__event")) {
+            let distance = bahrain__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Bahrain race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+                
+        } else if (imola__event.classList.contains("active__event")) {
+            let distance = imola__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Imola race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (portimao__event.classList.contains("active__event")) {
+            let distance = portimao__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Portimão race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (barcelona__event.classList.contains("active__event")) {
+            let distance = barcelona__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Barcelona race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (monaco__event.classList.contains("active__event")) {
+            let distance = monaco__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Monaco race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (baku__event.classList.contains("active__event")) {
+            let distance = baku__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Baku race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (montreal__event.classList.contains("active__event")) {
+            let distance = montreal__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Montreal race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (castellet__event.classList.contains("active__event")) {
+            let distance = castellet__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Castellet race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (spielberg__event.classList.contains("active__event")) {
+            let distance = spielberg__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Spielberg race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (silverstone__event.classList.contains("active__event")) {
+            let distance = silverstone__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Silverstone race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (budapest__event.classList.contains("active__event")) {
+            let distance = budapest__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Budapest race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (spa__event.classList.contains("active__event")) {
+            let distance = spa__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Spa-Francorchamps race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (zandvoort__event.classList.contains("active__event")) {
+            let distance = zandvoort__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Zandvoort race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (monza__event.classList.contains("active__event")) {
+            let distance = monza__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Monza race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (sochi__event.classList.contains("active__event")) {
+            let distance = sochi__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Sochi race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (singapore__event.classList.contains("active__event")) {
+            let distance = singapore__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Singapore race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (suzuka__event.classList.contains("active__event")) {
+            let distance = suzuka__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Suzuka race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (austin__event.classList.contains("active__event")) {
+            let distance = austin__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Austin race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (mexico__event.classList.contains("active__event")) {
+            let distance = mexico__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Mexico race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (interlagos__event.classList.contains("active__event")) {
+            let distance = interlagos__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Interlagos race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (melbourne__event.classList.contains("active__event")) {
+            let distance = melbourne__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Melbourne race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (jeddah__event.classList.contains("active__event")) {
+            let distance = jeddah__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Jeddah race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else if (emirates__event.classList.contains("active__event")) {
+            let distance = UAE__race__start - current__date__time;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            race__countdown__timer.textContent = `Abu Dhabi race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+            
+            if (distance < 0) {
+                clearInterval(countdown__timer);
+                race__countdown__timer.textContent = "Countdown has expired.";
+                };
+
+        } else {
+            console.log("changeCountdownTimer is broken");
+            race__countdown__timer.textContent = `Error: could not start a countdown timer.`;
+        };
+    }, 20000);
+};
