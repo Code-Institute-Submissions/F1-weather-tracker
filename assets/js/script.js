@@ -4501,10 +4501,15 @@ const checkMainFlexDirection = function() {
         hideAllHamburgerIcons();
         showAllEvents();
         allDataContainersVisible();
-    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column") {
+    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
         showActiveEventHamburgerIcon();
         showActiveEventOnly();
         displayActiveEventDataMobile();
+    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        showActiveEventHamburgerIcon();
+        showActiveEventOnly();
+        displayActiveEventDataMobile();
+        mobileCalendarExtended === false;
     }  else {
         console.log("error in checkMainFlexDirection function");
     }
