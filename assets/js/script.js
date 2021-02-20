@@ -160,6 +160,31 @@ const melbourne__event = document.querySelector("#melbourne__event");
 const jeddah__event = document.querySelector("#jeddah__event");
 const emirates__event = document.querySelector("#emirates__event");
 
+// individual hamburger icon container selectors for each event
+const HIC__bahrain = document.querySelector(".HIC__bahrain");
+const HIC__imola = document.querySelector(".HIC__imola");
+const HIC__portimao = document.querySelector(".HIC__portimao");
+const HIC__barcelona = document.querySelector(".HIC__barcelona");
+const HIC__monaco = document.querySelector(".HIC__monaco");
+const HIC__baku = document.querySelector(".HIC__baku");
+const HIC__montreal = document.querySelector(".HIC__montreal");
+const HIC__castellet = document.querySelector(".HIC__castellet");
+const HIC__spielberg = document.querySelector(".HIC__spielberg");
+const HIC__silverstone = document.querySelector(".HIC__silverstone");
+const HIC__budapest = document.querySelector(".HIC__budapest");
+const HIC__spa = document.querySelector(".HIC__spa");
+const HIC__zandvoort = document.querySelector(".HIC__zandvoort");
+const HIC__monza = document.querySelector(".HIC__monza");
+const HIC__sochi = document.querySelector(".HIC__sochi");
+const HIC__singapore = document.querySelector(".HIC__singapore");
+const HIC__suzuka = document.querySelector(".HIC__suzuka");
+const HIC__austin = document.querySelector(".HIC__austin");
+const HIC__mexico = document.querySelector(".HIC__mexico");
+const HIC__interlagos = document.querySelector(".HIC__interlagos");
+const HIC__melbourne = document.querySelector(".HIC__melbourne");
+const HIC__jeddah = document.querySelector(".HIC__jeddah");
+const HIC__emirates = document.querySelector(".HIC__emirates");
+
 // dashboard button selectors
 const weather__button = document.querySelector(".weather__button");
 const track__button = document.querySelector(".track__button");
@@ -3258,9 +3283,13 @@ bahrain__event.addEventListener("click", function(){
         console.log("bahrain already is the active event");
         return;
     } else if (bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3268,6 +3297,8 @@ bahrain__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         bahrain__event.classList.add("active__event");
         console.log("added active class to bahrain event");
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3286,9 +3317,13 @@ imola__event.addEventListener("click", function(){
         console.log("imola already is the active event");
         return;
     } else if (imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__imola.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3296,6 +3331,8 @@ imola__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         imola__event.classList.add("active__event");
         console.log("added active class to imola event");
+        hideAllHamburgerIcons();
+        HIC__imola.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3314,9 +3351,13 @@ portimao__event.addEventListener("click", function(){
         console.log("portimao already is the active event");
         return;
     } else if (portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__portimao.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3324,6 +3365,8 @@ portimao__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         portimao__event.classList.add("active__event");
         console.log("added active class to portimao event");
+        hideAllHamburgerIcons();
+        HIC__portimao.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3342,9 +3385,13 @@ barcelona__event.addEventListener("click", function(){
         console.log("barcelona already is the active event");
         return;
     } else if (barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__barcelona.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3352,6 +3399,8 @@ barcelona__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         barcelona__event.classList.add("active__event");
         console.log("added active class to barcelona event");
+        hideAllHamburgerIcons();
+        HIC__barcelona.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3370,9 +3419,13 @@ monaco__event.addEventListener("click", function(){
         console.log("monaco already is the active event");
         return;
     } else if (monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__monaco.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3380,6 +3433,8 @@ monaco__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         monaco__event.classList.add("active__event");
         console.log("added active class to monaco event");
+        hideAllHamburgerIcons();
+        HIC__monaco.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3398,9 +3453,13 @@ baku__event.addEventListener("click", function(){
         console.log("baku already is the active event");
         return;
     } else if (baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__baku.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3408,6 +3467,8 @@ baku__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         baku__event.classList.add("active__event");
         console.log("added active class to baku event");
+        hideAllHamburgerIcons();
+        HIC__baku.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3426,9 +3487,13 @@ montreal__event.addEventListener("click", function(){
         console.log("montreal already is the active event");
         return;
     } else if (montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__montreal.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3436,6 +3501,8 @@ montreal__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         montreal__event.classList.add("active__event");
         console.log("added active class to montreal event");
+        hideAllHamburgerIcons();
+        HIC__montreal.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3454,9 +3521,13 @@ castellet__event.addEventListener("click", function(){
         console.log("castellet already is the active event");
         return;
     } else if (castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__castellet.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3464,6 +3535,8 @@ castellet__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         castellet__event.classList.add("active__event");
         console.log("added active class to castellet event");
+        hideAllHamburgerIcons();
+        HIC__castellet.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3482,9 +3555,13 @@ spielberg__event.addEventListener("click", function(){
         console.log("spielberg already is the active event");
         return;
     } else if (spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__spielberg.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3492,6 +3569,8 @@ spielberg__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         spielberg__event.classList.add("active__event");
         console.log("added active class to spielberg event");
+        hideAllHamburgerIcons();
+        HIC__spielberg.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3510,9 +3589,13 @@ silverstone__event.addEventListener("click", function(){
         console.log("silverstone already is the active event");
         return;
     } else if (silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__silverstone.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3520,6 +3603,8 @@ silverstone__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         silverstone__event.classList.add("active__event");
         console.log("added active class to silverstone event");
+        hideAllHamburgerIcons();
+        HIC__silverstone.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3538,9 +3623,13 @@ budapest__event.addEventListener("click", function(){
         console.log("budapest already is the active event");
         return;
     } else if (budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__budapest.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3548,6 +3637,8 @@ budapest__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         budapest__event.classList.add("active__event");
         console.log("added active class to budapest event");
+        hideAllHamburgerIcons();
+        HIC__budapest.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3566,9 +3657,13 @@ spa__event.addEventListener("click", function(){
         console.log("spa already is the active event");
         return;
     } else if (spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__spa.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3576,6 +3671,8 @@ spa__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         spa__event.classList.add("active__event");
         console.log("added active class to spa event");
+        hideAllHamburgerIcons();
+        HIC__spa.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3594,9 +3691,13 @@ zandvoort__event.addEventListener("click", function(){
         console.log("zandvoort already is the active event");
         return;
     } else if (zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__zandvoort.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3604,6 +3705,8 @@ zandvoort__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         zandvoort__event.classList.add("active__event");
         console.log("added active class to zandvoort event");
+        hideAllHamburgerIcons();
+        HIC__zandvoort.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3622,9 +3725,13 @@ monza__event.addEventListener("click", function(){
         console.log("monza already is the active event");
         return;
     } else if (monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__monza.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3632,6 +3739,8 @@ monza__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         monza__event.classList.add("active__event");
         console.log("added active class to monza event");
+        hideAllHamburgerIcons();
+        HIC__monza.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3650,9 +3759,13 @@ sochi__event.addEventListener("click", function(){
         console.log("sochi already is the active event");
         return;
     } else if (sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__sochi.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3660,6 +3773,8 @@ sochi__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         sochi__event.classList.add("active__event");
         console.log("added active class to sochi event");
+        hideAllHamburgerIcons();
+        HIC__sochi.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3678,9 +3793,13 @@ singapore__event.addEventListener("click", function(){
         console.log("singapore already is the active event");
         return;
     } else if (singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__singapore.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3688,6 +3807,8 @@ singapore__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         singapore__event.classList.add("active__event");
         console.log("added active class to singapore event");
+        hideAllHamburgerIcons();
+        HIC__singapore.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3706,9 +3827,13 @@ suzuka__event.addEventListener("click", function(){
         console.log("suzuka already is the active event");
         return;
     } else if (suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__suzuka.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3716,6 +3841,8 @@ suzuka__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         suzuka__event.classList.add("active__event");
         console.log("added active class to suzuka event");
+        hideAllHamburgerIcons();
+        HIC__suzuka.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3734,9 +3861,13 @@ austin__event.addEventListener("click", function(){
         console.log("austin already is the active event");
         return;
     } else if (austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__austin.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3744,6 +3875,8 @@ austin__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         austin__event.classList.add("active__event");
         console.log("added active class to austin event");
+        hideAllHamburgerIcons();
+        HIC__austin.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3762,9 +3895,13 @@ mexico__event.addEventListener("click", function(){
         console.log("mexico already is the active event");
         return;
     } else if (mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__mexico.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3772,6 +3909,8 @@ mexico__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         mexico__event.classList.add("active__event");
         console.log("added active class to mexico event");
+        hideAllHamburgerIcons();
+        HIC__mexico.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3790,9 +3929,13 @@ interlagos__event.addEventListener("click", function(){
         console.log("interlagos already is the active event");
         return;
     } else if (interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__interlagos.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3800,6 +3943,8 @@ interlagos__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         interlagos__event.classList.add("active__event");
         console.log("added active class to interlagos event");
+        hideAllHamburgerIcons();
+        HIC__interlagos.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3818,9 +3963,13 @@ melbourne__event.addEventListener("click", function(){
         console.log("melbourne already is the active event");
         return;
     } else if (melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__melbourne.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3828,6 +3977,8 @@ melbourne__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         melbourne__event.classList.add("active__event");
         console.log("added active class to melbourne event");
+        hideAllHamburgerIcons();
+        HIC__melbourne.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3846,9 +3997,13 @@ jeddah__event.addEventListener("click", function(){
         console.log("jeddah already is the active event");
         return;
     } else if (jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__jeddah.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3856,6 +4011,8 @@ jeddah__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         jeddah__event.classList.add("active__event");
         console.log("added active class to jeddah event");
+        hideAllHamburgerIcons();
+        HIC__jeddah.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -3874,9 +4031,13 @@ emirates__event.addEventListener("click", function(){
         console.log("emirates already is the active event");
         return;
     } else if (emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
     } else if (emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        hideAllHamburgerIcons();
+        HIC__emirates.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else if (!emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
@@ -3884,6 +4045,8 @@ emirates__event.addEventListener("click", function(){
         console.log("removed all active event classses");
         emirates__event.classList.add("active__event");
         console.log("added active class to emirates event");
+        hideAllHamburgerIcons();
+        HIC__emirates.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
@@ -4060,6 +4223,32 @@ const showAllEvents = function() {
     melbourne__event.style.display = "flex";
     jeddah__event.style.display = "flex";
     emirates__event.style.display = "flex";
+}
+
+const hideAllHamburgerIcons = function() { 
+    HIC__bahrain.style.display = "none";
+    HIC__imola.style.display = "none";
+    HIC__portimao.style.display = "none";
+    HIC__barcelona.style.display = "none";
+    HIC__monaco.style.display = "none";
+    HIC__baku.style.display = "none";
+    HIC__montreal.style.display = "none";
+    HIC__castellet.style.display = "none";
+    HIC__spielberg.style.display = "none";
+    HIC__silverstone.style.display = "none";
+    HIC__budapest.style.display = "none";
+    HIC__spa.style.display = "none";
+    HIC__zandvoort.style.display = "none";
+    HIC__monza.style.display = "none";
+    HIC__sochi.style.display = "none";
+    HIC__singapore.style.display = "none";
+    HIC__suzuka.style.display = "none";
+    HIC__austin.style.display = "none";
+    HIC__mexico.style.display = "none";
+    HIC__interlagos.style.display = "none";
+    HIC__melbourne.style.display = "none";
+    HIC__jeddah.style.display = "none";
+    HIC__emirates.style.display = "none";
 }
 
 // event listeners that switch temperature units on click
