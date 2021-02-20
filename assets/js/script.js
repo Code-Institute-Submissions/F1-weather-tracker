@@ -4506,10 +4506,10 @@ const checkMainFlexDirection = function() {
         showActiveEventOnly();
         displayActiveEventDataMobile();
     } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        showActiveEventHamburgerIcon();
-        showActiveEventOnly();
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
+        showAllEvents();
         displayActiveEventDataMobile();
-        mobileCalendarExtended === false;
     }  else {
         console.log("error in checkMainFlexDirection function");
     }
