@@ -4411,6 +4411,82 @@ const showActiveEventOnly = function() {
     }
 }
 
+const showActiveEventHamburgerIcon = function() { 
+	if (bahrain__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
+    } else if (imola__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__imola.style.display = "flex";
+    } else if (portimao__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__portimao.style.display = "flex";
+    } else if (barcelona__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__barcelona.style.display = "flex";
+    } else if (monaco__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__monaco.style.display = "flex";
+    } else if (baku__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__baku.style.display = "flex";
+    } else if (montreal__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__montreal.style.display = "flex";
+    } else if (castellet__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__castellet.style.display = "flex";
+    } else if (spielberg__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__spielberg.style.display = "flex";
+    } else if (silverstone__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__silverstone.style.display = "flex";
+    } else if (budapest__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__budapest.style.display = "flex";
+    } else if (spa__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__spa.style.display = "flex";
+    } else if (zandvoort__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__zandvoort.style.display = "flex";
+    } else if (monza__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__monza.style.display = "flex";
+    } else if (sochi__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__sochi.style.display = "flex";
+    } else if (singapore__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__singapore.style.display = "flex";
+    } else if (suzuka__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__suzuka.style.display = "flex";
+    } else if (austin__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__austin.style.display = "flex";
+    } else if (mexico__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__mexico.style.display = "flex";
+    } else if (interlagos__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__interlagos.style.display = "flex";
+    } else if (melbourne__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__melbourne.style.display = "flex";
+    } else if (jeddah__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__jeddah.style.display = "flex";
+    } else if (emirates__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__emirates.style.display = "flex";
+    } else {
+        console.log("error: no active event for showActiveEventHamburgerIcon to target");
+        return;
+    }
+}
+
 // function that gives track info container & time info container & weather location info container their visibility back
 const allDataContainersVisible = function() { 
     weather__location__info__container.style.display = "flex";
@@ -4422,9 +4498,11 @@ const allDataContainersVisible = function() {
 // function that checks whether to display the whole race calendar or just a single event
 const checkMainFlexDirection = function() { 
     if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
+        hideAllHamburgerIcons();
         showAllEvents();
         allDataContainersVisible();
     } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column") {
+        showActiveEventHamburgerIcon();
         showActiveEventOnly();
         displayActiveEventDataMobile();
     }  else {
