@@ -94,7 +94,7 @@ nav h1 {
   white-space: pre-line;
 }
 
-.hamburger__icon {
+.hamburger__icon__container {
   display: none;
 }
 
@@ -472,24 +472,32 @@ nav h1 {
     flex: 0 0 0px;
   }
 
-  .hamburger__icon {
+  .race__events {
+    justify-content: space-between;
+  }
+
+  .hamburger__icon__container {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 6%;
+    cursor: pointer;
+  }
+
+  .hamburger__icon {
     color: #509cff;
     padding: 0;
-    margin-left: 10%;
-    margin-right: 50px;
     font-size: 2.6rem;
-    cursor: pointer;
   }
 
   .event__location {
     white-space: normal;
+    margin-left: 6%;
   }
 
   .event__date {
     white-space: normal;
+    margin-right: 6%;
   }
 
   .button__dashboard__container {
