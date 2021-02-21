@@ -43,9 +43,9 @@ const getWeatherData = async function() {
     /* credits #? */
     localStorage.setItem("weatherData", JSON.stringify(weatherData));
     console.log("added weatherdata to local storage");
-    checkClosestRace();
+
     displayActiveEventData();
-    checkMainFlexDirection();
+
     } catch(err) { 
         alert(err);
     }
@@ -3245,6 +3245,9 @@ const checkClosestRace = function() {
     }
 };
 
+// execute function to check for the closest race and give an active class based on that and grey out past races
+checkClosestRace();
+
 // function that removes the active class from all event elements
 const removeActiveEventClass = function() { 
     bahrain__event.classList.remove("active__event");
@@ -4514,6 +4517,9 @@ const checkMainFlexDirection = function() {
         console.log("error in checkMainFlexDirection function");
     }
 }
+
+// execute function to set initial hamburger menu icons and displayed event data
+checkMainFlexDirection();
 
 // checks for changes in window size and then executes the checkMainFlexDirection function
 window.onresize = function(){
