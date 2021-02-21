@@ -463,6 +463,16 @@ nav h1 {
 
 /* --------------- media queries --------------- */
 
+@media (max-width: 1437px) {
+  .track__info__container {
+    border-right: none;
+  }
+
+  .time__info__container {
+    border-left: none;
+  }
+}
+
 @media (max-width: 1025px) {
   .main__homepage__container {
     flex-direction: column;
@@ -509,9 +519,11 @@ nav h1 {
 
   .track__info__container {
     display: none;
+    border-bottom: none;
   }
 
   .time__info__container {
     display: none;
+    border-bottom: none;
   }
 }
