@@ -204,7 +204,7 @@ nav h1 {
   display: flex;
 }
 
-/* ----- track & time info container ----- */
+/* ----- track info container ----- */
 
 .track__info__container {
   flex: 1 0 60%;
@@ -214,7 +214,7 @@ nav h1 {
   min-width: 660px;
 }
 
-/* ----- track info container ----- */
+/* ----- track info ----- */
 
 .track__info {
   flex: 1 1 auto;
@@ -222,6 +222,32 @@ nav h1 {
   flex-direction: column;
   font-family: "Inter", sans-serif;
   font-size: 2.6rem;
+}
+
+.track__info__bahrain,
+.track__info__imola,
+.track__info__portimao,
+.track__info__barcelona,
+.track__info__monaco,
+.track__info__baku,
+.track__info__montreal,
+.track__info__castellet,
+.track__info__spielberg,
+.track__info__silverstone,
+.track__info__budapest,
+.track__info__spa,
+.track__info__zandvoort,
+.track__info__monza,
+.track__info__sochi,
+.track__info__singapore,
+.track__info__suzuka,
+.track__info__austin,
+.track__info__mexico,
+.track__info__interlagos,
+.track__info__melbourne,
+.track__info__jeddah,
+.track__info__emirates {
+  display: none;
 }
 
 .track__name__container {
@@ -520,6 +546,10 @@ nav h1 {
   .track__info__container {
     display: none;
     border-bottom: none;
+  }
+
+  .track__stats {
+    border-bottom: 1px solid #ffc929;
   }
 
   .time__info__container {

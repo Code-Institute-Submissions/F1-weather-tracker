@@ -185,6 +185,32 @@ const HIC__melbourne = document.querySelector(".HIC__melbourne");
 const HIC__jeddah = document.querySelector(".HIC__jeddah");
 const HIC__emirates = document.querySelector(".HIC__emirates");
 
+// individual track info selectors
+const track__info__template = document.querySelector(".track__info__template");
+const track__info__bahrain = document.querySelector(".track__info__bahrain");
+const track__info__imola = document.querySelector(".track__info__imola");
+const track__info__portimao = document.querySelector(".track__info__portimao");
+const track__info__barcelona = document.querySelector(".track__info__barcelona");
+const track__info__monaco = document.querySelector(".track__info__monaco");
+const track__info__baku = document.querySelector(".track__info__baku");
+const track__info__montreal = document.querySelector(".track__info__montreal");
+const track__info__castellet = document.querySelector(".track__info__castellet");
+const track__info__spielberg = document.querySelector(".track__info__spielberg");
+const track__info__silverstone = document.querySelector(".track__info__silverstone");
+const track__info__budapest = document.querySelector(".track__info__budapest");
+const track__info__spa = document.querySelector(".track__info__spa");
+const track__info__zandvoort = document.querySelector(".track__info__zandvoort");
+const track__info__monza = document.querySelector(".track__info__monza");
+const track__info__sochi = document.querySelector(".track__info__sochi");
+const track__info__singapore = document.querySelector(".track__info__singapore");
+const track__info__suzuka = document.querySelector(".track__info__suzuka");
+const track__info__austin = document.querySelector(".track__info__austin");
+const track__info__mexico = document.querySelector(".track__info__mexico");
+const track__info__interlagos = document.querySelector(".track__info__interlagos");
+const track__info__melbourne = document.querySelector(".track__info__melbourne");
+const track__info__jeddah = document.querySelector(".track__info__jeddah");
+const track__info__emirates = document.querySelector(".track__info__emirates");
+
 // dashboard button selectors
 const weather__button = document.querySelector(".weather__button");
 const track__button = document.querySelector(".track__button");
@@ -222,26 +248,8 @@ const displayActiveEventData = function() {
 
     if (bahrain__event.classList.contains("active__event")) {
         console.log("bahrain has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Bahrain international circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/bahrain-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        57
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.412 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:31.447
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__bahrain.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -327,26 +335,8 @@ const displayActiveEventData = function() {
 
     } else if (imola__event.classList.contains("active__event")) {
         console.log("imola has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Autodromo Enzo e Dino Ferrari</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/imola-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        63
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.909 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:15.484
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__imola.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -432,26 +422,8 @@ const displayActiveEventData = function() {
 
     } else if (portimao__event.classList.contains("active__event")) {
         console.log("portimao has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Autódromo Internacional do Algarve</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/portimao-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        66
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.653 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:18.750
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__portimao.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -537,26 +509,8 @@ const displayActiveEventData = function() {
     
     } else if (barcelona__event.classList.contains("active__event")) {
         console.log("barcelona has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit de Barcelona-Catalunya</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/barcelona-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        66
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.675 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:18.183
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__barcelona.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -642,26 +596,8 @@ const displayActiveEventData = function() {
     
     } else if (monaco__event.classList.contains("active__event")) {
         console.log("monaco has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit de Monaco</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/monaco-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        78
-                    </div>
-                    <div class="track__stats__content">Length:
-                        3.337 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:14.260
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__monaco.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -747,26 +683,8 @@ const displayActiveEventData = function() {
     
     } else if (baku__event.classList.contains("active__event")) {
         console.log("baku has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Baku City Circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/baku-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        51
-                    </div>
-                    <div class="track__stats__content">Length:
-                        6.003 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:43.009
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__baku.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -852,26 +770,8 @@ const displayActiveEventData = function() {
     
     } else if (montreal__event.classList.contains("active__event")) {
         console.log("montreal has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit Gilles-Villeneuve</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/montreal-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        70
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.361 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:13.078
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__montreal.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -957,26 +857,8 @@ const displayActiveEventData = function() {
     
     } else if (castellet__event.classList.contains("active__event")) {
         console.log("castellet has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit Paul Ricard</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/castellet-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        53
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.842 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:32.740
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__castellet.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1062,26 +944,8 @@ const displayActiveEventData = function() {
     
     } else if (spielberg__event.classList.contains("active__event")) {
         console.log("spielberg has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Red Bull Ring</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/spielberg-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        71
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.318 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:05.619
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__spielberg.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1167,26 +1031,8 @@ const displayActiveEventData = function() {
     
     } else if (silverstone__event.classList.contains("active__event")) {
         console.log("silverstone has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Silverstone Circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/silverstone-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        52
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.891 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:27.097
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__silverstone.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1272,26 +1118,8 @@ const displayActiveEventData = function() {
     
     } else if (budapest__event.classList.contains("active__event")) {
         console.log("budapest has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Hungaroring</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/budapest-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        70
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.381 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:16.627
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__budapest.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1377,26 +1205,8 @@ const displayActiveEventData = function() {
     
     } else if (spa__event.classList.contains("active__event")) {
         console.log("spa has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit de Spa-Francorchamps</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/spa-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        44
-                    </div>
-                    <div class="track__stats__content">Length:
-                        7.004 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:46.286
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__spa.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1482,26 +1292,8 @@ const displayActiveEventData = function() {
     
     } else if (zandvoort__event.classList.contains("active__event")) {
         console.log("zandvoort has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit Zandvoort</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/zandvoort-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        72
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.259 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        -
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__zandvoort.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1587,26 +1379,8 @@ const displayActiveEventData = function() {
     
     } else if (monza__event.classList.contains("active__event")) {
         console.log("monza has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Autodromo Nazionale Monza</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/monza-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        53
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.793 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:21.046
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__monza.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1692,26 +1466,8 @@ const displayActiveEventData = function() {
     
     } else if (sochi__event.classList.contains("active__event")) {
         console.log("sochi has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Sochi Autodrom</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/sochi-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        53
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.848 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:35.761
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__sochi.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1797,26 +1553,8 @@ const displayActiveEventData = function() {
     
     } else if (singapore__event.classList.contains("active__event")) {
         console.log("singapore has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Marina Bay Street Circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/singapore-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        61
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.063 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:41.905
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__singapore.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -1902,26 +1640,8 @@ const displayActiveEventData = function() {
     
     } else if (suzuka__event.classList.contains("active__event")) {
         console.log("suzuka has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Suzuka International Racing Course</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/suzuka-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        53
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.807 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:30.983
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__suzuka.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2007,26 +1727,8 @@ const displayActiveEventData = function() {
     
     } else if (austin__event.classList.contains("active__event")) {
         console.log("austin has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Circuit of The Americas</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/austin-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        56
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.513 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:36.169
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__austin.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2112,26 +1814,8 @@ const displayActiveEventData = function() {
     
     } else if (mexico__event.classList.contains("active__event")) {
         console.log("mexico has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Autódromo Hermanos Rodríguez</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/mexico-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        71
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.304 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:18.741
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__mexico.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2217,26 +1901,8 @@ const displayActiveEventData = function() {
     
     } else if (interlagos__event.classList.contains("active__event")) {
         console.log("interlagos has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Autódromo José Carlos Pace</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/interlagos-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        71
-                    </div>
-                    <div class="track__stats__content">Length:
-                        4.309 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:10.540
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__interlagos.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2322,26 +1988,8 @@ const displayActiveEventData = function() {
     
     } else if (melbourne__event.classList.contains("active__event")) {
         console.log("melbourne has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Melbourne Grand Prix Circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/melbourne-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        58
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.303 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:24.125
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__melbourne.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2427,26 +2075,8 @@ const displayActiveEventData = function() {
     
     } else if (jeddah__event.classList.contains("active__event")) {
         console.log("jeddah has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Jeddah Street Circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/jeddah-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        -
-                    </div>
-                    <div class="track__stats__content">Length:
-                        - km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        -
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__jeddah.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2532,26 +2162,8 @@ const displayActiveEventData = function() {
     
     } else if (emirates__event.classList.contains("active__event")) {
         console.log("emirates has active class");
-        track__info__container.innerHTML = 
-        `<div class="track__info">
-            <div class="track__name__container">
-                <h3 class="track__name">Yas Marina Circuit</h3>
-            </div>
-            <div class="track__map__stats__container">
-                <div class="track__map"><img class="circuit-img" src="assets/img/trackmaps/UAE-trackmap.png"></div>
-                <div class="track__stats">
-                    <div class="track__stats__content">Laps:
-                        55
-                    </div>
-                    <div class="track__stats__content">Length:
-                        5.554 km
-                    </div>
-                    <div class="track__stats__content">Track record:
-                        1:39.283
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        hideAllTrackInfo();
+        track__info__emirates.style.display = "flex";
         time__info__container.innerHTML = 
         `<div id="schedule">
             <div id="schedule__title">Time schedule</div>
@@ -2639,6 +2251,34 @@ const displayActiveEventData = function() {
         console.log("error: no active event");
     }
 };
+
+// hide all track info
+const hideAllTrackInfo = function() {
+    track__info__template.style.display = "none";
+    track__info__bahrain.style.display = "none";
+    track__info__imola.style.display = "none";
+    track__info__portimao.style.display = "none";
+    track__info__barcelona.style.display = "none";
+    track__info__monaco.style.display = "none";
+    track__info__baku.style.display = "none";
+    track__info__montreal.style.display = "none";
+    track__info__castellet.style.display = "none";
+    track__info__spielberg.style.display = "none";
+    track__info__silverstone.style.display = "none";
+    track__info__budapest.style.display = "none";
+    track__info__spa.style.display = "none";
+    track__info__zandvoort.style.display = "none";
+    track__info__monza.style.display = "none";
+    track__info__sochi.style.display = "none";
+    track__info__singapore.style.display = "none";
+    track__info__suzuka.style.display = "none";
+    track__info__austin.style.display = "none";
+    track__info__mexico.style.display = "none";
+    track__info__interlagos.style.display = "none";
+    track__info__melbourne.style.display = "none";
+    track__info__jeddah.style.display = "none";
+    track__info__emirates.style.display = "none";
+}
 
 // check the closest race to give active class and grey out past races
 const checkClosestRace = function() {
