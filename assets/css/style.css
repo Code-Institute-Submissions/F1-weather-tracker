@@ -252,7 +252,9 @@ nav h1 {
 
 .track__name__container {
   width: 100%;
-  height: 10%;
+  height: 11%;
+  padding-bottom: 10px;
+  padding-top: 10px;
   background: #211f22;
   border-bottom: 1px solid #ffc929;
   display: flex;
@@ -262,16 +264,13 @@ nav h1 {
 
 .track__name {
   color: #ffc929;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
   font-family: "Montserrat", sans-serif;
   font-size: 2.6rem;
   font-weight: 500;
 }
 
 .track__map__stats__container {
-  height: 90%;
+  height: 89%;
   display: flex;
 }
 
@@ -323,7 +322,7 @@ nav h1 {
 #schedule {
   display: flex;
   flex-direction: column;
-  margin: 0 5px 0 5px;
+  margin: 5px;
 }
 
 #schedule__title {
@@ -411,7 +410,7 @@ nav h1 {
 }
 
 #location {
-  flex: 1 0 50%;
+  flex: 1 0 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -421,10 +420,11 @@ nav h1 {
 }
 
 #local__time {
-  flex: 1 0 50%;
+  flex: 1 0 30%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 10px;
   font-family: "Inter", sans-serif;
   font-size: 2.6rem;
   font-weight: 400;
@@ -496,6 +496,91 @@ nav h1 {
 
   .time__info__container {
     border-left: none;
+  }
+
+  .location__info__container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .location__time__container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffc929;
+  }
+
+  .start__time__container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #location {
+    flex: 1 0 50%;
+  }
+
+  #local__time {
+    flex: 1 0 50%;
+  }
+
+  .weather__info {
+    margin: 16px 16px;
+    padding: 10px;
+    height: 220px;
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1240px) {
+  .race__countdown__timer__container {
+    padding: 12px;
+    font-size: 2.4rem;
+  }
+
+  .weather__title__container {
+    font-size: 2.6rem;
+  }
+
+  #location {
+    font-size: 2.2rem;
+  }
+
+  #local__time {
+    font-size: 2.2rem;
+  }
+
+  .start__time__container {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1110px) {
+  .race__countdown__timer__container {
+    padding: 8px;
+    font-size: 2rem;
+  }
+
+  .track__name {
+    font-size: 2.2rem;
+  }
+
+  .weather__title__container {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 2.4rem;
+  }
+
+  #location {
+    font-size: 2rem;
+  }
+
+  #local__time {
+    font-size: 2rem;
+  }
+
+  .start__time__container {
+    font-size: 2rem;
   }
 }
 
