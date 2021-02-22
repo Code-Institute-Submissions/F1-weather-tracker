@@ -211,6 +211,13 @@ const track__info__melbourne = document.querySelector(".track__info__melbourne")
 const track__info__jeddah = document.querySelector(".track__info__jeddah");
 const track__info__emirates = document.querySelector(".track__info__emirates");
 
+// track session time selectors
+const time__P1 = document.querySelector(".time__P1");
+const time__P2 = document.querySelector(".time__P2");
+const time__P3 = document.querySelector(".time__P3");
+const time__Q = document.querySelector(".time__Q");
+const time__R = document.querySelector(".time__R");
+
 // dashboard button selectors
 const weather__button = document.querySelector(".weather__button");
 const track__button = document.querySelector(".track__button");
@@ -236,6 +243,15 @@ let tempUnitsCelsius = true;
 // set boolean that indicates if the race calendar is shown completely on smaller screen sizes
 let mobileCalendarExtended = false;
 
+// function that sets the track session times to the most common ones
+const setCommonSessionTimes = function() {
+    time__P1.textContent = "11:30 - 12:30";
+    time__P2.textContent = "15:00 - 16:00";
+    time__P3.textContent = "12:00 - 13:00";
+    time__Q.textContent = "15:00 - 16:00";
+    time__R.textContent = "15:00 - 17:00";
+}
+
 // display active event data
 const displayActiveEventData = function() { 
     // get data from local storage and convert back to JSON
@@ -248,33 +264,16 @@ const displayActiveEventData = function() {
 
     if (bahrain__event.classList.contains("active__event")) {
         console.log("bahrain has active class");
+
         hideAllTrackInfo();
         track__info__bahrain.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">12:30 - 13:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">16:00 - 17:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">13:00 - 14:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-            <div class="time">16:00 - 17:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">17:00 - 19:00</div>
-        </div>`;
+
+        time__P1.textContent = "12:30 - 13:30";
+        time__P2.textContent = "16:00 - 17:00";
+        time__P3.textContent = "13:00 - 14:00";
+        time__Q.textContent = "16:00 - 17:00";
+        time__R.textContent = "17:00 - 19:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Bahrain</div>
@@ -335,33 +334,12 @@ const displayActiveEventData = function() {
 
     } else if (imola__event.classList.contains("active__event")) {
         console.log("imola has active class");
+
         hideAllTrackInfo();
         track__info__imola.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Imola</div>
@@ -422,33 +400,12 @@ const displayActiveEventData = function() {
 
     } else if (portimao__event.classList.contains("active__event")) {
         console.log("portimao has active class");
+
         hideAllTrackInfo();
         track__info__portimao.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Portimão</div>
@@ -509,33 +466,12 @@ const displayActiveEventData = function() {
     
     } else if (barcelona__event.classList.contains("active__event")) {
         console.log("barcelona has active class");
+
         hideAllTrackInfo();
         track__info__barcelona.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Barcelona</div>
@@ -596,33 +532,12 @@ const displayActiveEventData = function() {
     
     } else if (monaco__event.classList.contains("active__event")) {
         console.log("monaco has active class");
+
         hideAllTrackInfo();
         track__info__monaco.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Monte Carlo</div>
@@ -683,33 +598,16 @@ const displayActiveEventData = function() {
     
     } else if (baku__event.classList.contains("active__event")) {
         console.log("baku has active class");
+
         hideAllTrackInfo();
         track__info__baku.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">13:30 - 14:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">17:00 - 18:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">14:00 - 15:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">17:00 - 18:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">16:00 - 18:00</div>
-        </div>`;
+
+        time__P1.textContent = "13:30 - 14:30";
+        time__P2.textContent = "17:00 - 18:00";
+        time__P3.textContent = "14:00 - 15:00";
+        time__Q.textContent = "17:00 - 18:00";
+        time__R.textContent = "16:00 - 18:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Baku</div>
@@ -770,33 +668,16 @@ const displayActiveEventData = function() {
     
     } else if (montreal__event.classList.contains("active__event")) {
         console.log("montreal has active class");
+
         hideAllTrackInfo();
         track__info__montreal.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">11:00 - 12:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">14:00 - 15:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">14:00 - 16:00</div>
-        </div>`;
+
+        time__P1.textContent = "11:30 - 12:30";
+        time__P2.textContent = "15:00 - 16:00";
+        time__P3.textContent = "11:00 - 12:00";
+        time__Q.textContent = "14:00 - 15:00";
+        time__R.textContent = "14:00 - 16:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Montreal</div>
@@ -857,33 +738,12 @@ const displayActiveEventData = function() {
     
     } else if (castellet__event.classList.contains("active__event")) {
         console.log("castellet has active class");
+
         hideAllTrackInfo();
         track__info__castellet.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Le Castellet</div>
@@ -944,33 +804,12 @@ const displayActiveEventData = function() {
     
     } else if (spielberg__event.classList.contains("active__event")) {
         console.log("spielberg has active class");
+
         hideAllTrackInfo();
         track__info__spielberg.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Spielberg</div>
@@ -1031,33 +870,12 @@ const displayActiveEventData = function() {
     
     } else if (silverstone__event.classList.contains("active__event")) {
         console.log("silverstone has active class");
+
         hideAllTrackInfo();
         track__info__silverstone.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Silverstone</div>
@@ -1118,33 +936,12 @@ const displayActiveEventData = function() {
     
     } else if (budapest__event.classList.contains("active__event")) {
         console.log("budapest has active class");
+
         hideAllTrackInfo();
         track__info__budapest.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Budapest</div>
@@ -1205,33 +1002,12 @@ const displayActiveEventData = function() {
     
     } else if (spa__event.classList.contains("active__event")) {
         console.log("spa has active class");
+
         hideAllTrackInfo();
         track__info__spa.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Spa Francorchamps</div>
@@ -1292,33 +1068,12 @@ const displayActiveEventData = function() {
     
     } else if (zandvoort__event.classList.contains("active__event")) {
         console.log("zandvoort has active class");
+
         hideAllTrackInfo();
         track__info__zandvoort.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Zandvoort</div>
@@ -1379,33 +1134,12 @@ const displayActiveEventData = function() {
     
     } else if (monza__event.classList.contains("active__event")) {
         console.log("monza has active class");
+
         hideAllTrackInfo();
         track__info__monza.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Monza</div>
@@ -1466,33 +1200,12 @@ const displayActiveEventData = function() {
     
     } else if (sochi__event.classList.contains("active__event")) {
         console.log("sochi has active class");
+
         hideAllTrackInfo();
         track__info__sochi.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">15:00 - 17:00</div>
-        </div>`;
+
+        setCommonSessionTimes();
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Sochi</div>
@@ -1553,33 +1266,16 @@ const displayActiveEventData = function() {
     
     } else if (singapore__event.classList.contains("active__event")) {
         console.log("singapore has active class");
+
         hideAllTrackInfo();
         track__info__singapore.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">17:00 - 18:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">20:30 - 21:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">18:00 - 19:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">21:00 - 22:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">20:00 - 22:00</div>
-        </div>`;
+
+        time__P1.textContent = "17:00 - 18:00";
+        time__P2.textContent = "20:30 - 21:30";
+        time__P3.textContent = "18:00 - 19:00";
+        time__Q.textContent = "21:00 - 22:00";
+        time__R.textContent = "20:00 - 22:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Singapore</div>
@@ -1640,33 +1336,16 @@ const displayActiveEventData = function() {
     
     } else if (suzuka__event.classList.contains("active__event")) {
         console.log("suzuka has active class");
+
         hideAllTrackInfo();
         track__info__suzuka.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">14:00 - 16:00</div>
-        </div>`;
+
+        time__P1.textContent = "11:30 - 12:30";
+        time__P2.textContent = "15:00 - 16:00";
+        time__P3.textContent = "12:00 - 13:00";
+        time__Q.textContent = "15:00 - 16:00";
+        time__R.textContent = "14:00 - 16:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Suzuka</div>
@@ -1727,33 +1406,16 @@ const displayActiveEventData = function() {
     
     } else if (austin__event.classList.contains("active__event")) {
         console.log("austin has active class");
+
         hideAllTrackInfo();
         track__info__austin.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">13:00 - 14:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">16:00 - 17:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">14:00 - 16:00</div>
-        </div>`;
+
+        time__P1.textContent = "11:30 - 12:30";
+        time__P2.textContent = "15:00 - 16:00";
+        time__P3.textContent = "13:00 - 14:00";
+        time__Q.textContent = "16:00 - 17:00";
+        time__R.textContent = "14:00 - 16:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Austin</div>
@@ -1814,33 +1476,16 @@ const displayActiveEventData = function() {
     
     } else if (mexico__event.classList.contains("active__event")) {
         console.log("mexico has active class");
+
         hideAllTrackInfo();
         track__info__mexico.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">11:00 - 12:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">14:00 - 15:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">13:00 - 15:00</div>
-        </div>`;
+
+        time__P1.textContent = "11:30 - 12:30";
+        time__P2.textContent = "15:00 - 16:00";
+        time__P3.textContent = "11:00 - 12:00";
+        time__Q.textContent = "14:00 - 15:00";
+        time__R.textContent = "13:00 - 15:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Mexico City</div>
@@ -1901,33 +1546,16 @@ const displayActiveEventData = function() {
     
     } else if (interlagos__event.classList.contains("active__event")) {
         console.log("interlagos has active class");
+
         hideAllTrackInfo();
         track__info__interlagos.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">11:30 - 12:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">12:00 - 13:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">15:00 - 16:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">14:00 - 16:00</div>
-        </div>`;
+
+        time__P1.textContent = "11:30 - 12:30";
+        time__P2.textContent = "15:00 - 16:00";
+        time__P3.textContent = "12:00 - 13:00";
+        time__Q.textContent = "15:00 - 16:00";
+        time__R.textContent = "14:00 - 16:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: São Paulo</div>
@@ -1988,33 +1616,16 @@ const displayActiveEventData = function() {
     
     } else if (melbourne__event.classList.contains("active__event")) {
         console.log("melbourne has active class");
+
         hideAllTrackInfo();
         track__info__melbourne.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">12:30 - 13:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">16:00 - 17:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">14:00 - 15:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">17:00 - 18:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">17:00 - 19:00</div>
-        </div>`;
+
+        time__P1.textContent = "12:30 - 13:30";
+        time__P2.textContent = "16:00 - 17:00";
+        time__P3.textContent = "14:00 - 15:00";
+        time__Q.textContent = "17:00 - 18:00";
+        time__R.textContent = "17:00 - 19:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Melbourne</div>
@@ -2075,33 +1686,16 @@ const displayActiveEventData = function() {
     
     } else if (jeddah__event.classList.contains("active__event")) {
         console.log("jeddah has active class");
+
         hideAllTrackInfo();
         track__info__jeddah.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">15:30 - 16:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">19:00 - 20:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">16:00 - 17:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">19:00 - 20:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">19:00 - 21:00</div>
-        </div>`;
+
+        time__P1.textContent = "15:30 - 16:30";
+        time__P2.textContent = "19:00 - 20:00";
+        time__P3.textContent = "16:00 - 17:00";
+        time__Q.textContent = "19:00 - 20:00";
+        time__R.textContent = "19:00 - 21:00";
+
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Jeddah</div>
@@ -2162,33 +1756,16 @@ const displayActiveEventData = function() {
     
     } else if (emirates__event.classList.contains("active__event")) {
         console.log("emirates has active class");
+
         hideAllTrackInfo();
         track__info__emirates.style.display = "flex";
-        time__info__container.innerHTML = 
-        `<div id="schedule">
-            <div id="schedule__title">Time schedule</div>
-            <div id="schedule__subtitle">(local timezone)</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 1:</div>
-            <div class="time">13:30 - 14:30</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Practice 2:</div>
-            <div class="time">17:00 - 18:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title"">Practice 3:</div>
-            <div class="time">14:00 - 15:00</div>
-        </div>
-        <div class="schedule__times">
-            <div class="session__title">Qualifying:</div>
-        <div class="time">17:00 - 18:00</div>
-        </div>
-        <div class="schedule__times"  id="race__time">
-            <div class="session__title">Race:</div>
-            <div class="time">17:00 - 19:00</div>
-        </div>`;
+
+        time__P1.textContent = "13:30 - 14:30";
+        time__P2.textContent = "17:00 - 18:00";
+        time__P3.textContent = "14:00 - 15:00";
+        time__Q.textContent = "17:00 - 18:00";
+        time__R.textContent = "17:00 - 19:00";
+        
         location__info__container.innerHTML = 
         `<div class="location__time__container">
             <div id="location">Location: Yas Island</div>
