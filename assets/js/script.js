@@ -2456,786 +2456,153 @@ window.addEventListener("load", () => {
     getWeatherData();
 });
 
-// event listener that makes bahrain the active event and displays its data on click
-bahrain__event.addEventListener("click", function(){
-    if (bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("bahrain already is the active event");
+// function that checks the active race calendar event and displays its data
+const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
+    if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
+        console.log(`${raceLocation} already is the active event`);
         return;
-    } else if (bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+    } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
         hideAllHamburgerIcons();
         HIC__bahrain.style.display = "flex";
         showAllEvents();
         mobileCalendarExtended = true;
-    } else if (bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+    } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
         hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
+        eventHIC.style.display = "flex";
         showActiveEventOnly();
         mobileCalendarExtended = false;
-    } else if (!bahrain__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+    } else if (!raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
         removeActiveEventClass();
         console.log("removed all active event classses");
-        bahrain__event.classList.add("active__event");
-        console.log("added active class to bahrain event");
+        raceEvent.classList.add("active__event");
+        console.log(`added active class to ${raceLocation} event`);
         hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
+        eventHIC.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
         mobileCalendarExtended = false;
     } else {
         removeActiveEventClass();
         console.log("removed all active event classses");
-        bahrain__event.classList.add("active__event");
-        console.log("added active class to bahrain event");
+        raceEvent.classList.add("active__event");
+        console.log(`added active class to ${raceLocation} event`);
         displayActiveEventData();
     }
+};
+
+// event listener that makes bahrain the active event and displays its data on click
+bahrain__event.addEventListener("click", function(){
+    raceCalendarFunctionality(bahrain__event, "bahrain", HIC__bahrain);
 });
 
 // event listener that makes imola the active event and displays its data on click
 imola__event.addEventListener("click", function(){
-    if (imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("imola already is the active event");
-        return;
-    } else if (imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__imola.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!imola__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        imola__event.classList.add("active__event");
-        console.log("added active class to imola event");
-        hideAllHamburgerIcons();
-        HIC__imola.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        imola__event.classList.add("active__event");
-        console.log("added active class to imola event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(imola__event, "imola", HIC__imola);
 });
 
 // event listener that makes portimao the active event and displays its data on click
 portimao__event.addEventListener("click", function(){
-    if (portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("portimao already is the active event");
-        return;
-    } else if (portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__portimao.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!portimao__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        portimao__event.classList.add("active__event");
-        console.log("added active class to portimao event");
-        hideAllHamburgerIcons();
-        HIC__portimao.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        portimao__event.classList.add("active__event");
-        console.log("added active class to portimao event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(portimao__event, "portimao", HIC__portimao);
 });
 
 // event listener that makes barcelona the active event and displays its data on click
 barcelona__event.addEventListener("click", function(){
-    if (barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("barcelona already is the active event");
-        return;
-    } else if (barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__barcelona.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!barcelona__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        barcelona__event.classList.add("active__event");
-        console.log("added active class to barcelona event");
-        hideAllHamburgerIcons();
-        HIC__barcelona.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        barcelona__event.classList.add("active__event");
-        console.log("added active class to barcelona event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(barcelona__event, "barcelona", HIC__barcelona);
 });
 
 // event listener that makes monaco the active event and displays its data on click
 monaco__event.addEventListener("click", function(){
-    if (monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("monaco already is the active event");
-        return;
-    } else if (monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__monaco.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!monaco__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        monaco__event.classList.add("active__event");
-        console.log("added active class to monaco event");
-        hideAllHamburgerIcons();
-        HIC__monaco.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        monaco__event.classList.add("active__event");
-        console.log("added active class to monaco event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(monaco__event, "monaco", HIC__monaco);
 });
 
 // event listener that makes baku the active event and displays its data on click
 baku__event.addEventListener("click", function(){
-    if (baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("baku already is the active event");
-        return;
-    } else if (baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__baku.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!baku__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        baku__event.classList.add("active__event");
-        console.log("added active class to baku event");
-        hideAllHamburgerIcons();
-        HIC__baku.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        baku__event.classList.add("active__event");
-        console.log("added active class to baku event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(baku__event, "baku", HIC__baku);
 });
 
 // event listener that makes montreal the active event and displays its data on click
 montreal__event.addEventListener("click", function(){
-    if (montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("montreal already is the active event");
-        return;
-    } else if (montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__montreal.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!montreal__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        montreal__event.classList.add("active__event");
-        console.log("added active class to montreal event");
-        hideAllHamburgerIcons();
-        HIC__montreal.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        montreal__event.classList.add("active__event");
-        console.log("added active class to montreal event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(montreal__event, "montreal", HIC__montreal);
 });
 
 // event listener that makes castellet the active event and displays its data on click
 castellet__event.addEventListener("click", function(){
-    if (castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("castellet already is the active event");
-        return;
-    } else if (castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__castellet.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!castellet__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        castellet__event.classList.add("active__event");
-        console.log("added active class to castellet event");
-        hideAllHamburgerIcons();
-        HIC__castellet.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        castellet__event.classList.add("active__event");
-        console.log("added active class to castellet event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(castellet__event, "castellet", HIC__castellet);
 });
 
 // event listener that makes spielberg the active event and displays its data on click
 spielberg__event.addEventListener("click", function(){
-    if (spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("spielberg already is the active event");
-        return;
-    } else if (spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__spielberg.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!spielberg__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        spielberg__event.classList.add("active__event");
-        console.log("added active class to spielberg event");
-        hideAllHamburgerIcons();
-        HIC__spielberg.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        spielberg__event.classList.add("active__event");
-        console.log("added active class to spielberg event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(spielberg__event, "spielberg", HIC__spielberg);
 });
 
 // event listener that makes silverstone the active event and displays its data on click
 silverstone__event.addEventListener("click", function(){
-    if (silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("silverstone already is the active event");
-        return;
-    } else if (silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__silverstone.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!silverstone__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        silverstone__event.classList.add("active__event");
-        console.log("added active class to silverstone event");
-        hideAllHamburgerIcons();
-        HIC__silverstone.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        silverstone__event.classList.add("active__event");
-        console.log("added active class to silverstone event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(silverstone__event, "silverstone", HIC__silverstone);
 });
 
 // event listener that makes budapest the active event and displays its data on click
 budapest__event.addEventListener("click", function(){
-    if (budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("budapest already is the active event");
-        return;
-    } else if (budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__budapest.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!budapest__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        budapest__event.classList.add("active__event");
-        console.log("added active class to budapest event");
-        hideAllHamburgerIcons();
-        HIC__budapest.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        budapest__event.classList.add("active__event");
-        console.log("added active class to budapest event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(budapest__event, "budapest", HIC__budapest);
 });
 
 // event listener that makes spa the active event and displays its data on click
 spa__event.addEventListener("click", function(){
-    if (spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("spa already is the active event");
-        return;
-    } else if (spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__spa.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!spa__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        spa__event.classList.add("active__event");
-        console.log("added active class to spa event");
-        hideAllHamburgerIcons();
-        HIC__spa.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        spa__event.classList.add("active__event");
-        console.log("added active class to spa event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(spa__event, "spa", HIC__spa);
 });
 
 // event listener that makes zandvoort the active event and displays its data on click
 zandvoort__event.addEventListener("click", function(){
-    if (zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("zandvoort already is the active event");
-        return;
-    } else if (zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__zandvoort.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!zandvoort__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        zandvoort__event.classList.add("active__event");
-        console.log("added active class to zandvoort event");
-        hideAllHamburgerIcons();
-        HIC__zandvoort.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        zandvoort__event.classList.add("active__event");
-        console.log("added active class to zandvoort event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(zandvoort__event, "zandvoort", HIC__zandvoort);
 });
 
 // event listener that makes monza the active event and displays its data on click
 monza__event.addEventListener("click", function(){
-    if (monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("monza already is the active event");
-        return;
-    } else if (monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__monza.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!monza__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        monza__event.classList.add("active__event");
-        console.log("added active class to monza event");
-        hideAllHamburgerIcons();
-        HIC__monza.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        monza__event.classList.add("active__event");
-        console.log("added active class to monza event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(monza__event, "monza", HIC__monza);
 });
 
 // event listener that makes sochi the active event and displays its data on click
 sochi__event.addEventListener("click", function(){
-    if (sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("sochi already is the active event");
-        return;
-    } else if (sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__sochi.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!sochi__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        sochi__event.classList.add("active__event");
-        console.log("added active class to sochi event");
-        hideAllHamburgerIcons();
-        HIC__sochi.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        sochi__event.classList.add("active__event");
-        console.log("added active class to sochi event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(sochi__event, "sochi", HIC__sochi);
 });
 
 // event listener that makes singapore the active event and displays its data on click
 singapore__event.addEventListener("click", function(){
-    if (singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("singapore already is the active event");
-        return;
-    } else if (singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__singapore.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!singapore__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        singapore__event.classList.add("active__event");
-        console.log("added active class to singapore event");
-        hideAllHamburgerIcons();
-        HIC__singapore.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        singapore__event.classList.add("active__event");
-        console.log("added active class to singapore event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(singapore__event, "singapore", HIC__singapore);
 });
 
 // event listener that makes suzuka the active event and displays its data on click
 suzuka__event.addEventListener("click", function(){
-    if (suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("suzuka already is the active event");
-        return;
-    } else if (suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__suzuka.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!suzuka__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        suzuka__event.classList.add("active__event");
-        console.log("added active class to suzuka event");
-        hideAllHamburgerIcons();
-        HIC__suzuka.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        suzuka__event.classList.add("active__event");
-        console.log("added active class to suzuka event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(suzuka__event, "suzuka", HIC__suzuka);
 });
 
 // event listener that makes austin the active event and displays its data on click
 austin__event.addEventListener("click", function(){
-    if (austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("austin already is the active event");
-        return;
-    } else if (austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__austin.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!austin__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        austin__event.classList.add("active__event");
-        console.log("added active class to austin event");
-        hideAllHamburgerIcons();
-        HIC__austin.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        austin__event.classList.add("active__event");
-        console.log("added active class to austin event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(austin__event, "austin", HIC__bahrain);
 });
 
 // event listener that makes mexico the active event and displays its data on click
 mexico__event.addEventListener("click", function(){
-    if (mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("mexico already is the active event");
-        return;
-    } else if (mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__mexico.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!mexico__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        mexico__event.classList.add("active__event");
-        console.log("added active class to mexico event");
-        hideAllHamburgerIcons();
-        HIC__mexico.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        mexico__event.classList.add("active__event");
-        console.log("added active class to mexico event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(mexico__event, "mexico", HIC__mexico);
 });
 
 // event listener that makes interlagos the active event and displays its data on click
 interlagos__event.addEventListener("click", function(){
-    if (interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("interlagos already is the active event");
-        return;
-    } else if (interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__interlagos.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!interlagos__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        interlagos__event.classList.add("active__event");
-        console.log("added active class to interlagos event");
-        hideAllHamburgerIcons();
-        HIC__interlagos.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        interlagos__event.classList.add("active__event");
-        console.log("added active class to interlagos event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(interlagos__event, "interlagos", HIC__interlagos);
 });
 
 // event listener that makes melbourne the active event and displays its data on click
 melbourne__event.addEventListener("click", function(){
-    if (melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("melbourne already is the active event");
-        return;
-    } else if (melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__melbourne.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!melbourne__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        melbourne__event.classList.add("active__event");
-        console.log("added active class to melbourne event");
-        hideAllHamburgerIcons();
-        HIC__melbourne.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        melbourne__event.classList.add("active__event");
-        console.log("added active class to melbourne event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(melbourne__event, "melbourne", HIC__melbourne);
 });
 
 // event listener that makes jeddah the active event and displays its data on click
 jeddah__event.addEventListener("click", function(){
-    if (jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("jeddah already is the active event");
-        return;
-    } else if (jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__jeddah.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!jeddah__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        jeddah__event.classList.add("active__event");
-        console.log("added active class to jeddah event");
-        hideAllHamburgerIcons();
-        HIC__jeddah.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        jeddah__event.classList.add("active__event");
-        console.log("added active class to jeddah event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(jeddah__event, "jeddah", HIC__jeddah);
 });
 
 // event listener that makes emirates the active event and displays its data on click
 emirates__event.addEventListener("click", function(){
-    if (emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log("emirates already is the active event");
-        return;
-    } else if (emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__emirates.style.display = "flex";
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!emirates__event.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        emirates__event.classList.add("active__event");
-        console.log("added active class to emirates event");
-        hideAllHamburgerIcons();
-        HIC__emirates.style.display = "flex";
-        displayActiveEventData();
-        showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else {
-        removeActiveEventClass();
-        console.log("removed all active event classses");
-        emirates__event.classList.add("active__event");
-        console.log("added active class to emirates event");
-        displayActiveEventData();
-    }
+    raceCalendarFunctionality(emirates__event, "emirates", HIC__emirates);
 });
 
 // function that allows you to change a date to the prefered date format
@@ -3673,7 +3040,6 @@ const allDataContainersVisible = function() {
     time__info__container.style.display = "flex";
 }
 
-
 // function that checks whether to display the whole race calendar or just a single event
 const checkMainFlexDirection = function() { 
     if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
@@ -3715,7 +3081,7 @@ const calculateCountdown = function (raceStart, raceLocation) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
     race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
-        
+    
     if (distance < 0) {
         race__countdown__timer.textContent = "Countdown has expired.";
     };
