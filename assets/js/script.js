@@ -218,6 +218,11 @@ const time__P3 = document.querySelector(".time__P3");
 const time__Q = document.querySelector(".time__Q");
 const time__R = document.querySelector(".time__R");
 
+// location & local time & start time container selectors
+const race__location = document.querySelector("#location");
+const local__time = document.querySelector("#local__time");
+const start__time__container = document.querySelector(".start__time__container");
+
 // dashboard button selectors
 const weather__button = document.querySelector(".weather__button");
 const track__button = document.querySelector(".track__button");
@@ -274,12 +279,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "16:00 - 17:00";
         time__R.textContent = "17:00 - 19:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Bahrain</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 17:00 @ 28 March 2021</div>`;
+        race__location.textContent = "Location: Bahrain";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 17:00 @ 28 March 2021";
+
         // change the date format for the weather elements
         const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for bahrain");
@@ -340,12 +343,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Imola</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 18 April 2021</div>`;
+        race__location.textContent = "Location: Imola";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 18 April 2021";
+
         // change the date format for the weather elements
         const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for imola");
@@ -406,12 +407,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Portimão</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 2 May 2021</div>`;
+        race__location.textContent = "Location: Portimão";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 2 May 2021";
+
         // change the date format for the weather elements
         const portimao__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[2].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
@@ -472,12 +471,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Barcelona</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 9 May 2021</div>`;
+        race__location.textContent = "Location: Barcelona";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 9 May 2021";
+
         // change the date format for the weather elements
         const barcelona__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[3].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for barcelona");
@@ -538,12 +535,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Monte Carlo</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 23 May 2021</div>`;
+        race__location.textContent = "Location: Monte Carlo";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 23 May 2021";
+
         // change the date format for the weather elements
         const monaco__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[4].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
@@ -608,12 +603,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "17:00 - 18:00";
         time__R.textContent = "16:00 - 18:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Baku</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 16:00 @ 6 June 2021</div>`;
+        race__location.textContent = "Location: Baku";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 16:00 @ 6 June 2021";
+
         // change the date format for the weather elements
         const baku__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[5].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for baku");
@@ -678,12 +671,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "14:00 - 15:00";
         time__R.textContent = "14:00 - 16:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Montreal</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 14:00 @ 13 June 2021</div>`;
+        race__location.textContent = "Location: Montreal";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 14:00 @ 13 June 2021";
+
         // change the date format for the weather elements
         const montreal__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[6].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
@@ -744,12 +735,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Le Castellet</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 27 June 2021</div>`;
+        race__location.textContent = "Location: Le Castellet";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 27 June 2021";
+
         // change the date format for the weather elements
         const castellet__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[7].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for castellet");
@@ -810,12 +799,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Spielberg</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 4 July 2021</div>`;
+        race__location.textContent = "Location: Spielberg";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 4 July 2021";
+
         // change the date format for the weather elements
         const spielberg__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[8].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for spielberg");
@@ -876,12 +863,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Silverstone</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 18 July 2021</div>`;
+        race__location.textContent = "Location: Silverstone";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 18 July 2021";
+
         // change the date format for the weather elements
         const silverstone__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[9].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for silverstone");
@@ -942,12 +927,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Budapest</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 1 August 2021</div>`;
+        race__location.textContent = "Location: Budapest";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 1 August 2021";
+
         // change the date format for the weather elements
         const budapest__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[10].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for budapest");
@@ -1008,12 +991,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Spa Francorchamps</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 29 August 2021</div>`;
+        race__location.textContent = "Location: Spa Francorchamps";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 29 August 2021";
+
         // change the date format for the weather elements
         const spa__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[11].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for spa");
@@ -1074,12 +1055,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Zandvoort</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 5 September 2021</div>`;
+        race__location.textContent = "Location: Zandvoort";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 5 September 2021";
+
         // change the date format for the weather elements
         const zandvoort__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[12].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for zandvoort");
@@ -1140,12 +1119,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Monza</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 12 September 2021</div>`;
+        race__location.textContent = "Location: Monza";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 12 September 2021";
+
         // change the date format for the weather elements
         const monza__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[13].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for monza");
@@ -1206,12 +1183,10 @@ const displayActiveEventData = function() {
 
         setCommonSessionTimes();
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Sochi</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 15:00 @ 26 September 2021</div>`;
+        race__location.textContent = "Location: Sochi";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 15:00 @ 26 September 2021";
+
         // change the date format for the weather elements
         const sochi__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[14].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for sochi");
@@ -1276,12 +1251,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "21:00 - 22:00";
         time__R.textContent = "20:00 - 22:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Singapore</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 20:00 @ 3 October 2021</div>`;
+        race__location.textContent = "Location: Singapore";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 20:00 @ 3 October 2021";
+
         // change the date format for the weather elements
         const singapore__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[15].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
@@ -1346,12 +1319,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "15:00 - 16:00";
         time__R.textContent = "14:00 - 16:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Suzuka</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 14:00 @ 10 October 2021</div>`;
+        race__location.textContent = "Location: Suzuka";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 14:00 @ 10 October 2021";
+
         // change the date format for the weather elements
         const suzuka__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[16].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for suzuka");
@@ -1416,12 +1387,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "16:00 - 17:00";
         time__R.textContent = "14:00 - 16:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Austin</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 14:00 @ 24 October 2021</div>`;
+        race__location.textContent = "Location: Austin";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 14:00 @ 24 October 2021";
+
         // change the date format for the weather elements
         const austin__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[17].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for austin");
@@ -1486,12 +1455,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "14:00 - 15:00";
         time__R.textContent = "13:00 - 15:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Mexico City</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 13:00 @ 31 October 2021</div>`;
+        race__location.textContent = "Location: Mexico City";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 13:00 @ 31 October 2021";
+
         // change the date format for the weather elements
         const mexico__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[18].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for mexico");
@@ -1556,12 +1523,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "15:00 - 16:00";
         time__R.textContent = "14:00 - 16:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: São Paulo</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 14:00 @ 7 November 2021</div>`;
+        race__location.textContent = "Location: São Paulo";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 14:00 @ 7 November 2021";
+
         // change the date format for the weather elements
         const interlagos__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[19].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for interlagos");
@@ -1626,12 +1591,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "17:00 - 18:00";
         time__R.textContent = "17:00 - 19:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Melbourne</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 17:00 @ 21 November 2021</div>`;
+        race__location.textContent = "Location: Melbourne";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 17:00 @ 21 November 2021";
+
         // change the date format for the weather elements
         const melbourne__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[20].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for melbourne");
@@ -1696,12 +1659,10 @@ const displayActiveEventData = function() {
         time__Q.textContent = "19:00 - 20:00";
         time__R.textContent = "19:00 - 21:00";
 
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Jeddah</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 19:00 @ 5 December 2021</div>`;
+        race__location.textContent = "Location: Jeddah";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 19:00 @ 5 December 2021";
+
         // change the date format for the weather elements
         const jeddah__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[21].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for jeddah");
@@ -1765,13 +1726,11 @@ const displayActiveEventData = function() {
         time__P3.textContent = "14:00 - 15:00";
         time__Q.textContent = "17:00 - 18:00";
         time__R.textContent = "17:00 - 19:00";
-        
-        location__info__container.innerHTML = 
-        `<div class="location__time__container">
-            <div id="location">Location: Yas Island</div>
-            <div id="local__time">Local time: -</div>
-        </div>
-        <div class="start__time__container">Start time: 17:00 @ 12 December 2021</div>`;
+
+        race__location.textContent = "Location: Yas Island";
+        local__time.textContent = "Local time: -";
+        start__time__container.textContent = "Start time: 17:00 @ 12 December 2021";
+
         // change the date format for the weather elements
         const emirates__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[22].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
