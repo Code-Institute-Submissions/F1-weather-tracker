@@ -584,6 +584,8 @@ nav h1 {
   }
 }
 
+/* smaller screen size media queries with collapsed race calendar start here */
+
 @media (max-width: 1025px) {
   .main__homepage__container {
     flex-direction: column;
@@ -595,6 +597,9 @@ nav h1 {
 
   .race__events {
     justify-content: space-between;
+    border-right: none;
+    padding: 10px 0px;
+    font-size: 2rem;
   }
 
   .hamburger__icon__container {
@@ -621,6 +626,11 @@ nav h1 {
     margin-right: 6%;
   }
 
+  .race__countdown__timer__container {
+    padding: 8px;
+    font-size: 2.6rem;
+  }
+
   .button__dashboard__container {
     flex-wrap: wrap;
     display: flex;
@@ -640,5 +650,375 @@ nav h1 {
   .time__info__container {
     display: none;
     border-bottom: none;
+  }
+
+  .track__name {
+    font-size: 2.6rem;
+  }
+
+  .weather__title__container {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 2.8rem;
+  }
+
+  #location {
+    font-size: 2.2rem;
+  }
+
+  #local__time {
+    font-size: 2.2rem;
+  }
+
+  .start__time__container {
+    font-size: 2.2rem;
+  }
+}
+
+/* media queries for smaller screen sizes in portrait mode */
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .race__events {
+    padding: 8px 0px;
+    font-size: 1.8rem;
+  }
+
+  .hamburger__icon__container {
+    margin-left: 3%;
+    cursor: pointer;
+  }
+
+  .hamburger__icon {
+    font-size: 2.2rem;
+  }
+
+  .event__location {
+    margin-left: 3%;
+  }
+
+  .event__date {
+    margin-right: 3%;
+  }
+
+  .race__countdown__timer__container {
+    padding: 8px 0px;
+    font-size: 2.2rem;
+  }
+
+  .track__name {
+    font-size: 2.2rem;
+  }
+
+  .track__map {
+    flex: 1 0 75%;
+  }
+
+  .track__stats {
+    flex: 1 0 25%;
+  }
+
+  .track__stats__content {
+    font-size: 2rem;
+  }
+
+  .weather__title__container {
+    font-size: 2.4rem;
+  }
+
+  .location__time__container {
+    padding: 8px;
+  }
+
+  #location {
+    font-size: 2rem;
+  }
+
+  #local__time {
+    font-size: 2rem;
+  }
+
+  .start__time__container {
+    padding: 8px;
+    font-size: 2rem;
+  }
+
+  .weather__info {
+    margin: 12px 8px;
+    padding: 10px;
+    height: 200px;
+    font-size: 2rem;
+  }
+
+  #schedule__title {
+    font-size: 2.2rem;
+  }
+
+  #schedule__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .schedule__times {
+    line-height: 1.1rem;
+  }
+
+  .session__title {
+    font-size: 2rem;
+  }
+
+  .time {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 662px) and (orientation: portrait) {
+  .race__events {
+    font-size: 1.6rem;
+  }
+
+  .dashboard__button {
+    height: 30px;
+    width: 100px;
+    margin: 8px 10px;
+    font-size: 1.6rem;
+  }
+
+  .race__countdown__timer__container {
+    font-size: 2rem;
+  }
+
+  .track__stats__content {
+    font-size: 1.8rem;
+  }
+
+  .track__info__container {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 582px) and (orientation: portrait) {
+  .race__events {
+    font-size: 1.4rem;
+  }
+
+  .race__countdown__timer__container {
+    font-size: 1.8rem;
+  }
+
+  .track__name {
+    font-size: 1.8rem;
+  }
+
+  .track__stats__content {
+    font-size: 1.6rem;
+  }
+
+  .weather__title__container {
+    padding: 6px 0px;
+    font-size: 2.1rem;
+  }
+
+  .location__time__container {
+    padding: 6px;
+  }
+
+  #location {
+    font-size: 1.8rem;
+  }
+
+  #local__time {
+    font-size: 1.8rem;
+  }
+
+  .start__time__container {
+    padding: 6px;
+    font-size: 1.8rem;
+  }
+
+  .weather__info {
+    margin: 8px 6px;
+    padding: 10px;
+    height: 160px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 508px) and (orientation: portrait) {
+  .race__events {
+    font-size: 1.2rem;
+  }
+
+  .race__countdown__timer__container {
+    font-size: 1.6rem;
+  }
+
+  .track__name {
+    font-size: 1.6rem;
+  }
+
+  .track__stats__content {
+    font-size: 1.6rem;
+  }
+
+  .weather__title__container {
+    font-size: 1.9rem;
+  }
+
+  #location {
+    font-size: 1.6rem;
+  }
+
+  #local__time {
+    font-size: 1.6rem;
+  }
+
+  .start__time__container {
+    font-size: 1.6rem;
+  }
+
+  .weather__info {
+    height: 150px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 456px) and (orientation: portrait) {
+  nav {
+    height: 36px;
+  }
+
+  nav h1 {
+    font-size: 1.8rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  }
+
+  .race__events {
+    padding: 4px 0px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .hamburger__icon {
+    font-size: 1.8rem;
+  }
+
+  .race__countdown__timer__container {
+    font-size: 1.4rem;
+  }
+
+  .track__stats__content {
+    font-size: 1.6rem;
+  }
+
+  .track__map__stats__container {
+    height: 90%;
+    flex-direction: column;
+  }
+
+  .track__stats {
+    padding: 4px 0px;
+    border-bottom: none;
+  }
+
+  .track__stats__content {
+    line-height: 2.4rem;
+    width: 80%;
+    border-bottom: 1px solid #ffc929;
+  }
+}
+
+@media (max-width: 346px) and (orientation: portrait) {
+  .hamburger__icon {
+    font-size: 1.6rem;
+  }
+
+  .flags {
+    max-height: 30px;
+    max-width: 30px;
+    margin-right: 6px;
+  }
+
+  .race__events {
+    font-size: 1rem;
+  }
+
+  .button__dashboard__container {
+    min-height: 42px;
+  }
+
+  .dashboard__button {
+    height: 24px;
+    width: 80px;
+    margin: 6px 4px;
+    font-size: 1.3rem;
+  }
+
+  .weather__title__container {
+    padding: 4px 0px;
+    font-size: 1.5rem;
+  }
+
+  .location__time__container {
+    padding: 4px 0px;
+  }
+
+  #location {
+    font-size: 1.3rem;
+  }
+
+  #local__time {
+    font-size: 1.3rem;
+  }
+
+  .start__time__container {
+    padding: 4px 0px;
+    font-size: 1.3rem;
+  }
+
+  .weather__info {
+    height: 120px;
+    font-size: 1.2rem;
+  }
+
+  .track__name__container {
+    height: 8%;
+    padding: 4px 0px;
+  }
+
+  .track__name {
+    font-size: 1.5rem;
+  }
+
+  #schedule__title {
+    font-size: 1.8rem;
+  }
+
+  #schedule__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .schedule__times {
+    line-height: 1rem;
+  }
+
+  .session__title {
+    font-size: 1.8rem;
+  }
+
+  .time {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 305px) and (orientation: portrait) {
+  .race__events {
+    padding: 0px;
+    font-size: 0.9rem;
+  }
+
+  .flags {
+    max-height: 26px;
+    max-width: 26px;
+    margin-right: 4px;
   }
 }
