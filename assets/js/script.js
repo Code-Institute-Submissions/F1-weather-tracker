@@ -3068,14 +3068,7 @@ checkMainFlexDirection();
 // checks for changes in window size and then executes the checkMainFlexDirection function
 window.onresize = function(){
     checkMainFlexDirection();
-}
-
-// checks for a change in orientation and then executes the setInitialCountdown function
-/* credits #? */
-window.onorientationchange = function() {
-    setTimeout(function(){
-        setInitialCountdown();
-    }, 50);
+    setInitialCountdown();
 }
 
 const calculateCountdown = function (raceStart, raceLocation) {
