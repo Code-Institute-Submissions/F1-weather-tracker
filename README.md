@@ -1,6 +1,6 @@
 # F1 weather tracker
 
-View live version of the website [here](placeholder).
+View live version of the website [here](https://larkinz.github.io/F1-weather-tracker/).
 
 Milestone Project 2: Interactive Front-end Development – [Code Institute](https://codeinstitute.net/)
 
@@ -8,7 +8,7 @@ This website was made as my second milestone project for the Code Institute cour
 
 **Remark: because of time restraints I had to change the scope of the project, my initial plan was way too ambitious and required thousands of pieces of data. It would have cost me months to finish, so at the 14th git commit on the 12th of February 2021 I changed the scope and documentation.**
 
-![Website example](file-location-placeholder)
+![Website example](wireframes-new/website-example.png)
 
 ---
 
@@ -117,13 +117,13 @@ To see separate image files of the wireframes check the wireframes-new/seperate-
 
 #### Colours
 
-My initial plan regarding the colour scheme is to use a grey and yellow colour palette with red as a supplementary option. I will add an image of the exact colour scheme later when I've made my final decisions.
+My initial plan regarding the colour scheme is to use a grey and yellow colour palette with red as a supplementary option. I ended up also adding blue as a supplementary colour option. I have kept with my initial plan and used grey and yellow throughout most of the website. I ended up using the red colour to separate between the different data areas (track, time and weather information), to indicate the active event, for the temperature unit button and for the temperature data itself. I used the blue colour to indicate the active data type button in the data dashboard, for the hamburger menu icon, for the rain and the precipitation data. The colour scheme has good contrast between each of the colours and everything is clearly readable.
 
-![Colour palette](file-location-placeholder)
+![Colour palette](wireframes-new/colour-palette.png)
 
 #### Typography
 
-My initial plan regarding the typography is to use at least 2 different font-styles to separate the weather data from the other content. I will add my final choices later, after I've tested which ones provide the best distinction and readability.
+My initial plan regarding the typography is to use at least 2 different font-styles to separate the weather data from the other content. My final choices of font-styles ended up being 'Montserrat' and 'Inter' from the Google Fonts library. Montserrat is what I consider more of a softer font-style, so I used Montserrat for the calendar items, track name and weather title container. Whereas Inter is quite a sharp font-style, which I used for all the data related text content.
 
 #### Uniformity
 

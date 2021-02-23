@@ -23,10 +23,8 @@ html {
 }
 
 body {
-  font-family: "calibri", sans-serif;
   font-size: 1.6rem;
-  background-color: #211f22; /* ---- remove later ---- */
-  /*background-color: #211f22;*/
+  background-color: #211f22;
 }
 
 /* ----- navbar ----- */
@@ -131,6 +129,7 @@ nav h1 {
   background: #211f22;
   color: #ffc929;
   border-bottom: 2px solid #ff4040;
+  font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
