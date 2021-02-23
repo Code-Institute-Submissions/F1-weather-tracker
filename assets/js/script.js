@@ -3070,6 +3070,14 @@ window.onresize = function(){
     checkMainFlexDirection();
 }
 
+// checks for a change in orientation and then executes the setInitialCountdown function
+/* credits #? */
+window.onorientationchange = function() {
+    setTimeout(function(){
+        setInitialCountdown();
+    }, 50);
+}
+
 const calculateCountdown = function (raceStart, raceLocation) {
 
     // Get today's date and time
