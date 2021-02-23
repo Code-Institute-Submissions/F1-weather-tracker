@@ -229,6 +229,8 @@ const track__button = document.querySelector(".track__button");
 const schedule__button = document.querySelector(".schedule__button");
 const temp__button = document.querySelector("#temp__button");
 
+// website name selector
+const website__name = document.querySelector(".website__name");
 // main homepage selector
 const main__homepage__container = document.querySelector(".main__homepage__container");
 // weather & location info selector
@@ -3080,8 +3082,14 @@ const calculateCountdown = function (raceStart, raceLocation) {
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-    race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
-    
+    if (window.getComputedStyle(website__name, null).getPropertyValue("color") === "rgb(255, 201, 40)") {
+        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"))
+        race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days}d -- ${hours}h -- ${minutes}m`;
+    } else {
+        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"))
+        race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+    }
+
     if (distance < 0) {
         race__countdown__timer.textContent = "Countdown has expired.";
     };
