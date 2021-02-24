@@ -52,30 +52,29 @@ const getWeatherData = async function() {
 };
 
 // races starting date & time
-const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 15, 0, 0));
-console.log(`${bahrain__race__start} bahrain race start`);
-const imola__race__start = new Date(Date.UTC(2021, 3, 18, 11, 0, 0));
-const portimao__race__start = new Date(Date.UTC(2021, 4, 2, 11, 0, 0));
-const barcelona__race__start = new Date(Date.UTC(2021, 4, 9, 11, 0, 0));
-const monaco__race__start = new Date(Date.UTC(2021, 4, 23, 11, 0, 0));
-const baku__race__start = new Date(Date.UTC(2021, 5, 6, 10, 0, 0));
-const montreal__race__start = new Date(Date.UTC(2021, 5, 13, 16, 0, 0));
-const castellet__race__start = new Date(Date.UTC(2021, 5, 27, 11, 0, 0));
-const spielberg__race__start = new Date(Date.UTC(2021, 6, 4, 11, 0, 0));
-const silverstone__race__start = new Date(Date.UTC(2021, 6, 18, 12, 0, 0));
-const budapest__race__start = new Date(Date.UTC(2021, 7, 1, 11, 0, 0));
-const spa__race__start = new Date(Date.UTC(2021, 7, 29, 11, 0, 0));
-const zandvoort__race__start = new Date(Date.UTC(2021, 8, 5, 11, 0, 0));
-const monza__race__start = new Date(Date.UTC(2021, 8, 12, 11, 0, 0));
-const sochi__race__start = new Date(Date.UTC(2021, 8, 26, 10, 0, 0));
-const singapore__race__start = new Date(Date.UTC(2021, 9, 3, 10, 0, 0));
-const suzuka__race__start = new Date(Date.UTC(2021, 9, 10, 3, 0, 0));
-const austin__race__start = new Date(Date.UTC(2021, 9, 24, 17, 0, 0));
-const mexico__race__start = new Date(Date.UTC(2021, 9, 31, 18, 0, 0));
-const interlagos__race__start = new Date(Date.UTC(2021, 10, 7, 16, 0, 0));
-const melbourne__race__start = new Date(Date.UTC(2021, 10, 21, 5, 0, 0));
-const jeddah__race__start = new Date(Date.UTC(2021, 11, 5, 15, 0, 0));
-const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 12, 0, 0));
+const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 16, 0, 0));
+const imola__race__start = new Date(Date.UTC(2021, 3, 18, 14, 0, 0));
+const portimao__race__start = new Date(Date.UTC(2021, 4, 2, 14, 0, 0));
+const barcelona__race__start = new Date(Date.UTC(2021, 4, 9, 14, 0, 0));
+const monaco__race__start = new Date(Date.UTC(2021, 4, 23, 14, 0, 0));
+const baku__race__start = new Date(Date.UTC(2021, 5, 6, 13, 0, 0));
+const montreal__race__start = new Date(Date.UTC(2021, 5, 13, 19, 0, 0));
+const castellet__race__start = new Date(Date.UTC(2021, 5, 27, 14, 0, 0));
+const spielberg__race__start = new Date(Date.UTC(2021, 6, 4, 14, 0, 0));
+const silverstone__race__start = new Date(Date.UTC(2021, 6, 18, 15, 0, 0));
+const budapest__race__start = new Date(Date.UTC(2021, 7, 1, 14, 0, 0));
+const spa__race__start = new Date(Date.UTC(2021, 7, 29, 14, 0, 0));
+const zandvoort__race__start = new Date(Date.UTC(2021, 8, 5, 14, 0, 0));
+const monza__race__start = new Date(Date.UTC(2021, 8, 12, 14, 0, 0));
+const sochi__race__start = new Date(Date.UTC(2021, 8, 26, 13, 0, 0));
+const singapore__race__start = new Date(Date.UTC(2021, 9, 3, 13, 0, 0));
+const suzuka__race__start = new Date(Date.UTC(2021, 9, 10, 6, 0, 0));
+const austin__race__start = new Date(Date.UTC(2021, 9, 24, 20, 0, 0));
+const mexico__race__start = new Date(Date.UTC(2021, 9, 31, 19, 0, 0));
+const interlagos__race__start = new Date(Date.UTC(2021, 10, 7, 17, 0, 0));
+const melbourne__race__start = new Date(Date.UTC(2021, 10, 21, 6, 0, 0));
+const jeddah__race__start = new Date(Date.UTC(2021, 11, 5, 18, 0, 0));
+const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 15, 0, 0));
 
 // races unix timestamp and days until race start calculation
 let current__date = new Date(); // get current date
