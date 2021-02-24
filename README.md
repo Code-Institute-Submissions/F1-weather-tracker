@@ -250,11 +250,34 @@ A separate file with testing information can be found [here](file-location-place
 
 ### Hosting online
 
-placeholder text
+This project was hosted on [GitHub Pages](https://pages.github.com/) with the following steps:
+
+1. Log into [GitHub](https://github.com/login).
+2. Go to [your repositories](deployment-guide/your-repos.png).
+3. Click on the repository that you'd like to host.
+4. From the menu tabs click on [settings](deployment-guide/repo-settings.png).
+5. Scroll down to the GitHub Pages section.
+6. Select the [main branch](deployment-guide/branch.png) and press save.
+7. Scroll back down to the GitHub Pages section.
+8. Find your [published website link](deployment-guide/site-link.png) there.
+9. The website should now be deployed after a couple of minutes. (GitHub says processing can take up to 20 minutes)
 
 ### Running locally
 
-placeholder text
+To run my project locally I'd suggest the following steps:
+
+1. At my [project repository page](https://github.com/Larkinz/F1-weather-tracker) click the [download button](deployment-guide/download-button.png).
+2. Select the [ZIP download option](deployment-guide/zip-download.png) and save it somewhere on your computer.
+3. Extract the content of the ZIP file in a folder on your computer.
+4. Download and install the appropriate version of [Visual Studio Code](https://code.visualstudio.com/download) for your computer.
+5. Open Visual Studio Code.
+6. In the top left corner select [file](deployment-guide/file.png) and then click [open folder](deployment-guide/open-folder.png).
+7. Select the folder in which you extracted the repository files.
+8. On the left side click on the [extensions tab](deployment-guide/extensions.png).
+9. Search for 'live server' and install [the one made by Ritwick Dey](deployment-guide/live-server.png).
+10. Click the [index.html tab](deployment-guide/index-tab.png).
+11. On the bottom right click on [Go Live](deployment-guide/go-live.png).
+12. A local version of the website should now open in your standard browser.
 
 **_[Back to top](#contents)_**
 
