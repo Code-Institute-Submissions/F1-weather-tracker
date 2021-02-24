@@ -34,13 +34,14 @@ const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx
 
 // fetch weather data & store locally
 const getWeatherData = async function() {
-    /* credits #? */
+    /* credits #1 (see README.md credits section) */
     try {
+    /* credits #2 (see README.md credits section) */
     const response = await fetch(weather__API);
     const weatherData = await response.json();
     
     // store weather data in local storage converted to a string
-    /* credits #? */
+    /* credits #3 (see README.md credits section) */
     localStorage.setItem("weatherData", JSON.stringify(weatherData));
     console.log("added weatherdata to local storage");
 
@@ -256,11 +257,11 @@ const setCommonSessionTimes = function() {
     time__R.textContent = "15:00 - 17:00";
 };
 
-// display active event data
+// function that displays the active type of event data
 const displayActiveEventData = function() { 
     // get data from local storage and convert back to JSON
     // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can reduce the amount of API calls to stay under the limit
-    /* credits #? */
+    /* credits #3 (see README.md credits section) */
     const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
     console.log(`grabbed weatherdata from localstorage`);
     setInitialCountdown();
@@ -283,6 +284,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 17:00 @ 28 March 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for bahrain");
         // change weather div 1 contents
@@ -347,6 +349,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 18 April 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for imola");
         // change weather div 1 contents
@@ -411,6 +414,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 2 May 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const portimao__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[2].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
         // change weather div 1 contents
@@ -475,6 +479,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 9 May 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const barcelona__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[3].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for barcelona");
         // change weather div 1 contents
@@ -539,6 +544,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 23 May 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const monaco__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[4].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
         // change weather div 1 contents
@@ -607,6 +613,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 16:00 @ 6 June 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const baku__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[5].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for baku");
         // change weather div 1 contents
@@ -675,6 +682,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 14:00 @ 13 June 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const montreal__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[6].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
         // change weather div 1 contents
@@ -739,6 +747,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 27 June 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const castellet__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[7].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for castellet");
         // change weather div 1 contents
@@ -803,6 +812,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 4 July 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const spielberg__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[8].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for spielberg");
         // change weather div 1 contents
@@ -867,6 +877,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 18 July 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const silverstone__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[9].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for silverstone");
         // change weather div 1 contents
@@ -931,6 +942,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 1 August 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const budapest__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[10].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for budapest");
         // change weather div 1 contents
@@ -995,6 +1007,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 29 August 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const spa__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[11].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for spa");
         // change weather div 1 contents
@@ -1059,6 +1072,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 5 September 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const zandvoort__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[12].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for zandvoort");
         // change weather div 1 contents
@@ -1123,6 +1137,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 12 September 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const monza__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[13].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for monza");
         // change weather div 1 contents
@@ -1187,6 +1202,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 15:00 @ 26 September 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const sochi__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[14].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for sochi");
         // change weather div 1 contents
@@ -1255,6 +1271,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 20:00 @ 3 October 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const singapore__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[15].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for portimao");
         // change weather div 1 contents
@@ -1323,6 +1340,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 14:00 @ 10 October 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const suzuka__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[16].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for suzuka");
         // change weather div 1 contents
@@ -1391,6 +1409,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 14:00 @ 24 October 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const austin__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[17].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for austin");
         // change weather div 1 contents
@@ -1459,6 +1478,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 13:00 @ 31 October 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const mexico__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[18].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for mexico");
         // change weather div 1 contents
@@ -1527,6 +1547,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 14:00 @ 7 November 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const interlagos__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[19].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for interlagos");
         // change weather div 1 contents
@@ -1595,6 +1616,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 17:00 @ 21 November 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const melbourne__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[20].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for melbourne");
         // change weather div 1 contents
@@ -1663,6 +1685,7 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 19:00 @ 5 December 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const jeddah__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[21].weather[0].date), 'DD MMMM YYYY');
         console.log("changed weather date format for jeddah");
         // change weather div 1 contents
@@ -1731,8 +1754,9 @@ const displayActiveEventData = function() {
         start__time__container.textContent = "Start time: 17:00 @ 12 December 2021";
 
         // change the date format for the weather elements
+        /* credits #4 (see README.md credits section) */
         const emirates__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[22].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for portimao");
+        console.log("changed weather date format for emirates");
         // change weather div 1 contents
         weather__1__date.textContent = emirates__weather__date;
         weather__1__time.textContent = `16:00`;
@@ -2456,6 +2480,7 @@ window.addEventListener("load", () => {
 });
 
 // function that checks the active race calendar event and displays its data
+/* credits #5 (see README.md credits section) */
 const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
     if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
         console.log(`${raceLocation} already is the active event`);
@@ -2605,7 +2630,7 @@ emirates__event.addEventListener("click", function(){
 });
 
 // function that allows you to change a date to the prefered date format
-/* credits #? */
+/* credits #4 (see README.md credits section) */
 const DateFormatter = {
   monthNames: [
     "January",
@@ -2770,6 +2795,7 @@ const showAllEvents = function() {
     emirates__event.style.display = "flex";
 };
 
+// function that hides all hamburger menu icons
 const hideAllHamburgerIcons = function() { 
     HIC__bahrain.style.display = "none";
     HIC__imola.style.display = "none";
@@ -2796,7 +2822,7 @@ const hideAllHamburgerIcons = function() {
     HIC__emirates.style.display = "none";
 };
 
-// event listeners that switch temperature units on click
+// event listeners on the elements that contain weather information that switch temperature units on click
 weather__1.addEventListener("click", function(){
     switchTempUnits();
 });
@@ -2956,6 +2982,7 @@ const showActiveEventOnly = function() {
     }
 };
 
+// function that only displays the hamburger menu icon on the actice event
 const showActiveEventHamburgerIcon = function() { 
 	if (bahrain__event.classList.contains("active__event")) {
         hideAllHamburgerIcons();
@@ -3040,6 +3067,7 @@ const allDataContainersVisible = function() {
 };
 
 // function that checks whether to display the whole race calendar or just a single event
+/* credits #5 (see README.md credits section) */
 const checkMainFlexDirection = function() { 
     if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
         hideAllHamburgerIcons();
@@ -3062,12 +3090,15 @@ const checkMainFlexDirection = function() {
 // execute function to set initial hamburger menu icons and displayed event data
 checkMainFlexDirection();
 
-// checks for changes in window size and then executes the checkMainFlexDirection function
+// checks for changes in window size and then executes the checkMainFlexDirection and countdown functions
+/* credits #6 (see README.md credits section) */
 window.onresize = function(){
     checkMainFlexDirection();
     setInitialCountdown();
 };
 
+// functions that calculates the days, hours and minutes based on the race start time data and places the result to the countdown timer container text content
+/* credits #7 (see README.md credits section) */
 const calculateCountdown = function (raceStart, raceLocation) {
 
     // Get today's date and time
@@ -3080,6 +3111,7 @@ const calculateCountdown = function (raceStart, raceLocation) {
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
+    /* credits #5 (see README.md credits section) */
     if (window.getComputedStyle(website__name, null).getPropertyValue("color") === "rgb(255, 201, 40)") {
         console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
         race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days}d -- ${hours}h -- ${minutes}m`;

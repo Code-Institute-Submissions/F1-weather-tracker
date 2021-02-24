@@ -285,15 +285,35 @@ To run my project locally I'd suggest the following steps:
 
 ## Credits
 
-placeholder text
+All numbered references below correspond with a comment in either the HTML, CSS or JavaScript code.
 
 ### Code
 
-placeholder text
+#1: Used [this code](https://javascript.info/async-await#error-handling) creating try/catch error handling block.
+
+#2: Referenced [lecture 258 'Consuming Promises with Async/Await'](https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649375) from the Udemy course 'The Complete JavaScript Course 2021: From Zero to Expert!' by Jonas Schmedtmann to build a function that fetches my API weather data.
+
+#3: Referenced [this online explanation](https://coderwall.com/p/ewxn9g/storing-and-retrieving-objects-with-localstorage-html5) from https://coderwall.com/ about storing and retrieving objects with localStorage to store and retrieve my API weather data from localStorage.
+
+#4: Used [this code snippet](https://stackoverflow.com/a/47437070) from https://stackoverflow.com/ to manipulate the date format in the weather elements to my preference.
+
+#5: Referenced [this code snippet](https://stackoverflow.com/a/51639047) from https://stackoverflow.com/ on how to read HTML element CSS properties in JavaScript.
+
+#6: Used [this code snippet](https://www.codegrepper.com/code-examples/javascript/js+detect+screen+size+change) from https://codegrepper.com/ to detect changes in window size.
+
+#7: Referenced [this code snippet](https://www.w3schools.com/howto/howto_js_countdown.asp) from https://w3schools.com/ to build a countdown timer for the race starts.
+
+### Media
+
+#8: Country flag images taken from the [official Formula 1 website](https://www.formula1.com/).
+
+#9: Track map images taken from the [official Formula 1 website](https://www.formula1.com/).
 
 ### Miscellaneous
 
-placeholder text
+- Used https://coolors.co/ to create an image of my colour palette (see ['Surface'](#surface) section of the README).
+
+- Used https://autoprefixer.github.io/ to add vendor prefixes to CSS rules for better browser compatibility.
 
 ### Acknowledgements
 
