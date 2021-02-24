@@ -204,19 +204,35 @@ None, the website uses a single page layout.
 
 ### Languages
 
-placeholder text
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) - for the structuring of the website.
+
+- [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3) - for the styling and responsiveness of the website.
+
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - for the (interactive) functionality of the website.
 
 ### Frameworks
 
-placeholder text
+None
 
 ### Libraries
 
-placeholder text
+- [Google Fonts](https://fonts.google.com/) - for the Montserrat and Inter font-family.
+
+- [Font Awesome](https://fontawesome.com/) - for the hamburger menu icon.
+
+### API's
+
+- [World Weather Online](https://www.worldweatheronline.com/developer/api/docs/local-city-town-weather-api.aspx/) - for the local weather data.
 
 ### Software
 
-placeholder text
+- [Balsamiq](https://balsamiq.com/) - for creating the wireframes.
+
+- [Visual Studio Code (desktop version)](https://code.visualstudio.com/) - for coding and creating the project.
+
+- [Git (BASH)](https://gitforwindows.org/) - for version control in the VSCode terminal.
+
+- [Google Chrome](https://www.google.com/chrome/) - for testing the website with their devtools.
 
 **_[Back to top](#contents)_**
 
