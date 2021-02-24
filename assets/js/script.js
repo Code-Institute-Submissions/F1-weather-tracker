@@ -27,8 +27,8 @@ const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
 // weather API
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
@@ -239,8 +239,6 @@ const weather__location__info__container = document.querySelector(".weather__loc
 const track__info__container = document.querySelector(".track__info__container");
 // time info selector
 const time__info__container = document.querySelector(".time__info__container");
-// location info selector
-const location__info__container = document.querySelector(".location__info__container");
 // countdown timer selector
 const race__countdown__timer = document.querySelector(".race__countdown__timer__container");
 
@@ -257,7 +255,7 @@ const setCommonSessionTimes = function() {
     time__P3.textContent = "12:00 - 13:00";
     time__Q.textContent = "15:00 - 16:00";
     time__R.textContent = "15:00 - 17:00";
-}
+};
 
 // display active event data
 const displayActiveEventData = function() { 
@@ -297,7 +295,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
@@ -309,7 +307,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
@@ -321,7 +319,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
@@ -333,7 +331,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].chanceofrain}%`;
 
@@ -361,7 +359,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -373,7 +371,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -385,7 +383,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -397,7 +395,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
 
@@ -425,7 +423,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -437,7 +435,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -449,7 +447,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -461,7 +459,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].chanceofrain}%`;
     
@@ -489,7 +487,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -501,7 +499,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -513,7 +511,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -525,7 +523,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].chanceofrain}%`;
     
@@ -553,7 +551,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -565,7 +563,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -577,7 +575,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -589,7 +587,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].chanceofrain}%`;
     
@@ -621,7 +619,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 2 contents
@@ -633,7 +631,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 3 contents
@@ -645,7 +643,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 4 contents
@@ -657,7 +655,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[18].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[18].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[18].chanceofrain}%`;
     
@@ -689,7 +687,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[13].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[13].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
@@ -701,7 +699,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[14].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
@@ -713,7 +711,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[15].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
@@ -725,7 +723,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[16].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[16].chanceofrain}%`;
     
@@ -753,7 +751,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -765,7 +763,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -777,7 +775,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -789,7 +787,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[17].chanceofrain}%`;
     
@@ -817,7 +815,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -829,7 +827,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -841,7 +839,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -853,7 +851,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[17].chanceofrain}%`;
     
@@ -881,7 +879,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -893,7 +891,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -905,7 +903,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -917,7 +915,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[17].chanceofrain}%`;
     
@@ -945,7 +943,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -957,7 +955,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -969,7 +967,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -981,7 +979,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[17].chanceofrain}%`;
     
@@ -1009,7 +1007,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -1021,7 +1019,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -1033,7 +1031,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -1045,7 +1043,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[17].chanceofrain}%`;
     
@@ -1073,7 +1071,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -1085,7 +1083,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -1097,7 +1095,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -1109,7 +1107,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[17].chanceofrain}%`;
     
@@ -1137,7 +1135,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -1149,7 +1147,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -1161,7 +1159,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -1173,7 +1171,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[17].chanceofrain}%`;
     
@@ -1201,7 +1199,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[14].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
@@ -1213,7 +1211,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[15].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
@@ -1225,7 +1223,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[16].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
@@ -1237,7 +1235,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[17].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[17].chanceofrain}%`;
     
@@ -1269,7 +1267,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[19].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[19].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[19].chanceofrain}%`;
         // change weather div 2 contents
@@ -1281,7 +1279,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[20].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[20].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[20].chanceofrain}%`;
         // change weather div 3 contents
@@ -1293,7 +1291,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[21].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[21].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[21].chanceofrain}%`;
         // change weather div 4 contents
@@ -1305,7 +1303,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[22].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[22].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[22].chanceofrain}%`;
     
@@ -1337,7 +1335,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[13].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[13].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
@@ -1349,7 +1347,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[14].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
@@ -1361,7 +1359,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[15].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
@@ -1373,7 +1371,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[16].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[16].chanceofrain}%`;
     
@@ -1405,7 +1403,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[13].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[13].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
@@ -1417,7 +1415,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[14].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
@@ -1429,7 +1427,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[15].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
@@ -1441,7 +1439,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[16].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[16].chanceofrain}%`;
     
@@ -1473,7 +1471,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[12].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[12].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[12].chanceofrain}%`;
         // change weather div 2 contents
@@ -1485,7 +1483,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[13].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[13].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 3 contents
@@ -1497,7 +1495,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[14].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 4 contents
@@ -1509,7 +1507,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[15].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[15].chanceofrain}%`;
     
@@ -1541,7 +1539,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[13].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[13].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
@@ -1553,7 +1551,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[14].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[14].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
@@ -1565,7 +1563,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[15].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[15].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
@@ -1577,7 +1575,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[16].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[16].chanceofrain}%`;
     
@@ -1609,7 +1607,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[16].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
@@ -1621,7 +1619,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[17].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
@@ -1633,7 +1631,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[18].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[18].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
@@ -1645,7 +1643,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[19].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[19].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[19].chanceofrain}%`;
     
@@ -1677,7 +1675,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[18].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[18].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 2 contents
@@ -1689,7 +1687,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[19].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[19].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[19].chanceofrain}%`;
         // change weather div 3 contents
@@ -1701,7 +1699,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[20].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[20].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[20].chanceofrain}%`;
         // change weather div 4 contents
@@ -1713,7 +1711,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[21].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[21].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[21].chanceofrain}%`;
     
@@ -1745,7 +1743,7 @@ const displayActiveEventData = function() {
             weather__1__temp.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[16].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__1__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[16].precipMM}mm`;
         weather__1__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
@@ -1757,7 +1755,7 @@ const displayActiveEventData = function() {
             weather__2__temp.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[17].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__2__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[17].precipMM}mm`;
         weather__2__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
@@ -1769,7 +1767,7 @@ const displayActiveEventData = function() {
             weather__3__temp.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[18].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__3__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[18].precipMM}mm`;
         weather__3__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
@@ -1781,7 +1779,7 @@ const displayActiveEventData = function() {
             weather__4__temp.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[19].tempF}°F`;
         } else {
             return;
-        };
+        }
         weather__4__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[19].precipMM}mm`;
         weather__4__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[19].chanceofrain}%`;
     
@@ -1816,7 +1814,7 @@ const hideAllTrackInfo = function() {
     track__info__melbourne.style.display = "none";
     track__info__jeddah.style.display = "none";
     track__info__emirates.style.display = "none";
-}
+};
 
 // check the closest race to give active class and grey out past races
 const checkClosestRace = function() {
@@ -2695,7 +2693,7 @@ const DateFormatter = {
       return s;
     });
   },
-}
+};
 
 // function that switches between temperature units Celcius and Fahrenheit
 const switchTempUnits = function() { 
@@ -2710,14 +2708,14 @@ const switchTempUnits = function() {
     } else {
         return;
     }
-}
+};
 
 // function that removes the active button ID
 const removeActiveButton = function() { 
     weather__button.removeAttribute('id');
     track__button.removeAttribute('id');
     schedule__button.removeAttribute('id');
-}
+};
 
 // function that hides all events
 const hideAllEvents = function() { 
@@ -2744,7 +2742,7 @@ const hideAllEvents = function() {
     melbourne__event.style.display = "none";
     jeddah__event.style.display = "none";
     emirates__event.style.display = "none";
-}
+};
 
 // function that lets all the events be displayed
 const showAllEvents = function() { 
@@ -2771,7 +2769,7 @@ const showAllEvents = function() {
     melbourne__event.style.display = "flex";
     jeddah__event.style.display = "flex";
     emirates__event.style.display = "flex";
-}
+};
 
 const hideAllHamburgerIcons = function() { 
     HIC__bahrain.style.display = "none";
@@ -2797,7 +2795,7 @@ const hideAllHamburgerIcons = function() {
     HIC__melbourne.style.display = "none";
     HIC__jeddah.style.display = "none";
     HIC__emirates.style.display = "none";
-}
+};
 
 // event listeners that switch temperature units on click
 weather__1.addEventListener("click", function(){
@@ -2833,7 +2831,7 @@ const displayActiveEventDataMobile = function() {
     } else {
         console.log("error: no active mobile data display classes");
     }
-}
+};
 
 // event listeners for the dashboard buttons that switch display data on click
 weather__button.addEventListener("click", function(){
@@ -2957,7 +2955,7 @@ const showActiveEventOnly = function() {
         console.log("error: no active event for showActiveEventOnly to target");
         return;
     }
-}
+};
 
 const showActiveEventHamburgerIcon = function() { 
 	if (bahrain__event.classList.contains("active__event")) {
@@ -3033,14 +3031,14 @@ const showActiveEventHamburgerIcon = function() {
         console.log("error: no active event for showActiveEventHamburgerIcon to target");
         return;
     }
-}
+};
 
 // function that gives track info container & time info container & weather location info container their visibility back
 const allDataContainersVisible = function() { 
     weather__location__info__container.style.display = "flex";
     track__info__container.style.display = "flex";
     time__info__container.style.display = "flex";
-}
+};
 
 // function that checks whether to display the whole race calendar or just a single event
 const checkMainFlexDirection = function() { 
@@ -3060,7 +3058,7 @@ const checkMainFlexDirection = function() {
     }  else {
         console.log("error in checkMainFlexDirection function");
     }
-}
+};
 
 // execute function to set initial hamburger menu icons and displayed event data
 checkMainFlexDirection();
@@ -3069,7 +3067,7 @@ checkMainFlexDirection();
 window.onresize = function(){
     checkMainFlexDirection();
     setInitialCountdown();
-}
+};
 
 const calculateCountdown = function (raceStart, raceLocation) {
 
@@ -3084,16 +3082,16 @@ const calculateCountdown = function (raceStart, raceLocation) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
     if (window.getComputedStyle(website__name, null).getPropertyValue("color") === "rgb(255, 201, 40)") {
-        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"))
+        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
         race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days}d -- ${hours}h -- ${minutes}m`;
     } else {
-        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"))
+        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
         race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
     }
 
     if (distance < 0) {
         race__countdown__timer.textContent = "Countdown has expired.";
-    };
+    }
 };
 
 // function that sets the initial text content of the countdown timer element without delay
@@ -3147,5 +3145,5 @@ const setInitialCountdown = function() {
     } else {
         console.log("changeCountdownTimer is broken");
         race__countdown__timer.textContent = `Error: could not start a countdown timer.`;
-    };
+    }
 };
