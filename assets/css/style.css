@@ -14,6 +14,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -31,14 +32,21 @@ body {
 
 nav {
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   top: 0px;
   z-index: 2;
   height: 50px;
   background-color: #211f22;
   color: #ffc929;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-bottom: 1px solid #ffc929;
 }
@@ -56,12 +64,21 @@ nav h1 {
 /* ----- frontpage containers ----- */
 
 .main__homepage__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .race__calendar__container {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 320px;
   flex: 0 0 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -79,8 +96,14 @@ nav h1 {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -91,7 +114,11 @@ nav h1 {
 }
 
 .event__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   white-space: pre-line;
 }
@@ -117,6 +144,8 @@ nav h1 {
 /* --------------- all info container --------------- */
 
 .all__info__container {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
@@ -130,8 +159,14 @@ nav h1 {
   color: #ffc929;
   border-bottom: 2px solid #ff4040;
   font-family: "Inter", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 2.6rem;
 }
@@ -143,14 +178,24 @@ nav h1 {
   background: #211f22;
   border-bottom: 2px solid #ff4040;
   display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 2.6rem;
 }
 
 .dashboard__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background: crimson;
   height: 40px;
@@ -189,30 +234,43 @@ nav h1 {
 }
 
 .weather__data__active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .track__data__active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .schedule__data__active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 /* ----- track & time info container ----- */
 
 .track__time__info__container {
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 /* ----- track info container ----- */
 
 .track__info__container {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 60%;
   flex: 1 0 60%;
   border-bottom: 2px solid #ff4040;
   border-right: 1px solid #ff4040;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-width: 660px;
 }
@@ -220,8 +278,15 @@ nav h1 {
 /* ----- track info ----- */
 
 .track__info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   font-family: "Inter", sans-serif;
   font-size: 2.6rem;
@@ -260,8 +325,14 @@ nav h1 {
   padding-top: 10px;
   background: #211f22;
   border-bottom: 1px solid #ffc929;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -274,10 +345,14 @@ nav h1 {
 
 .track__map__stats__container {
   height: 89%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .track__map {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 70%;
   flex: 1 0 70%;
   background: #ffffec;
 }
@@ -286,16 +361,28 @@ nav h1 {
   width: 100%;
   height: 100%;
   display: block;
+  -o-object-fit: contain;
   object-fit: contain;
 }
 
 .track__stats {
   color: #ffc929;
   background: #211f22;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 30%;
   flex: 1 0 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
@@ -309,21 +396,37 @@ nav h1 {
 /* ----- time info container ----- */
 
 .time__info__container {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 40%;
   flex: 1 0 40%;
   color: #ffc929;
   background: #211f22;
   border-bottom: 2px solid #ff4040;
   border-left: 1px solid #ff4040;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   font-family: "Inter", sans-serif;
   font-size: 2.4rem;
 }
 
 #schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin: 5px;
 }
@@ -370,7 +473,12 @@ nav h1 {
 .weather__location__info__container {
   color: #ffc929;
   background: #211f22;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -380,9 +488,17 @@ nav h1 {
   padding-bottom: 12px;
   padding-top: 12px;
   color: #ffc929;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 14%;
   flex: 1 0 14%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-bottom: 1px solid #ffc929;
   font-family: "Montserrat", sans-serif;
@@ -394,10 +510,19 @@ nav h1 {
 
 .location__info__container {
   padding: 12px 24px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 10%;
   flex: 1 0 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   border-bottom: 1px solid #ffc929;
 }
@@ -406,16 +531,32 @@ nav h1 {
 
 .location__time__container {
   height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 50%;
   flex: 1 0 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
 #location {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 70%;
   flex: 1 0 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-family: "Inter", sans-serif;
   font-size: 2.6rem;
@@ -423,9 +564,17 @@ nav h1 {
 }
 
 #local__time {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 30%;
   flex: 1 0 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-left: 10px;
   font-family: "Inter", sans-serif;
@@ -437,9 +586,17 @@ nav h1 {
 
 .start__time__container {
   height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 50%;
   flex: 1 0 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-family: "Inter", sans-serif;
   font-size: 2.6rem;
@@ -449,10 +606,19 @@ nav h1 {
 /* ----- weather info container ----- */
 
 .weather__info__container {
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 76%;
   flex: 1 0 76%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -463,9 +629,17 @@ nav h1 {
   padding: 16px;
   height: 240px;
   width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   font-family: "Inter", sans-serif;
   font-size: 2.4rem;
@@ -502,6 +676,9 @@ nav h1 {
   }
 
   .location__info__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 0;
   }
@@ -520,10 +697,14 @@ nav h1 {
   }
 
   #location {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 50%;
     flex: 1 0 50%;
   }
 
   #local__time {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 50%;
     flex: 1 0 50%;
   }
 
@@ -603,14 +784,21 @@ nav h1 {
 
 @media (max-width: 1025px) {
   .main__homepage__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
   .race__calendar__container {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 0px;
     flex: 0 0 0px;
   }
 
   .race__events {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     border-right: none;
     padding: 10px 0px;
@@ -618,8 +806,14 @@ nav h1 {
   }
 
   .hamburger__icon__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-left: 6%;
     cursor: pointer;
@@ -642,9 +836,15 @@ nav h1 {
   }
 
   .button__dashboard__container {
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 
@@ -737,10 +937,14 @@ nav h1 {
   }
 
   .track__map {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 75%;
     flex: 1 0 75%;
   }
 
   .track__stats {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 25%;
     flex: 1 0 25%;
   }
 
@@ -942,6 +1146,9 @@ nav h1 {
 
   .track__map__stats__container {
     height: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -1383,3 +1590,10 @@ nav h1 {
     font-size: 1.7rem;
   }
 }
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
