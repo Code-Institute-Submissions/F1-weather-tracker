@@ -26,83 +26,11 @@ const melbourne__coordinates = `-37.851, 144.97`;
 const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
-// weather API
+// weather API link
 const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-
-// fetch weather data & store locally
-const getWeatherData = async function() {
-    /* credits #1 (see README.md credits section) */
-    try {
-    /* credits #2 (see README.md credits section) */
-    const response = await fetch(weather__API);
-    const weatherData = await response.json();
-    
-    // store weather data in local storage converted to a string
-    /* credits #3 (see README.md credits section) */
-    localStorage.setItem("weatherData", JSON.stringify(weatherData));
-    console.log("added weatherdata to local storage");
-
-    displayActiveEventData();
-
-    } catch(err) { 
-        alert(err);
-    }
-};
-
-// races starting date & time
-const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 16, 0, 0));
-const imola__race__start = new Date(Date.UTC(2021, 3, 18, 14, 0, 0));
-const portimao__race__start = new Date(Date.UTC(2021, 4, 2, 14, 0, 0));
-const barcelona__race__start = new Date(Date.UTC(2021, 4, 9, 14, 0, 0));
-const monaco__race__start = new Date(Date.UTC(2021, 4, 23, 14, 0, 0));
-const baku__race__start = new Date(Date.UTC(2021, 5, 6, 13, 0, 0));
-const montreal__race__start = new Date(Date.UTC(2021, 5, 13, 19, 0, 0));
-const castellet__race__start = new Date(Date.UTC(2021, 5, 27, 14, 0, 0));
-const spielberg__race__start = new Date(Date.UTC(2021, 6, 4, 14, 0, 0));
-const silverstone__race__start = new Date(Date.UTC(2021, 6, 18, 15, 0, 0));
-const budapest__race__start = new Date(Date.UTC(2021, 7, 1, 14, 0, 0));
-const spa__race__start = new Date(Date.UTC(2021, 7, 29, 14, 0, 0));
-const zandvoort__race__start = new Date(Date.UTC(2021, 8, 5, 14, 0, 0));
-const monza__race__start = new Date(Date.UTC(2021, 8, 12, 14, 0, 0));
-const sochi__race__start = new Date(Date.UTC(2021, 8, 26, 13, 0, 0));
-const singapore__race__start = new Date(Date.UTC(2021, 9, 3, 13, 0, 0));
-const suzuka__race__start = new Date(Date.UTC(2021, 9, 10, 6, 0, 0));
-const austin__race__start = new Date(Date.UTC(2021, 9, 24, 20, 0, 0));
-const mexico__race__start = new Date(Date.UTC(2021, 9, 31, 19, 0, 0));
-const interlagos__race__start = new Date(Date.UTC(2021, 10, 7, 17, 0, 0));
-const melbourne__race__start = new Date(Date.UTC(2021, 10, 21, 6, 0, 0));
-const jeddah__race__start = new Date(Date.UTC(2021, 11, 5, 18, 0, 0));
-const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 15, 0, 0));
-
-// races unix timestamp and days until race start calculation
-let current__date = new Date(); // get current date
-console.log(`${current__date} is the current date`);
-let days__until__bahrain = Math.trunc((((((bahrain__race__start - current__date)/1000)/60)/60)/24));
-let days__until__imola = Math.trunc((((((imola__race__start - current__date)/1000)/60)/60)/24));
-let days__until__portimao = Math.trunc((((((portimao__race__start - current__date)/1000)/60)/60)/24));
-let days__until__barcelona = Math.trunc((((((barcelona__race__start - current__date)/1000)/60)/60)/24));
-let days__until__monaco = Math.trunc((((((monaco__race__start - current__date)/1000)/60)/60)/24));
-let days__until__baku = Math.trunc((((((baku__race__start - current__date)/1000)/60)/60)/24));
-let days__until__montreal = Math.trunc((((((montreal__race__start - current__date)/1000)/60)/60)/24));
-let days__until__castellet = Math.trunc((((((castellet__race__start - current__date)/1000)/60)/60)/24));
-let days__until__spielberg = Math.trunc((((((spielberg__race__start - current__date)/1000)/60)/60)/24));
-let days__until__silverstone = Math.trunc((((((silverstone__race__start - current__date)/1000)/60)/60)/24));
-let days__until__budapest = Math.trunc((((((budapest__race__start - current__date)/1000)/60)/60)/24));
-let days__until__spa = Math.trunc((((((spa__race__start - current__date)/1000)/60)/60)/24));
-let days__until__zandvoort = Math.trunc((((((zandvoort__race__start - current__date)/1000)/60)/60)/24));
-let days__until__monza = Math.trunc((((((monza__race__start - current__date)/1000)/60)/60)/24));
-let days__until__sochi = Math.trunc((((((sochi__race__start - current__date)/1000)/60)/60)/24));
-let days__until__singapore = Math.trunc((((((singapore__race__start - current__date)/1000)/60)/60)/24));
-let days__until__suzuka = Math.trunc((((((suzuka__race__start - current__date)/1000)/60)/60)/24));
-let days__until__austin = Math.trunc((((((austin__race__start - current__date)/1000)/60)/60)/24));
-let days__until__mexico = Math.trunc((((((mexico__race__start - current__date)/1000)/60)/60)/24));
-let days__until__interlagos = Math.trunc((((((interlagos__race__start - current__date)/1000)/60)/60)/24));
-let days__until__melbourne = Math.trunc((((((melbourne__race__start - current__date)/1000)/60)/60)/24));
-let days__until__jeddah = Math.trunc((((((jeddah__race__start - current__date)/1000)/60)/60)/24));
-let days__until__UAE = Math.trunc((((((UAE__race__start - current__date)/1000)/60)/60)/24));
 
 // weather container elements selectors
 const weather__1 = document.querySelector("#weather__info--1");
@@ -135,7 +63,7 @@ const weather__4__temp = document.querySelector("#weather__info--4__temp");
 const weather__4__precip = document.querySelector("#weather__info--4__precip");
 const weather__4__rain = document.querySelector("#weather__info--4__rain");
 
-// event div selectors
+// race calendar elements selectors
 const bahrain__event = document.querySelector("#bahrain__event");
 const imola__event = document.querySelector("#imola__event");
 const portimao__event = document.querySelector("#portimao__event");
@@ -160,7 +88,7 @@ const melbourne__event = document.querySelector("#melbourne__event");
 const jeddah__event = document.querySelector("#jeddah__event");
 const emirates__event = document.querySelector("#emirates__event");
 
-// individual hamburger icon container selectors for each event
+// individual hamburger menu icon container selectors for each event
 const HIC__bahrain = document.querySelector(".HIC__bahrain");
 const HIC__imola = document.querySelector(".HIC__imola");
 const HIC__portimao = document.querySelector(".HIC__portimao");
@@ -218,12 +146,12 @@ const time__P3 = document.querySelector(".time__P3");
 const time__Q = document.querySelector(".time__Q");
 const time__R = document.querySelector(".time__R");
 
-// location & local time & start time container selectors
+// location, local time and start time containers selectors
 const race__location = document.querySelector("#location");
 const local__time = document.querySelector("#local__time");
 const start__time__container = document.querySelector(".start__time__container");
 
-// dashboard button selectors
+// dashboard buttons selectors
 const weather__button = document.querySelector(".weather__button");
 const track__button = document.querySelector(".track__button");
 const schedule__button = document.querySelector(".schedule__button");
@@ -231,24 +159,1079 @@ const temp__button = document.querySelector("#temp__button");
 
 // website name selector
 const website__name = document.querySelector(".website__name");
-// main homepage selector
+// main homepage container selector
 const main__homepage__container = document.querySelector(".main__homepage__container");
-// weather & location info selector
+// weather and location info container selector
 const weather__location__info__container = document.querySelector(".weather__location__info__container");
-// track info selector
+// track info container selector
 const track__info__container = document.querySelector(".track__info__container");
-// time info selector
+// time info container selector
 const time__info__container = document.querySelector(".time__info__container");
-// countdown timer selector
+// countdown timer container selector
 const race__countdown__timer = document.querySelector(".race__countdown__timer__container");
 
-// set boolean value for celcius/fahrenheit switch
+// individual race start date and time (UNIX timestamps)
+const bahrain__race__start = new Date(Date.UTC(2020, 2, 28, 16, 0, 0));
+const imola__race__start = new Date(Date.UTC(2020, 3, 18, 14, 0, 0));
+const portimao__race__start = new Date(Date.UTC(2020, 4, 2, 14, 0, 0));
+const barcelona__race__start = new Date(Date.UTC(2020, 4, 9, 14, 0, 0));
+const monaco__race__start = new Date(Date.UTC(2020, 4, 23, 14, 0, 0));
+const baku__race__start = new Date(Date.UTC(2020, 5, 6, 13, 0, 0));
+const montreal__race__start = new Date(Date.UTC(2021, 5, 13, 19, 0, 0));
+const castellet__race__start = new Date(Date.UTC(2021, 5, 27, 14, 0, 0));
+const spielberg__race__start = new Date(Date.UTC(2021, 6, 4, 14, 0, 0));
+const silverstone__race__start = new Date(Date.UTC(2021, 6, 18, 15, 0, 0));
+const budapest__race__start = new Date(Date.UTC(2021, 7, 1, 14, 0, 0));
+const spa__race__start = new Date(Date.UTC(2021, 7, 29, 14, 0, 0));
+const zandvoort__race__start = new Date(Date.UTC(2021, 8, 5, 14, 0, 0));
+const monza__race__start = new Date(Date.UTC(2021, 8, 12, 14, 0, 0));
+const sochi__race__start = new Date(Date.UTC(2021, 8, 26, 13, 0, 0));
+const singapore__race__start = new Date(Date.UTC(2021, 9, 3, 13, 0, 0));
+const suzuka__race__start = new Date(Date.UTC(2021, 9, 10, 6, 0, 0));
+const austin__race__start = new Date(Date.UTC(2021, 9, 24, 20, 0, 0));
+const mexico__race__start = new Date(Date.UTC(2021, 9, 31, 19, 0, 0));
+const interlagos__race__start = new Date(Date.UTC(2021, 10, 7, 17, 0, 0));
+const melbourne__race__start = new Date(Date.UTC(2021, 10, 21, 6, 0, 0));
+const jeddah__race__start = new Date(Date.UTC(2021, 11, 5, 18, 0, 0));
+const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 15, 0, 0));
+
+// register the current date as a UNIX timestamp and calculate the number of days until every individual race start
+let current__date = new Date(); // get current date
+console.log(`${current__date} is the current date`);
+let days__until__bahrain = Math.trunc((((((bahrain__race__start - current__date)/1000)/60)/60)/24));
+let days__until__imola = Math.trunc((((((imola__race__start - current__date)/1000)/60)/60)/24));
+let days__until__portimao = Math.trunc((((((portimao__race__start - current__date)/1000)/60)/60)/24));
+let days__until__barcelona = Math.trunc((((((barcelona__race__start - current__date)/1000)/60)/60)/24));
+let days__until__monaco = Math.trunc((((((monaco__race__start - current__date)/1000)/60)/60)/24));
+let days__until__baku = Math.trunc((((((baku__race__start - current__date)/1000)/60)/60)/24));
+let days__until__montreal = Math.trunc((((((montreal__race__start - current__date)/1000)/60)/60)/24));
+let days__until__castellet = Math.trunc((((((castellet__race__start - current__date)/1000)/60)/60)/24));
+let days__until__spielberg = Math.trunc((((((spielberg__race__start - current__date)/1000)/60)/60)/24));
+let days__until__silverstone = Math.trunc((((((silverstone__race__start - current__date)/1000)/60)/60)/24));
+let days__until__budapest = Math.trunc((((((budapest__race__start - current__date)/1000)/60)/60)/24));
+let days__until__spa = Math.trunc((((((spa__race__start - current__date)/1000)/60)/60)/24));
+let days__until__zandvoort = Math.trunc((((((zandvoort__race__start - current__date)/1000)/60)/60)/24));
+let days__until__monza = Math.trunc((((((monza__race__start - current__date)/1000)/60)/60)/24));
+let days__until__sochi = Math.trunc((((((sochi__race__start - current__date)/1000)/60)/60)/24));
+let days__until__singapore = Math.trunc((((((singapore__race__start - current__date)/1000)/60)/60)/24));
+let days__until__suzuka = Math.trunc((((((suzuka__race__start - current__date)/1000)/60)/60)/24));
+let days__until__austin = Math.trunc((((((austin__race__start - current__date)/1000)/60)/60)/24));
+let days__until__mexico = Math.trunc((((((mexico__race__start - current__date)/1000)/60)/60)/24));
+let days__until__interlagos = Math.trunc((((((interlagos__race__start - current__date)/1000)/60)/60)/24));
+let days__until__melbourne = Math.trunc((((((melbourne__race__start - current__date)/1000)/60)/60)/24));
+let days__until__jeddah = Math.trunc((((((jeddah__race__start - current__date)/1000)/60)/60)/24));
+let days__until__UAE = Math.trunc((((((UAE__race__start - current__date)/1000)/60)/60)/24));
+
+// set boolean value for the celcius/fahrenheit switch
 let tempUnitsCelsius = true;
 
-// set boolean that indicates if the race calendar is shown completely on smaller screen sizes
-let mobileCalendarExtended = false;
+// set boolean value that indicates if the race calendar is expanded or collapsed
+let mobileCalendarExpanded = false;
 
-// function that sets the track session times to the most common ones
+// function that checks what the closest race on the calendar is, then gives active class to the closest race, then greys out past races
+const checkClosestRace = function() {
+    if (days__until__bahrain > -1) {
+        bahrain__event.classList.add("active__event");
+    } else if (days__until__imola > -1) {
+        imola__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__portimao > -1) {
+        portimao__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__barcelona > -1) {
+        barcelona__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__monaco > -1) {
+        monaco__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__baku > -1) {
+        baku__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__montreal > -1) {
+        montreal__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__castellet > -1) {
+        castellet__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__spielberg > -1) {
+        spielberg__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__silverstone > -1) {
+        silverstone__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__budapest > -1) {
+        budapest__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__spa > -1) {
+        spa__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__zandvoort > -1) {
+        zandvoort__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__monza > -1) {
+        monza__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__sochi > -1) {
+        sochi__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__singapore > -1) {
+        singapore__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__suzuka > -1) {
+        suzuka__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__austin > -1) {
+        austin__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__mexico > -1) {
+        mexico__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+        austin__event.style.color = "#b3b3b3";
+        austin__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__interlagos > -1) {
+        interlagos__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+        austin__event.style.color = "#b3b3b3";
+        austin__event.style.backgroundColor = "#4e4e4e";
+        mexico__event.style.color = "#b3b3b3";
+        mexico__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__melbourne > -1) {
+        melbourne__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+        austin__event.style.color = "#b3b3b3";
+        austin__event.style.backgroundColor = "#4e4e4e";
+        mexico__event.style.color = "#b3b3b3";
+        mexico__event.style.backgroundColor = "#4e4e4e";
+        interlagos__event.style.color = "#b3b3b3";
+        interlagos__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__jeddah > -1) {
+        jeddah__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+        austin__event.style.color = "#b3b3b3";
+        austin__event.style.backgroundColor = "#4e4e4e";
+        mexico__event.style.color = "#b3b3b3";
+        mexico__event.style.backgroundColor = "#4e4e4e";
+        interlagos__event.style.color = "#b3b3b3";
+        interlagos__event.style.backgroundColor = "#4e4e4e";
+        melbourne__event.style.color = "#b3b3b3";
+        melbourne__event.style.backgroundColor = "#4e4e4e";
+    } else if (days__until__UAE > -1) {
+        emirates__event.classList.add("active__event");
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+        austin__event.style.color = "#b3b3b3";
+        austin__event.style.backgroundColor = "#4e4e4e";
+        mexico__event.style.color = "#b3b3b3";
+        mexico__event.style.backgroundColor = "#4e4e4e";
+        interlagos__event.style.color = "#b3b3b3";
+        interlagos__event.style.backgroundColor = "#4e4e4e";
+        melbourne__event.style.color = "#b3b3b3";
+        melbourne__event.style.backgroundColor = "#4e4e4e";
+        jeddah__event.style.color = "#b3b3b3";
+        jeddah__event.style.backgroundColor = "#4e4e4e";
+    } else {
+        bahrain__event.style.color = "#b3b3b3";
+        bahrain__event.style.backgroundColor = "#4e4e4e";
+        imola__event.style.color = "#b3b3b3";
+        imola__event.style.backgroundColor = "#4e4e4e";
+        portimao__event.style.color = "#b3b3b3";
+        portimao__event.style.backgroundColor = "#4e4e4e";
+        barcelona__event.style.color = "#b3b3b3";
+        barcelona__event.style.backgroundColor = "#4e4e4e";
+        monaco__event.style.color = "#b3b3b3";
+        monaco__event.style.backgroundColor = "#4e4e4e";
+        baku__event.style.color = "#b3b3b3";
+        baku__event.style.backgroundColor = "#4e4e4e";
+        montreal__event.style.color = "#b3b3b3";
+        montreal__event.style.backgroundColor = "#4e4e4e";
+        castellet__event.style.color = "#b3b3b3";
+        castellet__event.style.backgroundColor = "#4e4e4e";
+        spielberg__event.style.color = "#b3b3b3";
+        spielberg__event.style.backgroundColor = "#4e4e4e";
+        silverstone__event.style.color = "#b3b3b3";
+        silverstone__event.style.backgroundColor = "#4e4e4e";
+        budapest__event.style.color = "#b3b3b3";
+        budapest__event.style.backgroundColor = "#4e4e4e";
+        spa__event.style.color = "#b3b3b3";
+        spa__event.style.backgroundColor = "#4e4e4e";
+        zandvoort__event.style.color = "#b3b3b3";
+        zandvoort__event.style.backgroundColor = "#4e4e4e";
+        monza__event.style.color = "#b3b3b3";
+        monza__event.style.backgroundColor = "#4e4e4e";
+        sochi__event.style.color = "#b3b3b3";
+        sochi__event.style.backgroundColor = "#4e4e4e";
+        singapore__event.style.color = "#b3b3b3";
+        singapore__event.style.backgroundColor = "#4e4e4e";
+        suzuka__event.style.color = "#b3b3b3";
+        suzuka__event.style.backgroundColor = "#4e4e4e";
+        austin__event.style.color = "#b3b3b3";
+        austin__event.style.backgroundColor = "#4e4e4e";
+        mexico__event.style.color = "#b3b3b3";
+        mexico__event.style.backgroundColor = "#4e4e4e";
+        interlagos__event.style.color = "#b3b3b3";
+        interlagos__event.style.backgroundColor = "#4e4e4e";
+        melbourne__event.style.color = "#b3b3b3";
+        melbourne__event.style.backgroundColor = "#4e4e4e";
+        jeddah__event.style.color = "#b3b3b3";
+        jeddah__event.style.backgroundColor = "#4e4e4e";
+        emirates__event.style.color = "#b3b3b3";
+        emirates__event.style.backgroundColor = "#4e4e4e";
+        bahrain__event.classList.add("active__event");
+    }
+};
+
+// execute checkClosestRace function
+checkClosestRace();
+
+// function that hides all hamburger menu icons
+const hideAllHamburgerIcons = function() { 
+    HIC__bahrain.style.display = "none";
+    HIC__imola.style.display = "none";
+    HIC__portimao.style.display = "none";
+    HIC__barcelona.style.display = "none";
+    HIC__monaco.style.display = "none";
+    HIC__baku.style.display = "none";
+    HIC__montreal.style.display = "none";
+    HIC__castellet.style.display = "none";
+    HIC__spielberg.style.display = "none";
+    HIC__silverstone.style.display = "none";
+    HIC__budapest.style.display = "none";
+    HIC__spa.style.display = "none";
+    HIC__zandvoort.style.display = "none";
+    HIC__monza.style.display = "none";
+    HIC__sochi.style.display = "none";
+    HIC__singapore.style.display = "none";
+    HIC__suzuka.style.display = "none";
+    HIC__austin.style.display = "none";
+    HIC__mexico.style.display = "none";
+    HIC__interlagos.style.display = "none";
+    HIC__melbourne.style.display = "none";
+    HIC__jeddah.style.display = "none";
+    HIC__emirates.style.display = "none";
+};
+
+// function that lets all the race events (the entire race calendar) be displayed
+const showAllEvents = function() { 
+    bahrain__event.style.display = "flex";
+    imola__event.style.display = "flex";
+    portimao__event.style.display = "flex";
+    barcelona__event.style.display = "flex";
+    monaco__event.style.display = "flex";
+    baku__event.style.display = "flex";
+    montreal__event.style.display = "flex";
+    castellet__event.style.display = "flex";
+    spielberg__event.style.display = "flex";
+    silverstone__event.style.display = "flex";
+    budapest__event.style.display = "flex";
+    spa__event.style.display = "flex";
+    zandvoort__event.style.display = "flex";
+    monza__event.style.display = "flex";
+    sochi__event.style.display = "flex";
+    singapore__event.style.display = "flex";
+    suzuka__event.style.display = "flex";
+    austin__event.style.display = "flex";
+    mexico__event.style.display = "flex";
+    interlagos__event.style.display = "flex";
+    melbourne__event.style.display = "flex";
+    jeddah__event.style.display = "flex";
+    emirates__event.style.display = "flex";
+};
+
+// function that lets all 3 data type containers (track, time and weather info) be displayed
+const allDataContainersVisible = function() { 
+    weather__location__info__container.style.display = "flex";
+    track__info__container.style.display = "flex";
+    time__info__container.style.display = "flex";
+};
+
+// function that only displays the hamburger menu icon on the actice race calendar event (by hiding all hamburger menu icons, then displaying the active event one)
+const showActiveEventHamburgerIcon = function() { 
+	if (bahrain__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
+    } else if (imola__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__imola.style.display = "flex";
+    } else if (portimao__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__portimao.style.display = "flex";
+    } else if (barcelona__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__barcelona.style.display = "flex";
+    } else if (monaco__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__monaco.style.display = "flex";
+    } else if (baku__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__baku.style.display = "flex";
+    } else if (montreal__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__montreal.style.display = "flex";
+    } else if (castellet__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__castellet.style.display = "flex";
+    } else if (spielberg__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__spielberg.style.display = "flex";
+    } else if (silverstone__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__silverstone.style.display = "flex";
+    } else if (budapest__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__budapest.style.display = "flex";
+    } else if (spa__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__spa.style.display = "flex";
+    } else if (zandvoort__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__zandvoort.style.display = "flex";
+    } else if (monza__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__monza.style.display = "flex";
+    } else if (sochi__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__sochi.style.display = "flex";
+    } else if (singapore__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__singapore.style.display = "flex";
+    } else if (suzuka__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__suzuka.style.display = "flex";
+    } else if (austin__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__austin.style.display = "flex";
+    } else if (mexico__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__mexico.style.display = "flex";
+    } else if (interlagos__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__interlagos.style.display = "flex";
+    } else if (melbourne__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__melbourne.style.display = "flex";
+    } else if (jeddah__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__jeddah.style.display = "flex";
+    } else if (emirates__event.classList.contains("active__event")) {
+        hideAllHamburgerIcons();
+        HIC__emirates.style.display = "flex";
+    } else {
+        console.log("error: no active event for showActiveEventHamburgerIcon to target");
+        return;
+    }
+};
+
+// function that hides all race calendar events
+const hideAllEvents = function() { 
+    bahrain__event.style.display = "none";
+    imola__event.style.display = "none";
+    portimao__event.style.display = "none";
+    barcelona__event.style.display = "none";
+    monaco__event.style.display = "none";
+    baku__event.style.display = "none";
+    montreal__event.style.display = "none";
+    castellet__event.style.display = "none";
+    spielberg__event.style.display = "none";
+    silverstone__event.style.display = "none";
+    budapest__event.style.display = "none";
+    spa__event.style.display = "none";
+    zandvoort__event.style.display = "none";
+    monza__event.style.display = "none";
+    sochi__event.style.display = "none";
+    singapore__event.style.display = "none";
+    suzuka__event.style.display = "none";
+    austin__event.style.display = "none";
+    mexico__event.style.display = "none";
+    interlagos__event.style.display = "none";
+    melbourne__event.style.display = "none";
+    jeddah__event.style.display = "none";
+    emirates__event.style.display = "none";
+};
+
+// function that lets only one calendar event be displayed (by hiding all calendar events, then display the active event one)
+const showActiveEventOnly = function() { 
+	if (bahrain__event.classList.contains("active__event")) {
+        hideAllEvents();
+        bahrain__event.style.display = "flex";
+    } else if (imola__event.classList.contains("active__event")) {
+        hideAllEvents();
+        imola__event.style.display = "flex";
+    } else if (portimao__event.classList.contains("active__event")) {
+        hideAllEvents();
+        portimao__event.style.display = "flex";
+    } else if (barcelona__event.classList.contains("active__event")) {
+        hideAllEvents();
+        barcelona__event.style.display = "flex";
+    } else if (monaco__event.classList.contains("active__event")) {
+        hideAllEvents();
+        monaco__event.style.display = "flex";
+    } else if (baku__event.classList.contains("active__event")) {
+        hideAllEvents();
+        baku__event.style.display = "flex";
+    } else if (montreal__event.classList.contains("active__event")) {
+        hideAllEvents();
+        montreal__event.style.display = "flex";
+    } else if (castellet__event.classList.contains("active__event")) {
+        hideAllEvents();
+        castellet__event.style.display = "flex";
+    } else if (spielberg__event.classList.contains("active__event")) {
+        hideAllEvents();
+        spielberg__event.style.display = "flex";
+    } else if (silverstone__event.classList.contains("active__event")) {
+        hideAllEvents();
+        silverstone__event.style.display = "flex";
+    } else if (budapest__event.classList.contains("active__event")) {
+        hideAllEvents();
+        budapest__event.style.display = "flex";
+    } else if (spa__event.classList.contains("active__event")) {
+        hideAllEvents();
+        spa__event.style.display = "flex";
+    } else if (zandvoort__event.classList.contains("active__event")) {
+        hideAllEvents();
+        zandvoort__event.style.display = "flex";
+    } else if (monza__event.classList.contains("active__event")) {
+        hideAllEvents();
+        monza__event.style.display = "flex";
+    } else if (sochi__event.classList.contains("active__event")) {
+        hideAllEvents();
+        sochi__event.style.display = "flex";
+    } else if (singapore__event.classList.contains("active__event")) {
+        hideAllEvents();
+        singapore__event.style.display = "flex";
+    } else if (suzuka__event.classList.contains("active__event")) {
+        hideAllEvents();
+        suzuka__event.style.display = "flex";
+    } else if (austin__event.classList.contains("active__event")) {
+        hideAllEvents();
+        austin__event.style.display = "flex";
+    } else if (mexico__event.classList.contains("active__event")) {
+        hideAllEvents();
+        mexico__event.style.display = "flex";
+    } else if (interlagos__event.classList.contains("active__event")) {
+        hideAllEvents();
+        interlagos__event.style.display = "flex";
+    } else if (melbourne__event.classList.contains("active__event")) {
+        hideAllEvents();
+        melbourne__event.style.display = "flex";
+    } else if (jeddah__event.classList.contains("active__event")) {
+        hideAllEvents();
+        jeddah__event.style.display = "flex";
+    } else if (emirates__event.classList.contains("active__event")) {
+        hideAllEvents();
+        emirates__event.style.display = "flex";
+    } else {
+        console.log("error: no active event for showActiveEventOnly to target");
+        return;
+    }
+};
+
+// function that lets only one of the track, time or weather data containers be displayed
+const displayActiveEventDataMobile = function() { 
+    if (weather__location__info__container.classList.contains("weather__data__active")) {
+        track__info__container.style.display = "none";
+        time__info__container.style.display = "none";
+        weather__location__info__container.style.display = "flex";
+    } else if (track__info__container.classList.contains("track__data__active")) {
+        time__info__container.style.display = "none";
+        weather__location__info__container.style.display = "none";
+        track__info__container.style.display = "flex";
+    } else if (time__info__container.classList.contains("schedule__data__active")) {
+        track__info__container.style.display = "none";
+        weather__location__info__container.style.display = "none";
+        time__info__container.style.display = "flex";
+    } else {
+        console.log("error: no active mobile data display classes");
+    }
+};
+
+// function that checks whether to display the whole race calendar or just a single event
+/* credits #5 (see README.md credits section) */
+const checkMainFlexDirection = function() { 
+    if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
+        hideAllHamburgerIcons();
+        showAllEvents();
+        allDataContainersVisible();
+    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === false) {
+        showActiveEventHamburgerIcon();
+        showActiveEventOnly();
+        displayActiveEventDataMobile();
+    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === true) {
+        hideAllHamburgerIcons();
+        HIC__bahrain.style.display = "flex";
+        showAllEvents();
+        displayActiveEventDataMobile();
+    }  else {
+        console.log("error in checkMainFlexDirection function");
+    }
+};
+
+// execute function to set initial hamburger menu icons and displayed event data
+checkMainFlexDirection();
+
+// function that calculates the days, hours and minutes until the race start of the active event based on the race start time data, then places the results into the countdown timer container text contents
+/* credits #7 (see README.md credits section) */
+const calculateCountdown = function (raceStart, raceLocation) {
+
+    // Get today's date and time
+    let current__date__time = new Date();
+
+    // calculate time between now and the race start
+    let distance = raceStart - current__date__time;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    /* credits #5 (see README.md credits section) */
+    if (window.getComputedStyle(website__name, null).getPropertyValue("color") === "rgb(255, 201, 40)") {
+        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
+        race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days}d -- ${hours}h -- ${minutes}m`;
+    } else {
+        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
+        race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
+    }
+
+    if (distance < 0) {
+        race__countdown__timer.textContent = "Countdown has expired.";
+    }
+};
+
+// function that executes the calculateCountdown function with parameters based on the active race event
+const setInitialCountdown = function() {
+    if (bahrain__event.classList.contains("active__event")) {
+        calculateCountdown(bahrain__race__start, "Bahrain");
+    } else if (imola__event.classList.contains("active__event")) {
+        calculateCountdown(imola__race__start, "Imola");
+    } else if (portimao__event.classList.contains("active__event")) {
+        calculateCountdown(portimao__race__start, "Portimão");
+    } else if (barcelona__event.classList.contains("active__event")) {
+        calculateCountdown(barcelona__race__start, "Barcelona");
+    } else if (monaco__event.classList.contains("active__event")) {
+        calculateCountdown(monaco__race__start, "Monaco");
+    } else if (baku__event.classList.contains("active__event")) {
+        calculateCountdown(baku__race__start, "Baku");
+    } else if (montreal__event.classList.contains("active__event")) {
+        calculateCountdown(montreal__race__start, "Montreal");
+    } else if (castellet__event.classList.contains("active__event")) {
+        calculateCountdown(castellet__race__start, "Castellet");
+    } else if (spielberg__event.classList.contains("active__event")) {
+        calculateCountdown(spielberg__race__start, "Spielberg");
+    } else if (silverstone__event.classList.contains("active__event")) {
+        calculateCountdown(silverstone__race__start, "Silverstone");
+    } else if (budapest__event.classList.contains("active__event")) {
+        calculateCountdown(budapest__race__start, "Budapest");
+    } else if (spa__event.classList.contains("active__event")) {
+        calculateCountdown(spa__race__start, "Spa");
+    } else if (zandvoort__event.classList.contains("active__event")) {
+        calculateCountdown(zandvoort__race__start, "Zandvoort");
+    } else if (monza__event.classList.contains("active__event")) {
+        calculateCountdown(monza__race__start, "Monza");
+    } else if (sochi__event.classList.contains("active__event")) {
+        calculateCountdown(sochi__race__start, "Sochi");
+    } else if (singapore__event.classList.contains("active__event")) {
+        calculateCountdown(singapore__race__start, "Singapore");
+    } else if (suzuka__event.classList.contains("active__event")) {
+        calculateCountdown(suzuka__race__start, "Suzuka");
+    } else if (austin__event.classList.contains("active__event")) {
+        calculateCountdown(austin__race__start, "Austin");
+    } else if (mexico__event.classList.contains("active__event")) {
+        calculateCountdown(mexico__race__start, "Mexico");
+    } else if (interlagos__event.classList.contains("active__event")) {
+        calculateCountdown(interlagos__race__start, "Interlagos");
+    } else if (melbourne__event.classList.contains("active__event")) {
+        calculateCountdown(melbourne__race__start, "Melbourne");
+    } else if (jeddah__event.classList.contains("active__event")) {
+        calculateCountdown(jeddah__race__start, "Jeddah");
+    } else if (emirates__event.classList.contains("active__event")) {
+        calculateCountdown(UAE__race__start, "Abu Dhabi");
+    } else {
+        console.log("changeCountdownTimer is broken");
+        race__countdown__timer.textContent = `Error: could not start a countdown timer.`;
+    }
+};
+
+// function that hides all the track info data containers
+const hideAllTrackInfo = function() {
+    track__info__template.style.display = "none";
+    track__info__bahrain.style.display = "none";
+    track__info__imola.style.display = "none";
+    track__info__portimao.style.display = "none";
+    track__info__barcelona.style.display = "none";
+    track__info__monaco.style.display = "none";
+    track__info__baku.style.display = "none";
+    track__info__montreal.style.display = "none";
+    track__info__castellet.style.display = "none";
+    track__info__spielberg.style.display = "none";
+    track__info__silverstone.style.display = "none";
+    track__info__budapest.style.display = "none";
+    track__info__spa.style.display = "none";
+    track__info__zandvoort.style.display = "none";
+    track__info__monza.style.display = "none";
+    track__info__sochi.style.display = "none";
+    track__info__singapore.style.display = "none";
+    track__info__suzuka.style.display = "none";
+    track__info__austin.style.display = "none";
+    track__info__mexico.style.display = "none";
+    track__info__interlagos.style.display = "none";
+    track__info__melbourne.style.display = "none";
+    track__info__jeddah.style.display = "none";
+    track__info__emirates.style.display = "none";
+};
+
+// function that sets the track session times text contents in the time schedule container to the most common ones
 const setCommonSessionTimes = function() {
     time__P1.textContent = "11:30 - 12:30";
     time__P2.textContent = "15:00 - 16:00";
@@ -257,7 +1240,97 @@ const setCommonSessionTimes = function() {
     time__R.textContent = "15:00 - 17:00";
 };
 
-// function that displays the active type of event data
+// function that allows you to change a date to a different prefered date format
+/* credits #4 (see README.md credits section) */
+const DateFormatter = {
+    monthNames: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    dayNames: [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    formatDate: function (date, format) {
+      var self = this;
+      format = self.getProperDigits(format, /d+/gi, date.getDate());
+      format = self.getProperDigits(format, /M+/g, date.getMonth() + 1);
+      format = format.replace(/y+/gi, function (y) {
+        var len = y.length;
+        var year = date.getFullYear();
+        if (len == 2) return (year + "").slice(-2);
+        else if (len == 4) return year;
+        return y;
+      });
+      format = self.getProperDigits(format, /H+/g, date.getHours());
+      format = self.getProperDigits(
+        format,
+        /h+/g,
+        self.getHours12(date.getHours())
+      );
+      format = self.getProperDigits(format, /m+/g, date.getMinutes());
+      format = self.getProperDigits(format, /s+/gi, date.getSeconds());
+      format = format.replace(/a/gi, function (a) {
+        var amPm = self.getAmPm(date.getHours());
+        if (a === "A") return amPm.toUpperCase();
+        return amPm;
+      });
+      format = self.getFullOr3Letters(
+        format,
+        /d+/gi,
+        self.dayNames,
+        date.getDay()
+      );
+      format = self.getFullOr3Letters(
+        format,
+        /M+/g,
+        self.monthNames,
+        date.getMonth()
+      );
+      return format;
+    },
+    getProperDigits: function (format, regex, value) {
+      return format.replace(regex, function (m) {
+        var length = m.length;
+        if (length == 1) return value;
+        else if (length == 2) return ("0" + value).slice(-2);
+        return m;
+      });
+    },
+    getHours12: function (hours) {
+      // https://stackoverflow.com/questions/10556879/changing-the-1-24-hour-to-1-12-hour-for-the-gethours-method
+      return (hours + 24) % 12 || 12;
+    },
+    getAmPm: function (hours) {
+      // https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
+      return hours >= 12 ? "pm" : "am";
+    },
+    getFullOr3Letters: function (format, regex, nameArray, value) {
+      return format.replace(regex, function (s) {
+        var len = s.length;
+        if (len == 3) return nameArray[value].substr(0, 3);
+        else if (len == 4) return nameArray[value];
+        return s;
+      });
+    },
+  };
+
+// function that executes other functions and if-statements that display track, time and weather data based on the active race event
 const displayActiveEventData = function() { 
     // get data from local storage and convert back to JSON
     // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can reduce the amount of API calls to stay under the limit
@@ -1811,643 +2884,37 @@ const displayActiveEventData = function() {
     }
 };
 
-// hide all track info
-const hideAllTrackInfo = function() {
-    track__info__template.style.display = "none";
-    track__info__bahrain.style.display = "none";
-    track__info__imola.style.display = "none";
-    track__info__portimao.style.display = "none";
-    track__info__barcelona.style.display = "none";
-    track__info__monaco.style.display = "none";
-    track__info__baku.style.display = "none";
-    track__info__montreal.style.display = "none";
-    track__info__castellet.style.display = "none";
-    track__info__spielberg.style.display = "none";
-    track__info__silverstone.style.display = "none";
-    track__info__budapest.style.display = "none";
-    track__info__spa.style.display = "none";
-    track__info__zandvoort.style.display = "none";
-    track__info__monza.style.display = "none";
-    track__info__sochi.style.display = "none";
-    track__info__singapore.style.display = "none";
-    track__info__suzuka.style.display = "none";
-    track__info__austin.style.display = "none";
-    track__info__mexico.style.display = "none";
-    track__info__interlagos.style.display = "none";
-    track__info__melbourne.style.display = "none";
-    track__info__jeddah.style.display = "none";
-    track__info__emirates.style.display = "none";
-};
+// function that fetches weather data from an API, then puts the data in localStorage, then executes the displayActiveEventData function
+const getWeatherData = async function() {
+    /* credits #1 (see README.md credits section) */
+    try {
+    /* credits #2 (see README.md credits section) */
+    const response = await fetch(weather__API);
+    const weatherData = await response.json();
+    
+    // store weather data in local storage converted to a string
+    /* credits #3 (see README.md credits section) */
+    localStorage.setItem("weatherData", JSON.stringify(weatherData));
+    console.log("added weatherdata to local storage");
 
-// check the closest race to give active class and grey out past races
-const checkClosestRace = function() {
-    if (days__until__bahrain > -1) {
-        bahrain__event.classList.add("active__event");
-    } else if (days__until__imola > -1) {
-        imola__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__portimao > -1) {
-        portimao__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__barcelona > -1) {
-        barcelona__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__monaco > -1) {
-        monaco__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__baku > -1) {
-        baku__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__montreal > -1) {
-        montreal__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__castellet > -1) {
-        castellet__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__spielberg > -1) {
-        spielberg__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__silverstone > -1) {
-        silverstone__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__budapest > -1) {
-        budapest__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__spa > -1) {
-        spa__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__zandvoort > -1) {
-        zandvoort__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__monza > -1) {
-        monza__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__sochi > -1) {
-        sochi__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__singapore > -1) {
-        singapore__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__suzuka > -1) {
-        suzuka__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__austin > -1) {
-        austin__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__mexico > -1) {
-        mexico__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-        austin__event.style.color = "#b3b3b3";
-        austin__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__interlagos > -1) {
-        interlagos__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-        austin__event.style.color = "#b3b3b3";
-        austin__event.style.backgroundColor = "#4e4e4e";
-        mexico__event.style.color = "#b3b3b3";
-        mexico__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__melbourne > -1) {
-        melbourne__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-        austin__event.style.color = "#b3b3b3";
-        austin__event.style.backgroundColor = "#4e4e4e";
-        mexico__event.style.color = "#b3b3b3";
-        mexico__event.style.backgroundColor = "#4e4e4e";
-        interlagos__event.style.color = "#b3b3b3";
-        interlagos__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__jeddah > -1) {
-        jeddah__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-        austin__event.style.color = "#b3b3b3";
-        austin__event.style.backgroundColor = "#4e4e4e";
-        mexico__event.style.color = "#b3b3b3";
-        mexico__event.style.backgroundColor = "#4e4e4e";
-        interlagos__event.style.color = "#b3b3b3";
-        interlagos__event.style.backgroundColor = "#4e4e4e";
-        melbourne__event.style.color = "#b3b3b3";
-        melbourne__event.style.backgroundColor = "#4e4e4e";
-    } else if (days__until__UAE > -1) {
-        emirates__event.classList.add("active__event");
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-        austin__event.style.color = "#b3b3b3";
-        austin__event.style.backgroundColor = "#4e4e4e";
-        mexico__event.style.color = "#b3b3b3";
-        mexico__event.style.backgroundColor = "#4e4e4e";
-        interlagos__event.style.color = "#b3b3b3";
-        interlagos__event.style.backgroundColor = "#4e4e4e";
-        melbourne__event.style.color = "#b3b3b3";
-        melbourne__event.style.backgroundColor = "#4e4e4e";
-        jeddah__event.style.color = "#b3b3b3";
-        jeddah__event.style.backgroundColor = "#4e4e4e";
-    } else {
-        bahrain__event.style.color = "#b3b3b3";
-        bahrain__event.style.backgroundColor = "#4e4e4e";
-        imola__event.style.color = "#b3b3b3";
-        imola__event.style.backgroundColor = "#4e4e4e";
-        portimao__event.style.color = "#b3b3b3";
-        portimao__event.style.backgroundColor = "#4e4e4e";
-        barcelona__event.style.color = "#b3b3b3";
-        barcelona__event.style.backgroundColor = "#4e4e4e";
-        monaco__event.style.color = "#b3b3b3";
-        monaco__event.style.backgroundColor = "#4e4e4e";
-        baku__event.style.color = "#b3b3b3";
-        baku__event.style.backgroundColor = "#4e4e4e";
-        montreal__event.style.color = "#b3b3b3";
-        montreal__event.style.backgroundColor = "#4e4e4e";
-        castellet__event.style.color = "#b3b3b3";
-        castellet__event.style.backgroundColor = "#4e4e4e";
-        spielberg__event.style.color = "#b3b3b3";
-        spielberg__event.style.backgroundColor = "#4e4e4e";
-        silverstone__event.style.color = "#b3b3b3";
-        silverstone__event.style.backgroundColor = "#4e4e4e";
-        budapest__event.style.color = "#b3b3b3";
-        budapest__event.style.backgroundColor = "#4e4e4e";
-        spa__event.style.color = "#b3b3b3";
-        spa__event.style.backgroundColor = "#4e4e4e";
-        zandvoort__event.style.color = "#b3b3b3";
-        zandvoort__event.style.backgroundColor = "#4e4e4e";
-        monza__event.style.color = "#b3b3b3";
-        monza__event.style.backgroundColor = "#4e4e4e";
-        sochi__event.style.color = "#b3b3b3";
-        sochi__event.style.backgroundColor = "#4e4e4e";
-        singapore__event.style.color = "#b3b3b3";
-        singapore__event.style.backgroundColor = "#4e4e4e";
-        suzuka__event.style.color = "#b3b3b3";
-        suzuka__event.style.backgroundColor = "#4e4e4e";
-        austin__event.style.color = "#b3b3b3";
-        austin__event.style.backgroundColor = "#4e4e4e";
-        mexico__event.style.color = "#b3b3b3";
-        mexico__event.style.backgroundColor = "#4e4e4e";
-        interlagos__event.style.color = "#b3b3b3";
-        interlagos__event.style.backgroundColor = "#4e4e4e";
-        melbourne__event.style.color = "#b3b3b3";
-        melbourne__event.style.backgroundColor = "#4e4e4e";
-        jeddah__event.style.color = "#b3b3b3";
-        jeddah__event.style.backgroundColor = "#4e4e4e";
-        emirates__event.style.color = "#b3b3b3";
-        emirates__event.style.backgroundColor = "#4e4e4e";
-        bahrain__event.classList.add("active__event");
+    displayActiveEventData();
+
+    } catch(err) { 
+        alert(err);
     }
 };
 
-// execute function to check for the closest race and give an active class based on that and grey out past races
-checkClosestRace();
+// execute function to fetch and store the API weather data, then executes the displayActiveEventData function to display track, time and weather data based on the active race event
+getWeatherData();
 
-// function that removes the active class from all event elements
+// checks for changes in window size, then executes the checkMainFlexDirection and setInitialCountdown functions
+/* credits #6 (see README.md credits section) */
+window.onresize = function(){
+    checkMainFlexDirection();
+    setInitialCountdown();
+};
+
+// function that removes the active class from all race calendar event elements
 const removeActiveEventClass = function() { 
     bahrain__event.classList.remove("active__event");
     imola__event.classList.remove("active__event");
@@ -2474,28 +2941,23 @@ const removeActiveEventClass = function() {
     emirates__event.classList.remove("active__event");
 };
 
-// event listener that performs functions when the page loads
-window.addEventListener("load", () => {
-    getWeatherData();
-});
-
-// function that checks the active race calendar event and displays its data
+// function that checks what the currently active race calendar event is, then displays its data
 /* credits #5 (see README.md credits section) */
 const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
     if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
         console.log(`${raceLocation} already is the active event`);
         return;
-    } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
+    } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === false) {
         hideAllHamburgerIcons();
         HIC__bahrain.style.display = "flex";
         showAllEvents();
-        mobileCalendarExtended = true;
-    } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        mobileCalendarExpanded = true;
+    } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === true) {
         hideAllHamburgerIcons();
         eventHIC.style.display = "flex";
         showActiveEventOnly();
-        mobileCalendarExtended = false;
-    } else if (!raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
+        mobileCalendarExpanded = false;
+    } else if (!raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === true) {
         removeActiveEventClass();
         console.log("removed all active event classses");
         raceEvent.classList.add("active__event");
@@ -2504,7 +2966,7 @@ const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
         eventHIC.style.display = "flex";
         displayActiveEventData();
         showActiveEventOnly();
-        mobileCalendarExtended = false;
+        mobileCalendarExpanded = false;
     } else {
         removeActiveEventClass();
         console.log("removed all active event classses");
@@ -2513,6 +2975,30 @@ const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
         displayActiveEventData();
     }
 };
+
+// function that switches between temperature units ( Celcius || Fahrenheit )
+const switchTempUnits = function() { 
+    if (tempUnitsCelsius === true) {
+        // change to Fahrenheit
+        tempUnitsCelsius = false;
+        displayActiveEventData();
+    } else if (tempUnitsCelsius === false) {
+        // change to Celcius
+        tempUnitsCelsius = true;
+        displayActiveEventData();
+    } else {
+        return;
+    }
+};
+
+// function that removes the active button ID from the weather, track and time mobile dashboard buttons
+const removeActiveButton = function() { 
+    weather__button.removeAttribute('id');
+    track__button.removeAttribute('id');
+    schedule__button.removeAttribute('id');
+};
+
+/* ---------- calendar elements event listeners ---------- */
 
 // event listener that makes bahrain the active event and displays its data on click
 bahrain__event.addEventListener("click", function(){
@@ -2629,236 +3115,9 @@ emirates__event.addEventListener("click", function(){
     raceCalendarFunctionality(emirates__event, "emirates", HIC__emirates);
 });
 
-// function that allows you to change a date to the prefered date format
-/* credits #4 (see README.md credits section) */
-const DateFormatter = {
-  monthNames: [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ],
-  dayNames: [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ],
-  formatDate: function (date, format) {
-    var self = this;
-    format = self.getProperDigits(format, /d+/gi, date.getDate());
-    format = self.getProperDigits(format, /M+/g, date.getMonth() + 1);
-    format = format.replace(/y+/gi, function (y) {
-      var len = y.length;
-      var year = date.getFullYear();
-      if (len == 2) return (year + "").slice(-2);
-      else if (len == 4) return year;
-      return y;
-    });
-    format = self.getProperDigits(format, /H+/g, date.getHours());
-    format = self.getProperDigits(
-      format,
-      /h+/g,
-      self.getHours12(date.getHours())
-    );
-    format = self.getProperDigits(format, /m+/g, date.getMinutes());
-    format = self.getProperDigits(format, /s+/gi, date.getSeconds());
-    format = format.replace(/a/gi, function (a) {
-      var amPm = self.getAmPm(date.getHours());
-      if (a === "A") return amPm.toUpperCase();
-      return amPm;
-    });
-    format = self.getFullOr3Letters(
-      format,
-      /d+/gi,
-      self.dayNames,
-      date.getDay()
-    );
-    format = self.getFullOr3Letters(
-      format,
-      /M+/g,
-      self.monthNames,
-      date.getMonth()
-    );
-    return format;
-  },
-  getProperDigits: function (format, regex, value) {
-    return format.replace(regex, function (m) {
-      var length = m.length;
-      if (length == 1) return value;
-      else if (length == 2) return ("0" + value).slice(-2);
-      return m;
-    });
-  },
-  getHours12: function (hours) {
-    // https://stackoverflow.com/questions/10556879/changing-the-1-24-hour-to-1-12-hour-for-the-gethours-method
-    return (hours + 24) % 12 || 12;
-  },
-  getAmPm: function (hours) {
-    // https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
-    return hours >= 12 ? "pm" : "am";
-  },
-  getFullOr3Letters: function (format, regex, nameArray, value) {
-    return format.replace(regex, function (s) {
-      var len = s.length;
-      if (len == 3) return nameArray[value].substr(0, 3);
-      else if (len == 4) return nameArray[value];
-      return s;
-    });
-  },
-};
+/* ---------- mobile dashboard buttons event listeners ---------- */
 
-// function that switches between temperature units Celcius and Fahrenheit
-const switchTempUnits = function() { 
-    if (tempUnitsCelsius === true) {
-        // change to Fahrenheit
-        tempUnitsCelsius = false;
-        displayActiveEventData();
-    } else if (tempUnitsCelsius === false) {
-        // change to Celcius
-        tempUnitsCelsius = true;
-        displayActiveEventData();
-    } else {
-        return;
-    }
-};
-
-// function that removes the active button ID
-const removeActiveButton = function() { 
-    weather__button.removeAttribute('id');
-    track__button.removeAttribute('id');
-    schedule__button.removeAttribute('id');
-};
-
-// function that hides all events
-const hideAllEvents = function() { 
-    bahrain__event.style.display = "none";
-    imola__event.style.display = "none";
-    portimao__event.style.display = "none";
-    barcelona__event.style.display = "none";
-    monaco__event.style.display = "none";
-    baku__event.style.display = "none";
-    montreal__event.style.display = "none";
-    castellet__event.style.display = "none";
-    spielberg__event.style.display = "none";
-    silverstone__event.style.display = "none";
-    budapest__event.style.display = "none";
-    spa__event.style.display = "none";
-    zandvoort__event.style.display = "none";
-    monza__event.style.display = "none";
-    sochi__event.style.display = "none";
-    singapore__event.style.display = "none";
-    suzuka__event.style.display = "none";
-    austin__event.style.display = "none";
-    mexico__event.style.display = "none";
-    interlagos__event.style.display = "none";
-    melbourne__event.style.display = "none";
-    jeddah__event.style.display = "none";
-    emirates__event.style.display = "none";
-};
-
-// function that lets all the events be displayed
-const showAllEvents = function() { 
-    bahrain__event.style.display = "flex";
-    imola__event.style.display = "flex";
-    portimao__event.style.display = "flex";
-    barcelona__event.style.display = "flex";
-    monaco__event.style.display = "flex";
-    baku__event.style.display = "flex";
-    montreal__event.style.display = "flex";
-    castellet__event.style.display = "flex";
-    spielberg__event.style.display = "flex";
-    silverstone__event.style.display = "flex";
-    budapest__event.style.display = "flex";
-    spa__event.style.display = "flex";
-    zandvoort__event.style.display = "flex";
-    monza__event.style.display = "flex";
-    sochi__event.style.display = "flex";
-    singapore__event.style.display = "flex";
-    suzuka__event.style.display = "flex";
-    austin__event.style.display = "flex";
-    mexico__event.style.display = "flex";
-    interlagos__event.style.display = "flex";
-    melbourne__event.style.display = "flex";
-    jeddah__event.style.display = "flex";
-    emirates__event.style.display = "flex";
-};
-
-// function that hides all hamburger menu icons
-const hideAllHamburgerIcons = function() { 
-    HIC__bahrain.style.display = "none";
-    HIC__imola.style.display = "none";
-    HIC__portimao.style.display = "none";
-    HIC__barcelona.style.display = "none";
-    HIC__monaco.style.display = "none";
-    HIC__baku.style.display = "none";
-    HIC__montreal.style.display = "none";
-    HIC__castellet.style.display = "none";
-    HIC__spielberg.style.display = "none";
-    HIC__silverstone.style.display = "none";
-    HIC__budapest.style.display = "none";
-    HIC__spa.style.display = "none";
-    HIC__zandvoort.style.display = "none";
-    HIC__monza.style.display = "none";
-    HIC__sochi.style.display = "none";
-    HIC__singapore.style.display = "none";
-    HIC__suzuka.style.display = "none";
-    HIC__austin.style.display = "none";
-    HIC__mexico.style.display = "none";
-    HIC__interlagos.style.display = "none";
-    HIC__melbourne.style.display = "none";
-    HIC__jeddah.style.display = "none";
-    HIC__emirates.style.display = "none";
-};
-
-// event listeners on the elements that contain weather information that switch temperature units on click
-weather__1.addEventListener("click", function(){
-    switchTempUnits();
-});
-weather__2.addEventListener("click", function(){
-    switchTempUnits();
-});
-weather__3.addEventListener("click", function(){
-    switchTempUnits();
-});
-weather__4.addEventListener("click", function(){
-    switchTempUnits();
-});
-temp__button.addEventListener("click", function(){
-    switchTempUnits();
-});
-
-// function to select what data to display at smaller screen sizes
-const displayActiveEventDataMobile = function() { 
-    if (weather__location__info__container.classList.contains("weather__data__active")) {
-        track__info__container.style.display = "none";
-        time__info__container.style.display = "none";
-        weather__location__info__container.style.display = "flex";
-    } else if (track__info__container.classList.contains("track__data__active")) {
-        time__info__container.style.display = "none";
-        weather__location__info__container.style.display = "none";
-        track__info__container.style.display = "flex";
-    } else if (time__info__container.classList.contains("schedule__data__active")) {
-        track__info__container.style.display = "none";
-        weather__location__info__container.style.display = "none";
-        time__info__container.style.display = "flex";
-    } else {
-        console.log("error: no active mobile data display classes");
-    }
-};
-
-// event listeners for the dashboard buttons that switch display data on click
+// event listener on the mobile button dashboard's weather button, that displays only the active event weather data on click
 weather__button.addEventListener("click", function(){
     if (weather__location__info__container.classList.contains("weather__data__active")) {
         console.log("weather location info container already has weather__data__active class");
@@ -2874,6 +3133,8 @@ weather__button.addEventListener("click", function(){
         displayActiveEventDataMobile();
     }
 });
+
+// event listener on the mobile button dashboard's track button, that displays only the active event track data on click
 track__button.addEventListener("click", function(){
     if (track__info__container.classList.contains("track__data__active")) {
         console.log("track info container already has track__data__active class");
@@ -2889,6 +3150,8 @@ track__button.addEventListener("click", function(){
         displayActiveEventDataMobile();
     }
 });
+
+// event listener on the mobile button dashboard's schedule button, that displays only the active event time data on click
 schedule__button.addEventListener("click", function(){
     if (time__info__container.classList.contains("schedule__data__active")) {
         console.log("time info container already has schedule__data__active class");
@@ -2905,276 +3168,21 @@ schedule__button.addEventListener("click", function(){
     }
 });
 
-// function that only lets the active event be displayed
-const showActiveEventOnly = function() { 
-	if (bahrain__event.classList.contains("active__event")) {
-        hideAllEvents();
-        bahrain__event.style.display = "flex";
-    } else if (imola__event.classList.contains("active__event")) {
-        hideAllEvents();
-        imola__event.style.display = "flex";
-    } else if (portimao__event.classList.contains("active__event")) {
-        hideAllEvents();
-        portimao__event.style.display = "flex";
-    } else if (barcelona__event.classList.contains("active__event")) {
-        hideAllEvents();
-        barcelona__event.style.display = "flex";
-    } else if (monaco__event.classList.contains("active__event")) {
-        hideAllEvents();
-        monaco__event.style.display = "flex";
-    } else if (baku__event.classList.contains("active__event")) {
-        hideAllEvents();
-        baku__event.style.display = "flex";
-    } else if (montreal__event.classList.contains("active__event")) {
-        hideAllEvents();
-        montreal__event.style.display = "flex";
-    } else if (castellet__event.classList.contains("active__event")) {
-        hideAllEvents();
-        castellet__event.style.display = "flex";
-    } else if (spielberg__event.classList.contains("active__event")) {
-        hideAllEvents();
-        spielberg__event.style.display = "flex";
-    } else if (silverstone__event.classList.contains("active__event")) {
-        hideAllEvents();
-        silverstone__event.style.display = "flex";
-    } else if (budapest__event.classList.contains("active__event")) {
-        hideAllEvents();
-        budapest__event.style.display = "flex";
-    } else if (spa__event.classList.contains("active__event")) {
-        hideAllEvents();
-        spa__event.style.display = "flex";
-    } else if (zandvoort__event.classList.contains("active__event")) {
-        hideAllEvents();
-        zandvoort__event.style.display = "flex";
-    } else if (monza__event.classList.contains("active__event")) {
-        hideAllEvents();
-        monza__event.style.display = "flex";
-    } else if (sochi__event.classList.contains("active__event")) {
-        hideAllEvents();
-        sochi__event.style.display = "flex";
-    } else if (singapore__event.classList.contains("active__event")) {
-        hideAllEvents();
-        singapore__event.style.display = "flex";
-    } else if (suzuka__event.classList.contains("active__event")) {
-        hideAllEvents();
-        suzuka__event.style.display = "flex";
-    } else if (austin__event.classList.contains("active__event")) {
-        hideAllEvents();
-        austin__event.style.display = "flex";
-    } else if (mexico__event.classList.contains("active__event")) {
-        hideAllEvents();
-        mexico__event.style.display = "flex";
-    } else if (interlagos__event.classList.contains("active__event")) {
-        hideAllEvents();
-        interlagos__event.style.display = "flex";
-    } else if (melbourne__event.classList.contains("active__event")) {
-        hideAllEvents();
-        melbourne__event.style.display = "flex";
-    } else if (jeddah__event.classList.contains("active__event")) {
-        hideAllEvents();
-        jeddah__event.style.display = "flex";
-    } else if (emirates__event.classList.contains("active__event")) {
-        hideAllEvents();
-        emirates__event.style.display = "flex";
-    } else {
-        console.log("error: no active event for showActiveEventOnly to target");
-        return;
-    }
-};
+/* ---------- weather container elements event listeners ---------- */
 
-// function that only displays the hamburger menu icon on the actice event
-const showActiveEventHamburgerIcon = function() { 
-	if (bahrain__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-    } else if (imola__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__imola.style.display = "flex";
-    } else if (portimao__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__portimao.style.display = "flex";
-    } else if (barcelona__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__barcelona.style.display = "flex";
-    } else if (monaco__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__monaco.style.display = "flex";
-    } else if (baku__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__baku.style.display = "flex";
-    } else if (montreal__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__montreal.style.display = "flex";
-    } else if (castellet__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__castellet.style.display = "flex";
-    } else if (spielberg__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__spielberg.style.display = "flex";
-    } else if (silverstone__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__silverstone.style.display = "flex";
-    } else if (budapest__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__budapest.style.display = "flex";
-    } else if (spa__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__spa.style.display = "flex";
-    } else if (zandvoort__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__zandvoort.style.display = "flex";
-    } else if (monza__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__monza.style.display = "flex";
-    } else if (sochi__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__sochi.style.display = "flex";
-    } else if (singapore__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__singapore.style.display = "flex";
-    } else if (suzuka__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__suzuka.style.display = "flex";
-    } else if (austin__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__austin.style.display = "flex";
-    } else if (mexico__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__mexico.style.display = "flex";
-    } else if (interlagos__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__interlagos.style.display = "flex";
-    } else if (melbourne__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__melbourne.style.display = "flex";
-    } else if (jeddah__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__jeddah.style.display = "flex";
-    } else if (emirates__event.classList.contains("active__event")) {
-        hideAllHamburgerIcons();
-        HIC__emirates.style.display = "flex";
-    } else {
-        console.log("error: no active event for showActiveEventHamburgerIcon to target");
-        return;
-    }
-};
-
-// function that gives track info container & time info container & weather location info container their visibility back
-const allDataContainersVisible = function() { 
-    weather__location__info__container.style.display = "flex";
-    track__info__container.style.display = "flex";
-    time__info__container.style.display = "flex";
-};
-
-// function that checks whether to display the whole race calendar or just a single event
-/* credits #5 (see README.md credits section) */
-const checkMainFlexDirection = function() { 
-    if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        hideAllHamburgerIcons();
-        showAllEvents();
-        allDataContainersVisible();
-    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === false) {
-        showActiveEventHamburgerIcon();
-        showActiveEventOnly();
-        displayActiveEventDataMobile();
-    } else if (window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExtended === true) {
-        hideAllHamburgerIcons();
-        HIC__bahrain.style.display = "flex";
-        showAllEvents();
-        displayActiveEventDataMobile();
-    }  else {
-        console.log("error in checkMainFlexDirection function");
-    }
-};
-
-// execute function to set initial hamburger menu icons and displayed event data
-checkMainFlexDirection();
-
-// checks for changes in window size and then executes the checkMainFlexDirection and countdown functions
-/* credits #6 (see README.md credits section) */
-window.onresize = function(){
-    checkMainFlexDirection();
-    setInitialCountdown();
-};
-
-// functions that calculates the days, hours and minutes based on the race start time data and places the result to the countdown timer container text content
-/* credits #7 (see README.md credits section) */
-const calculateCountdown = function (raceStart, raceLocation) {
-
-    // Get today's date and time
-    let current__date__time = new Date();
-
-    // calculate time between now and the race start
-    let distance = raceStart - current__date__time;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-    /* credits #5 (see README.md credits section) */
-    if (window.getComputedStyle(website__name, null).getPropertyValue("color") === "rgb(255, 201, 40)") {
-        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
-        race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days}d -- ${hours}h -- ${minutes}m`;
-    } else {
-        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
-        race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
-    }
-
-    if (distance < 0) {
-        race__countdown__timer.textContent = "Countdown has expired.";
-    }
-};
-
-// function that sets the initial text content of the countdown timer element without delay
-const setInitialCountdown = function() {
-    if (bahrain__event.classList.contains("active__event")) {
-        calculateCountdown(bahrain__race__start, "Bahrain");
-    } else if (imola__event.classList.contains("active__event")) {
-        calculateCountdown(imola__race__start, "Imola");
-    } else if (portimao__event.classList.contains("active__event")) {
-        calculateCountdown(portimao__race__start, "Portimão");
-    } else if (barcelona__event.classList.contains("active__event")) {
-        calculateCountdown(barcelona__race__start, "Barcelona");
-    } else if (monaco__event.classList.contains("active__event")) {
-        calculateCountdown(monaco__race__start, "Monaco");
-    } else if (baku__event.classList.contains("active__event")) {
-        calculateCountdown(baku__race__start, "Baku");
-    } else if (montreal__event.classList.contains("active__event")) {
-        calculateCountdown(montreal__race__start, "Montreal");
-    } else if (castellet__event.classList.contains("active__event")) {
-        calculateCountdown(castellet__race__start, "Castellet");
-    } else if (spielberg__event.classList.contains("active__event")) {
-        calculateCountdown(spielberg__race__start, "Spielberg");
-    } else if (silverstone__event.classList.contains("active__event")) {
-        calculateCountdown(silverstone__race__start, "Silverstone");
-    } else if (budapest__event.classList.contains("active__event")) {
-        calculateCountdown(budapest__race__start, "Budapest");
-    } else if (spa__event.classList.contains("active__event")) {
-        calculateCountdown(spa__race__start, "Spa");
-    } else if (zandvoort__event.classList.contains("active__event")) {
-        calculateCountdown(zandvoort__race__start, "Zandvoort");
-    } else if (monza__event.classList.contains("active__event")) {
-        calculateCountdown(monza__race__start, "Monza");
-    } else if (sochi__event.classList.contains("active__event")) {
-        calculateCountdown(sochi__race__start, "Sochi");
-    } else if (singapore__event.classList.contains("active__event")) {
-        calculateCountdown(singapore__race__start, "Singapore");
-    } else if (suzuka__event.classList.contains("active__event")) {
-        calculateCountdown(suzuka__race__start, "Suzuka");
-    } else if (austin__event.classList.contains("active__event")) {
-        calculateCountdown(austin__race__start, "Austin");
-    } else if (mexico__event.classList.contains("active__event")) {
-        calculateCountdown(mexico__race__start, "Mexico");
-    } else if (interlagos__event.classList.contains("active__event")) {
-        calculateCountdown(interlagos__race__start, "Interlagos");
-    } else if (melbourne__event.classList.contains("active__event")) {
-        calculateCountdown(melbourne__race__start, "Melbourne");
-    } else if (jeddah__event.classList.contains("active__event")) {
-        calculateCountdown(jeddah__race__start, "Jeddah");
-    } else if (emirates__event.classList.contains("active__event")) {
-        calculateCountdown(UAE__race__start, "Abu Dhabi");
-    } else {
-        console.log("changeCountdownTimer is broken");
-        race__countdown__timer.textContent = `Error: could not start a countdown timer.`;
-    }
-};
+// switches the displayed temperature units on click ( Celcius || Farenheit )
+weather__1.addEventListener("click", function(){
+    switchTempUnits();
+});
+weather__2.addEventListener("click", function(){
+    switchTempUnits();
+});
+weather__3.addEventListener("click", function(){
+    switchTempUnits();
+});
+weather__4.addEventListener("click", function(){
+    switchTempUnits();
+});
+temp__button.addEventListener("click", function(){
+    switchTempUnits();
+});
