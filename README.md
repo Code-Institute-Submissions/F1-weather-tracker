@@ -101,6 +101,14 @@ This website uses a single page layout, so everything is either visible already 
 
 Users can click on a race calendar event to display information relevant to that event. Depending on their device, users could see through visible indicators like changes of colour and/or changing mouse pointers whether something is clickable. Users can also see which events have already taken place through colour indications. Users with touchscreens can swipe up and down to scroll through the page, and they can (double)tap to select race event and browse through the information displayed on the website. If a weather radar is implemented users should be able to pause and play the footage with a single tap or click. A button might be implemented that lets users switch between Celsius and Fahrenheit with a single tap or click. No audio will be used in this website.
 
+#### Function call structure
+
+After I was done with most of the coding, I made flowcharts of the function call chains. I did this for both the desktop and mobile website page load. It gave me a simple overview of the order of the function calls and their purpose. I wasn't sure if and where to put this in the README.md file, but the structure section seemed the most fitting.
+
+To see a flowchart of the desktop page load [click here](wireframes-new/function-flowchart-desktop.png).
+
+To see a flowchart of the mobile page load [click here](wireframes-new/function-flowchart-mobile.png).
+
 ### Skeleton
 
 On bigger screen sizes the entire race calendar will be positioned on the left of the page. On the right side of the page all the information for the selected race event will be displayed. On the top of the right side is a race countdown timer. Below that are the track information and time schedule displayed side by side. Below that a 4 hour weather forecast and the local time are displayed. On smaller screen sizes only the selected calendar event is displayed. Below it is the race countdown timer. Below that several buttons are displayed to switch between the different sections of information and there is also a button to switch between Celsius and Fahrenheit. Below that the currently selected section of information is displayed.
