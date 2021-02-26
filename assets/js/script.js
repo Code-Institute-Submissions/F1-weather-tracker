@@ -27,9 +27,9 @@ const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
 // weather API link
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // weather container elements selectors
@@ -171,12 +171,12 @@ const time__info__container = document.querySelector(".time__info__container");
 const race__countdown__timer = document.querySelector(".race__countdown__timer__container");
 
 // individual race start date and time (UNIX timestamps)
-const bahrain__race__start = new Date(Date.UTC(2020, 2, 28, 16, 0, 0));
-const imola__race__start = new Date(Date.UTC(2020, 3, 18, 14, 0, 0));
-const portimao__race__start = new Date(Date.UTC(2020, 4, 2, 14, 0, 0));
-const barcelona__race__start = new Date(Date.UTC(2020, 4, 9, 14, 0, 0));
-const monaco__race__start = new Date(Date.UTC(2020, 4, 23, 14, 0, 0));
-const baku__race__start = new Date(Date.UTC(2020, 5, 6, 13, 0, 0));
+const bahrain__race__start = new Date(Date.UTC(2021, 2, 28, 16, 0, 0));
+const imola__race__start = new Date(Date.UTC(2021, 3, 18, 14, 0, 0));
+const portimao__race__start = new Date(Date.UTC(2021, 4, 2, 14, 0, 0));
+const barcelona__race__start = new Date(Date.UTC(2021, 4, 9, 14, 0, 0));
+const monaco__race__start = new Date(Date.UTC(2021, 4, 23, 14, 0, 0));
+const baku__race__start = new Date(Date.UTC(2021, 5, 6, 13, 0, 0));
 const montreal__race__start = new Date(Date.UTC(2021, 5, 13, 19, 0, 0));
 const castellet__race__start = new Date(Date.UTC(2021, 5, 27, 14, 0, 0));
 const spielberg__race__start = new Date(Date.UTC(2021, 6, 4, 14, 0, 0));
