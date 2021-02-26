@@ -8,7 +8,7 @@ const portimao__coordinates = `37.233,-8.629`;
 const barcelona__coordinates = `41.57,2.26`;
 const monaco__coordinates = `43.735,7.422`;
 const baku__coordinates = `40.373,49.853`;
-const montreal__coordinates = `45.504 -73.524`;
+const montreal__coordinates = `45.504,-73.524`;
 const castellet__coordinates = `43.251,5.794`;
 const spielberg__coordinates = `47.22,14.762`;
 const silverstone__coordinates = `52.073,-1.01`;
@@ -22,15 +22,16 @@ const suzuka__coordinates = `34.8439,136.5312`;
 const austin__coordinates = `30.1302,-97.637`;
 const mexico__coordinates = `19.406,-99.093`;
 const interlagos__coordinates = `-23.706,-46.699`;
-const melbourne__coordinates = `-37.851, 144.97`;
+const melbourne__coordinates = `-37.851,144.97`;
 const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
 // weather API link
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 //const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
+console.log(weather__API);
 
 // weather container elements selectors
 const weather__1 = document.querySelector("#weather__info--1");
@@ -1330,6 +1331,29 @@ const DateFormatter = {
     },
   };
 
+const setEmptyWeatherData = function() {
+    weather__1__date.textContent = "Date";
+    weather__1__time.textContent = "Time";
+    weather__1__temp.textContent = "Temperature";
+    weather__1__precip.textContent = "Precipitation";
+    weather__1__rain.textContent = "Rain";
+    weather__2__date.textContent = "Date";
+    weather__2__time.textContent = "Time";
+    weather__2__temp.textContent = "Temperature";
+    weather__2__precip.textContent = "Precipitation";
+    weather__2__rain.textContent = "Rain";
+    weather__3__date.textContent = "Date";
+    weather__3__time.textContent = "Time";
+    weather__3__temp.textContent = "Temperature";
+    weather__3__precip.textContent = "Precipitation";
+    weather__3__rain.textContent = "Rain";
+    weather__4__date.textContent = "Date";
+    weather__4__time.textContent = "Time";
+    weather__4__temp.textContent = "Temperature";
+    weather__4__precip.textContent = "Precipitation";
+    weather__4__rain.textContent = "Rain";
+};
+
 // function that executes other functions and if-statements that display track, time and weather data based on the active race event
 const displayActiveEventData = function() { 
     // get data from local storage and convert back to JSON
@@ -1356,6 +1380,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 17:00 @ 28 March 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
@@ -1371,7 +1397,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = bahrain__weather__date;
         weather__2__time.textContent = `17:00`;
@@ -1383,7 +1409,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = bahrain__weather__date;
         weather__3__time.textContent = `18:00`;
@@ -1395,7 +1421,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = bahrain__weather__date;
         weather__4__time.textContent = `19:00`;
@@ -1407,8 +1433,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].chanceofrain}%`;
-
+        weather__4__rain.textContent = `${weatherDataSet.data.area[0].weather[0].hourly[19].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Bahrain weather data!");
+        setEmptyWeatherData();
+    }
     } else if (imola__event.classList.contains("active__event")) {
         console.log("imola has active class");
 
@@ -1421,6 +1450,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 18 April 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
@@ -1436,7 +1467,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = imola__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1448,7 +1479,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = imola__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1460,7 +1491,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = imola__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -1472,8 +1503,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
-
+        weather__4__rain.textContent = `${weatherDataSet.data.area[1].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Imola weather data!");
+        setEmptyWeatherData();
+    }
     } else if (portimao__event.classList.contains("active__event")) {
         console.log("portimao has active class");
 
@@ -1486,6 +1520,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 2 May 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const portimao__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[2].weather[0].date), 'DD MMMM YYYY');
@@ -1501,7 +1537,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = portimao__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1513,7 +1549,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = portimao__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1525,7 +1561,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = portimao__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -1537,8 +1573,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[2].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Portimão weather data!");
+        setEmptyWeatherData();
+    }
     } else if (barcelona__event.classList.contains("active__event")) {
         console.log("barcelona has active class");
 
@@ -1551,6 +1590,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 9 May 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const barcelona__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[3].weather[0].date), 'DD MMMM YYYY');
@@ -1566,7 +1607,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = barcelona__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1578,7 +1619,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = barcelona__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1590,7 +1631,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = barcelona__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -1602,8 +1643,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[3].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Barcelona weather data!");
+        setEmptyWeatherData();
+    }
     } else if (monaco__event.classList.contains("active__event")) {
         console.log("monaco has active class");
 
@@ -1616,6 +1660,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 23 May 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const monaco__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[4].weather[0].date), 'DD MMMM YYYY');
@@ -1631,7 +1677,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = monaco__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1643,7 +1689,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = monaco__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1655,7 +1701,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = monaco__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -1667,8 +1713,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[4].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Monaco weather data!");
+        setEmptyWeatherData();
+    }
     } else if (baku__event.classList.contains("active__event")) {
         console.log("baku has active class");
 
@@ -1685,6 +1734,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 16:00 @ 6 June 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const baku__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[5].weather[0].date), 'DD MMMM YYYY');
@@ -1700,7 +1751,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = baku__weather__date;
         weather__2__time.textContent = `16:00`;
@@ -1712,7 +1763,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = baku__weather__date;
         weather__3__time.textContent = `17:00`;
@@ -1724,7 +1775,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = baku__weather__date;
         weather__4__time.textContent = `18:00`;
@@ -1736,8 +1787,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[18].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[5].weather[0].hourly[18].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[5].weather[0].hourly[18].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Baku weather data!");
+        setEmptyWeatherData();
+    }
     } else if (montreal__event.classList.contains("active__event")) {
         console.log("montreal has active class");
 
@@ -1754,6 +1808,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 14:00 @ 13 June 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const montreal__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[6].weather[0].date), 'DD MMMM YYYY');
@@ -1769,7 +1825,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[13].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[13].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = montreal__weather__date;
         weather__2__time.textContent = `14:00`;
@@ -1781,7 +1837,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[14].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[14].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = montreal__weather__date;
         weather__3__time.textContent = `15:00`;
@@ -1793,7 +1849,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[15].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[15].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = montreal__weather__date;
         weather__4__time.textContent = `16:00`;
@@ -1805,8 +1861,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[16].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[6].weather[0].hourly[16].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[6].weather[0].hourly[16].chanceofrain}%`;
+        } catch(err) { 
+            alert("Error: could not get Montreal weather data!");
+            setEmptyWeatherData();
+        }
     } else if (castellet__event.classList.contains("active__event")) {
         console.log("castellet has active class");
 
@@ -1819,6 +1878,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 27 June 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const castellet__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[7].weather[0].date), 'DD MMMM YYYY');
@@ -1834,7 +1895,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = castellet__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1846,7 +1907,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = castellet__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1858,7 +1919,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = castellet__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -1870,8 +1931,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[7].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[7].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Castellet weather data!");
+        setEmptyWeatherData();
+    }
     } else if (spielberg__event.classList.contains("active__event")) {
         console.log("spielberg has active class");
 
@@ -1884,6 +1948,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 4 July 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const spielberg__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[8].weather[0].date), 'DD MMMM YYYY');
@@ -1899,7 +1965,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = spielberg__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1911,7 +1977,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = spielberg__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1923,7 +1989,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = spielberg__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -1935,8 +2001,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[8].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[8].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Spielberg weather data!");
+        setEmptyWeatherData();
+    }
     } else if (silverstone__event.classList.contains("active__event")) {
         console.log("silverstone has active class");
 
@@ -1949,6 +2018,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 18 July 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const silverstone__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[9].weather[0].date), 'DD MMMM YYYY');
@@ -1964,7 +2035,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = silverstone__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -1976,7 +2047,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = silverstone__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -1988,7 +2059,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = silverstone__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -2000,8 +2071,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[9].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[9].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Silverstone weather data!");
+        setEmptyWeatherData();
+    }
     } else if (budapest__event.classList.contains("active__event")) {
         console.log("budapest has active class");
 
@@ -2014,6 +2088,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 1 August 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const budapest__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[10].weather[0].date), 'DD MMMM YYYY');
@@ -2029,7 +2105,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = budapest__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -2041,7 +2117,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = budapest__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -2053,7 +2129,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = budapest__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -2065,8 +2141,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[10].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[10].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Budapest weather data!");
+        setEmptyWeatherData();
+    }
     } else if (spa__event.classList.contains("active__event")) {
         console.log("spa has active class");
 
@@ -2079,6 +2158,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 29 August 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const spa__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[11].weather[0].date), 'DD MMMM YYYY');
@@ -2094,7 +2175,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = spa__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -2106,7 +2187,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = spa__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -2118,7 +2199,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = spa__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -2130,8 +2211,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[11].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[11].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Spa weather data!");
+        setEmptyWeatherData();
+    }
     } else if (zandvoort__event.classList.contains("active__event")) {
         console.log("zandvoort has active class");
 
@@ -2144,6 +2228,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 5 September 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const zandvoort__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[12].weather[0].date), 'DD MMMM YYYY');
@@ -2159,7 +2245,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = zandvoort__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -2171,7 +2257,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = zandvoort__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -2183,7 +2269,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = zandvoort__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -2195,8 +2281,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[12].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[12].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Zandvoort weather data!");
+        setEmptyWeatherData();
+    }
     } else if (monza__event.classList.contains("active__event")) {
         console.log("monza has active class");
 
@@ -2209,6 +2298,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 12 September 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const monza__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[13].weather[0].date), 'DD MMMM YYYY');
@@ -2224,7 +2315,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = monza__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -2236,7 +2327,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = monza__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -2248,7 +2339,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = monza__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -2260,8 +2351,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[13].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[13].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Monza weather data!");
+        setEmptyWeatherData();
+    }
     } else if (sochi__event.classList.contains("active__event")) {
         console.log("sochi has active class");
 
@@ -2274,6 +2368,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 15:00 @ 26 September 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const sochi__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[14].weather[0].date), 'DD MMMM YYYY');
@@ -2289,7 +2385,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[14].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[14].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = sochi__weather__date;
         weather__2__time.textContent = `15:00`;
@@ -2301,7 +2397,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[15].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[15].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = sochi__weather__date;
         weather__3__time.textContent = `16:00`;
@@ -2313,7 +2409,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[16].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[16].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = sochi__weather__date;
         weather__4__time.textContent = `17:00`;
@@ -2325,8 +2421,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[17].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[14].weather[0].hourly[17].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[14].weather[0].hourly[17].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Sochi weather data!");
+        setEmptyWeatherData();
+    }
     } else if (singapore__event.classList.contains("active__event")) {
         console.log("singapore has active class");
 
@@ -2343,6 +2442,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 20:00 @ 3 October 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const singapore__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[15].weather[0].date), 'DD MMMM YYYY');
@@ -2358,7 +2459,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[19].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[19].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[19].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = singapore__weather__date;
         weather__2__time.textContent = `20:00`;
@@ -2370,7 +2471,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[20].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[20].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[20].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = singapore__weather__date;
         weather__3__time.textContent = `21:00`;
@@ -2382,7 +2483,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[21].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[21].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[21].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = singapore__weather__date;
         weather__4__time.textContent = `22:00`;
@@ -2394,8 +2495,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[22].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[15].weather[0].hourly[22].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[15].weather[0].hourly[22].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Singapore weather data!");
+        setEmptyWeatherData();
+    }
     } else if (suzuka__event.classList.contains("active__event")) {
         console.log("suzuka has active class");
 
@@ -2412,6 +2516,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 14:00 @ 10 October 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const suzuka__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[16].weather[0].date), 'DD MMMM YYYY');
@@ -2427,7 +2533,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[13].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[13].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = suzuka__weather__date;
         weather__2__time.textContent = `14:00`;
@@ -2439,7 +2545,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[14].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[14].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = suzuka__weather__date;
         weather__3__time.textContent = `15:00`;
@@ -2451,7 +2557,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[15].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[15].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = suzuka__weather__date;
         weather__4__time.textContent = `16:00`;
@@ -2463,8 +2569,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[16].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[16].weather[0].hourly[16].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[16].weather[0].hourly[16].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Suzuka weather data!");
+        setEmptyWeatherData();
+    }
     } else if (austin__event.classList.contains("active__event")) {
         console.log("austin has active class");
 
@@ -2481,6 +2590,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 14:00 @ 24 October 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const austin__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[17].weather[0].date), 'DD MMMM YYYY');
@@ -2496,7 +2607,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[13].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[13].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = austin__weather__date;
         weather__2__time.textContent = `14:00`;
@@ -2508,7 +2619,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[14].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[14].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = austin__weather__date;
         weather__3__time.textContent = `15:00`;
@@ -2520,7 +2631,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[15].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[15].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = austin__weather__date;
         weather__4__time.textContent = `16:00`;
@@ -2532,8 +2643,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[16].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[17].weather[0].hourly[16].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[17].weather[0].hourly[16].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Austin weather data!");
+        setEmptyWeatherData();
+    }
     } else if (mexico__event.classList.contains("active__event")) {
         console.log("mexico has active class");
 
@@ -2550,6 +2664,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 13:00 @ 31 October 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const mexico__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[18].weather[0].date), 'DD MMMM YYYY');
@@ -2565,7 +2681,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[12].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[12].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[12].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = mexico__weather__date;
         weather__2__time.textContent = `13:00`;
@@ -2577,7 +2693,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[13].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[13].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = mexico__weather__date;
         weather__3__time.textContent = `14:00`;
@@ -2589,7 +2705,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[14].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[14].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = mexico__weather__date;
         weather__4__time.textContent = `15:00`;
@@ -2601,8 +2717,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[15].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[18].weather[0].hourly[15].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[18].weather[0].hourly[15].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Mexico City weather data!");
+        setEmptyWeatherData();
+    }
     } else if (interlagos__event.classList.contains("active__event")) {
         console.log("interlagos has active class");
 
@@ -2619,6 +2738,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 14:00 @ 7 November 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const interlagos__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[19].weather[0].date), 'DD MMMM YYYY');
@@ -2634,7 +2755,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[13].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[13].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[13].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = interlagos__weather__date;
         weather__2__time.textContent = `14:00`;
@@ -2646,7 +2767,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[14].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[14].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[14].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = interlagos__weather__date;
         weather__3__time.textContent = `15:00`;
@@ -2658,7 +2779,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[15].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[15].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[15].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = interlagos__weather__date;
         weather__4__time.textContent = `16:00`;
@@ -2670,8 +2791,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[16].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[19].weather[0].hourly[16].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[19].weather[0].hourly[16].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get São Paulo weather data!");
+        setEmptyWeatherData();
+    }
     } else if (melbourne__event.classList.contains("active__event")) {
         console.log("melbourne has active class");
 
@@ -2688,6 +2812,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 17:00 @ 21 November 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const melbourne__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[20].weather[0].date), 'DD MMMM YYYY');
@@ -2703,7 +2829,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[16].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[16].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = melbourne__weather__date;
         weather__2__time.textContent = `17:00`;
@@ -2715,7 +2841,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[17].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[17].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = melbourne__weather__date;
         weather__3__time.textContent = `18:00`;
@@ -2727,7 +2853,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[18].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[18].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = melbourne__weather__date;
         weather__4__time.textContent = `19:00`;
@@ -2739,8 +2865,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[19].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[20].weather[0].hourly[19].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[20].weather[0].hourly[19].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Melbourne weather data!");
+        setEmptyWeatherData();
+    }
     } else if (jeddah__event.classList.contains("active__event")) {
         console.log("jeddah has active class");
 
@@ -2757,6 +2886,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 19:00 @ 5 December 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const jeddah__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[21].weather[0].date), 'DD MMMM YYYY');
@@ -2772,7 +2903,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[18].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[18].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = jeddah__weather__date;
         weather__2__time.textContent = `19:00`;
@@ -2784,7 +2915,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[19].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[19].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[19].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = jeddah__weather__date;
         weather__3__time.textContent = `20:00`;
@@ -2796,7 +2927,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[20].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[20].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[20].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = jeddah__weather__date;
         weather__4__time.textContent = `21:00`;
@@ -2808,8 +2939,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[21].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[21].weather[0].hourly[21].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[21].weather[0].hourly[21].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Jeddah weather data!");
+        setEmptyWeatherData();
+    }
     } else if (emirates__event.classList.contains("active__event")) {
         console.log("emirates has active class");
 
@@ -2826,6 +2960,8 @@ const displayActiveEventData = function() {
         local__time.textContent = "Local time: -";
         start__time__container.textContent = "Start time: 17:00 @ 12 December 2021";
 
+        // change the text contents of the weather container elements
+        try {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const emirates__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[22].weather[0].date), 'DD MMMM YYYY');
@@ -2841,7 +2977,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__1__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[16].precipMM}mm`;
-        weather__1__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[16].chanceofrain}%`;
+        weather__1__rain.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[16].chanceofrain}%`;
         // change weather div 2 contents
         weather__2__date.textContent = emirates__weather__date;
         weather__2__time.textContent = `17:00`;
@@ -2853,7 +2989,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__2__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[17].precipMM}mm`;
-        weather__2__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[17].chanceofrain}%`;
+        weather__2__rain.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[17].chanceofrain}%`;
         // change weather div 3 contents
         weather__3__date.textContent = emirates__weather__date;
         weather__3__time.textContent = `18:00`;
@@ -2865,7 +3001,7 @@ const displayActiveEventData = function() {
             return;
         }
         weather__3__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[18].precipMM}mm`;
-        weather__3__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[18].chanceofrain}%`;
+        weather__3__rain.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[18].chanceofrain}%`;
         // change weather div 4 contents
         weather__4__date.textContent = emirates__weather__date;
         weather__4__time.textContent = `19:00`;
@@ -2877,8 +3013,11 @@ const displayActiveEventData = function() {
             return;
         }
         weather__4__precip.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[19].precipMM}mm`;
-        weather__4__rain .textContent = `${weatherDataSet.data.area[22].weather[0].hourly[19].chanceofrain}%`;
-    
+        weather__4__rain.textContent = `${weatherDataSet.data.area[22].weather[0].hourly[19].chanceofrain}%`;
+    } catch(err) { 
+        alert("Error: could not get Abu Dhabi weather data!");
+        setEmptyWeatherData();
+    }
     } else {
         console.log("error: no active event");
     }
@@ -2900,7 +3039,7 @@ const getWeatherData = async function() {
     displayActiveEventData();
 
     } catch(err) { 
-        alert(err);
+        alert("Error: could not get weather data!");
     }
 };
 
