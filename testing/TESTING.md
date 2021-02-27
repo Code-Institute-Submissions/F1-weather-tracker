@@ -87,7 +87,7 @@ Everything is working and displaying as intended.
 
 **Safari:**
 
-On basically all the Apple devices that I've tested on [Browserstack](https://www.browserstack.com/) the calendar event is [not displayed](testing-img/ipad-air4-safari14-portrait.png), even when using Safari 14, same as in the old version of Samsung Internet. While using the same device in landscape mode [the calendar is actually visible](testing-img/ipad-air4-safari14-landscape.png) and functions normally. On older iOS devices the website is completely broken, check out the [iPhone S6](testing-img/iphone6S-safari9.png) for example. None of the Apple devices that I've tested showed the calendar event when in portait mode, [even when using Google Chrome](testing-img/iphone12pro-chrome.png) instead of Safari. The images also don't work unless you are using Safari 14, this was no surprise since https://caniuse.com/webp already showed me that the WebP image format is poorly supported on Safari. I confirmed this by checking both [Safari 13](testing-img/ipad-safari13.png) and [Safari 14](testing-img/ipad-safari14.png) on the same device. I have no clue though why the calendar event is not displayed in portait mode, but this isn't necessarily an iOS only issue since the same issue happened on the old Samsung Internet version on an Android device too.
+On basically all the Apple devices that I've tested on [Browserstack](https://www.browserstack.com/) the calendar event is [not displayed](testing-img/ipad-air4-safari14-portrait.png), even when using Safari 14, same as in the old version of Samsung Internet. While using the same device in landscape mode [the calendar is actually visible](testing-img/ipad-air4-safari14-landscape.png) and functions normally. On older iOS devices the website is completely broken, check out the [iPhone 6S](testing-img/iphone6S-safari9.png) for example. None of the Apple devices that I've tested showed the calendar event when in portait mode, [even when using Google Chrome](testing-img/iphone12pro-chrome.png) instead of Safari. The images also don't work unless you are using Safari 14, this was no surprise since https://caniuse.com/webp already showed me that the WebP image format is poorly supported on Safari. I confirmed this by checking both [Safari 13](testing-img/ipad-safari13.png) and [Safari 14](testing-img/ipad-safari14.png) on the same device. I have no clue though why the calendar event is not displayed in portait mode, but this isn't necessarily an iOS only issue since the same issue happened on the old Samsung Internet version on an Android device too.
 
 **Opera Version 74.0.3911.160 (64-bit):**
 
@@ -247,6 +247,8 @@ Smaller screen sizes:
 - On older iPhones the website seems to be completely broken. ([see screenshot](testing-img/iphone6S-safari9.png)).
 
 - Sometimes when you refresh the website multiple times in quick succession on a mobile device, the race calendar will stay expanded until you scroll or select an event.
+
+- There is no information displayed in the local time container. The reason for this is that it was too difficult to implement this feature without a back-end, but I didn't want to remove the feature container, because I will probably host an actual website from this project that does allow me to use a back-end and implement it.
 
 **_[Back to top](#contents)_**
 

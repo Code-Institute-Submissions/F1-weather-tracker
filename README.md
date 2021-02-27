@@ -204,6 +204,8 @@ None, the website uses a single page layout.
 
 - A feature that allows visitors to get email notifications several days prior to a race events could be added.
 
+- A current local time feature (tried to implement it already, but was too difficult without a back-end).
+
 **_[Back to top](#contents)_**
 
 ---
