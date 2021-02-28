@@ -264,16 +264,24 @@ This project was hosted on [GitHub Pages](https://pages.github.com/) with the fo
 
 1. Log into [GitHub](https://github.com/login).
 2. Go to your repositories.
-   ![your repositories](deployment-guide/your-repos.png)
+
+![your repositories](deployment-guide/your-repos.png)
+
 3. Click on the repository that you'd like to host.
 4. From the menu tabs click on settings.
-   ![settings](deployment-guide/repo-settings.png)
+
+![settings](deployment-guide/repo-settings.png)
+
 5. Scroll down to the GitHub Pages section.
 6. Select the main branch and press save.
-   ![main branch](deployment-guide/branch.png)
+
+![main branch](deployment-guide/branch.png)
+
 7. Scroll back down to the GitHub Pages section.
 8. Find your published website link there.
-   ![published website link](deployment-guide/site-link.png)
+
+![published website link](deployment-guide/site-link.png)
+
 9. The website should now be deployed after a couple of minutes. (GitHub says processing can take up to 20 minutes)
 
 ### Running locally
@@ -281,24 +289,39 @@ This project was hosted on [GitHub Pages](https://pages.github.com/) with the fo
 To run my project locally I'd suggest the following steps:
 
 1. At my [project repository page](https://github.com/Larkinz/F1-weather-tracker) click the download button.
-   ![download button](deployment-guide/download-button.png)
+
+![download button](deployment-guide/download-button.png)
+
 2. Select the ZIP download option and save it somewhere on your computer.
-   ![ZIP download option](deployment-guide/zip-download.png)
+
+![ZIP download option](deployment-guide/zip-download.png)
+
 3. Extract the content of the ZIP file in a folder on your computer.
 4. Download and install the appropriate version of [Visual Studio Code](https://code.visualstudio.com/download) for your computer.
 5. Open Visual Studio Code.
 6. In the top left corner select 'file' and then click on 'open folder'.
-   ![file](deployment-guide/file.png)  
-   ![open folder](deployment-guide/open-folder.png)
+
+![file](deployment-guide/file.png)
+
+![open folder](deployment-guide/open-folder.png)
+
 7. Select the folder in which you extracted the repository files.
 8. On the left side click on the extensions tab.
-   ![extensions tab](deployment-guide/extensions.png)
+
+![extensions tab](deployment-guide/extensions.png)
+
 9. Search for 'live server' and install the one made by Ritwick Dey.
-   ![the one made by Ritwick Dey](deployment-guide/live-server.png)
+
+![the one made by Ritwick Dey](deployment-guide/live-server.png)
+
 10. Click the index.html tab.
-    ![index.html tab](deployment-guide/index-tab.png)
+
+![index.html tab](deployment-guide/index-tab.png)
+
 11. On the bottom right click on 'Go Live'.
-    ![Go Live](deployment-guide/go-live.png)
+
+![Go Live](deployment-guide/go-live.png)
+
 12. A local version of the website should now open in your standard browser.
 
 **_[Back to top](#contents)_**
