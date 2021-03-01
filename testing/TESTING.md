@@ -167,12 +167,12 @@ placeholder text
 
 Large screen sizes:
 
-1. When the visitor enters the website, they will immediately see the full 2021 Formula 1 calendar including the event location and dates on the left of the page.
+1. When the visitor enters the website, they will immediately see the full 2021 Formula 1 calendar including the event location and dates on the left of the page. ([see screenshot](testing-img/desktop-calendar.png))
 
 Smaller screen sizes:
 
-1. When the visitor enters the website, they will see the closest 2021 Formula 1 calendar event below the top (navigation) bar.
-2. After clicking on this single calendar event the full 2021 Formula 1 calendar including the event location and dates will be displayed.
+1. When the visitor enters the website, they will see the closest 2021 Formula 1 calendar event below the top (navigation) bar. ([see screenshot](testing-img/mobile-calendar1.png))
+2. After clicking on this single calendar event the full 2021 Formula 1 calendar including the event location and dates will be displayed. ([see screenshot](testing-img/mobile-calendar2.png))
 
 ---
 
@@ -180,12 +180,12 @@ Smaller screen sizes:
 
 Large screen sizes:
 
-1. When the visitor enters the website, they will immediately see a time schedule of the currently selected event on the right of the page.
+1. When the visitor enters the website, they will immediately see a time schedule of the currently selected event on the right of the page. ([see screenshot](testing-img/desktop-schedule.png))
 
 Smaller screen sizes:
 
-1. When the visitor enters the website, they will see a button dashboard with a button labeled 'Schedule'.
-2. After clicking on this button the time schedule of the currently selected event will be displayed.
+1. When the visitor enters the website, they will see a button dashboard with a button labeled 'Schedule'. ([see screenshot](testing-img/mobile-schedule1.png))
+2. After clicking on this button the time schedule of the currently selected event will be displayed. ([see screenshot](testing-img/mobile-schedule2.png))
 
 ---
 
@@ -193,11 +193,11 @@ Smaller screen sizes:
 
 Large screen sizes:
 
-1. When the visitor enters the website, they will see local weather data of the currently selected event on the right of the page (possibly after scrolling down a little bit, depending on screen size).
+1. When the visitor enters the website, they will see local weather data of the currently selected event on the right of the page (possibly after scrolling down a little bit, depending on screen size). ([see screenshot](testing-img/desktop-weather.png))
 
 Smaller screen sizes:
 
-1. When the visitor enters the website, they will immediately see local weather data of the currently selected event on the bottom of the page.
+1. When the visitor enters the website, they will immediately see local weather data of the currently selected event on the bottom of the page. ([see screenshot](testing-img/mobile-weather.png))
 
 ---
 
@@ -205,16 +205,16 @@ Smaller screen sizes:
 
 Large screen sizes:
 
-1. When the visitor enters the website, they will immediately see the full 2021 Formula 1 calendar on the left of the page.
-2. Hovering an event on the calendar will change the mouse cursor to pointer and change the colours of the currently hovered event to indicate to the user that it can be clicked.
-3. Clicking on a calendar event will change the data displayed on the website to the selected event.
+1. When the visitor enters the website, they will immediately see the full 2021 Formula 1 calendar on the left of the page. ([see screenshot](testing-img/desktop-calendar.png))
+2. Hovering an event on the calendar will change the mouse cursor to pointer and change the colours of the currently hovered event to indicate to the user that it can be clicked. ([see screenshot](testing-img/desktop-calendar-hover.png))
+3. Clicking on a calendar event will change the data displayed on the website to the selected event. ([see screenshot](testing-img/desktop-click.png))
 
 Smaller screen sizes:
 
-1. When the visitor enters the website, they will see the closest 2021 Formula 1 calendar event below the top (navigation) bar.
-2. This calendar event has a hamburger menu icon on the left, indicating to the user that it can be selected.
-3. After clicking on this single calendar event the full 2021 Formula 1 calendar will be displayed.
-4. Clicking on a calendar event will change the data displayed on the website to the selected event.
+1. When the visitor enters the website, they will see the closest 2021 Formula 1 calendar event below the top (navigation) bar. ([see screenshot](testing-img/mobile-calendar1.png))
+2. This calendar event has a hamburger menu icon on the left, indicating to the user that it can be selected. ([see screenshot](testing-img/HIC.png))
+3. After clicking on this single calendar event the full 2021 Formula 1 calendar will be displayed. ([see screenshot](testing-img/mobile-calendar2.png))
+4. Clicking on a calendar event will change the data displayed on the website to the selected event. ([see screenshot](testing-img/mobile-click.png))
 
 **_[Back to top](#contents)_**
 
