@@ -792,8 +792,8 @@ nav h1 {
 
   .race__calendar__container {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 0px;
-    flex: 0 0 0px;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
   }
 
   .race__events {
