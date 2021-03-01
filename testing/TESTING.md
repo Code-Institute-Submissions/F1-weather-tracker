@@ -155,7 +155,59 @@ I've put my script.js file through the [JSHint validator](https://jshint.com/) a
 
 ## Test cases
 
-placeholder text
+1. Top bar:
+   1.1 The top bar will be visible at the top of the page.
+   1.2 The top bar should be sticky.
+   1.3 The top bar should have the text "F1 weather tracker" in the center.
+
+---
+
+2. Race calendar:
+   2.1 On desktop the race calendar will be visible on the left side of the page.
+   2.2 Hovering over a race event will change the cursor, and change the background colour to black, and the font colour to red.
+   2.3 Clicking on a race event will display the event data on the right side of the page.
+   2.4 On mobile screen sizes the race calendar will be available as a drop down via the hamburger menu icon.
+
+---
+
+3. Race countdown timer:
+   3.1 On desktop the race countdown timer will be visible on the right side of the page, below the top bar.
+   3.2 The race countdown timer should have text that shows the days, hours and minutes until the race start of the currently selected event.
+   3.3 On mobile screen sizes the race countdown timer will be visible below the race calendar event.
+
+---
+
+4. Track information:
+   4.1 On desktop the track information will be visible on the right side of the page, below the race countdown timer.
+   4.2 The track information should contain the name of the track, a trackmap image, the total number of race laps, the length of the track and the Formula 1 track record.
+   4.3 On mobile screen sizes the track information will be visible below the button dashboard after clicking the 'Track' button.
+
+---
+
+5. Event time schedule:
+   5.1 On desktop the event time schedule will be visible on the right side of the page, either next to or below the track information.
+   5.2 The event time schedule should contain the local start and finish time of every track session of the currently selected race event.
+   5.3 On mobile screen sizes the event time schedule will be visible below the button dashboard after clicking the 'Schedule' button.
+
+---
+
+6. 4 hour weather forecast:
+   6.1 On desktop the 4 hour weather forecast will be visible on the right side of the page, below the event time schedule.
+   6.2 The 4 hour weather forecast should have 4 containers with local weather data of the currently selected race event, 1 for each hour.
+   6.3 Each container has 5 pieces of data: the date, time, temperature, precipitation and chance of rain.
+   6.4 On mobile screen sizes the 4 hour weather forecast will be visible below the button dashboard after clicking the 'Weather' button.
+   6.5 Clicking on a weather container will change the displayed temperature units from Celsius to Fahrenheit, or vice versa.
+
+---
+
+7. Button dashboard:
+   7.1 On desktop the button dashboard will be hidden.
+   7.2 On mobile screen sizes the button dashboard will be visible below the race countdown timer.
+   7.3 The button dashboard has 4 buttons: weather, track, schedule and °C/°F.
+   7.4 Clicking on the 'Weather' button will display the 4 hour weather forecast data of the currently selected race event.
+   7.5 Clicking on the 'Track' button will display the track information of the currently selected race event.
+   7.6 Clicking on the 'Schedule' button will display the event time schedule of the currently selected race event.
+   7.7 Clicking on the '°C/°F' button will change the displayed temperature units in the 4 hour weather forecast data of the currently selected race event from Celsius to Fahrenheit.
 
 **_[Back to top](#contents)_**
 
