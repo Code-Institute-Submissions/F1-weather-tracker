@@ -1,16 +1,10 @@
 /* ----- import fonts ----- */
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap");
 
-/* ----- color options ----- */
-/*
-#ffc929;
-#211f22;
-#ff4040;
-#509cff;
-*/
-
 /* ------ set clean elements styling by removing default margins and paddings ----- */
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +13,7 @@
 }
 
 /* ------ set easy unit conversion for REM font size (1 REM = 10px) that still allows font scaling in browser ----- */
+
 html {
   font-size: 62.5%;
 }
@@ -1145,7 +1140,6 @@ nav h1 {
   }
 
   .track__map__stats__container {
-    height: 90%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -1153,7 +1147,8 @@ nav h1 {
   }
 
   .track__stats {
-    padding: 4px 0px;
+    margin-top: 4px;
+    padding-top: 4px;
     border-bottom: none;
   }
 
