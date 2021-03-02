@@ -87,7 +87,7 @@ Everything is working and displaying as intended.
 
 **Safari:**
 
-On basically all the Apple devices that I've tested on [Browserstack](https://www.browserstack.com/) the calendar event is [not displayed](testing-img/ipad-air4-safari14-portrait.png), even when using Safari 14, same as in the old version of Samsung Internet. While using the same device in landscape mode [the calendar is actually visible](testing-img/ipad-air4-safari14-landscape.png) and functions normally. On older iOS devices the website is completely broken, check out the [iPhone 6S](testing-img/iphone6S-safari9.png) for example. None of the Apple devices that I've tested showed the calendar event when in portait mode, [even when using Google Chrome](testing-img/iphone12pro-chrome.png) instead of Safari. The images also don't work unless you are using Safari 14, this was no surprise since https://caniuse.com/webp already showed me that the WebP image format is poorly supported on Safari. I confirmed this by checking both [Safari 13](testing-img/ipad-safari13.png) and [Safari 14](testing-img/ipad-safari14.png) on the same device. I have no clue though why the calendar event is not displayed in portait mode, but this isn't necessarily an iOS only issue since the same issue happened on the old Samsung Internet version on an Android device too.
+I've tested a lot of iOS devices on [Browserstack](https://www.browserstack.com/). At first there was quite a large bug that caused the [race calendar event not to be displayed](testing-img/iphone12pro-chrome.png) on all iOS devices with smaller screen sizes, but I was able to fix this with some help from tutor support. Right now, on iOS version 10 or older the website [seems to be completely broken](testing-img/iphone6S-safari-ios9.png). On iOS versions 11, 12 and 13 the [images don't display](testing-img/ipad7th-chrome-ios13.png) because the WebP image format is only supported since iOS 14. On iOS 14 devices the [track stats overflow into the track map image](testing-img/iphone11-safari-ios14.png) a little bit. So my website currently has only partial support for the Safari browser, and only for version 11 and up.
 
 **Opera Version 74.0.3911.160 (64-bit):**
 
@@ -318,13 +318,15 @@ Smaller screen sizes:
 
 - Apparently the API fetch sometimes returns empty arrays for some of the weather locations, when this happens and you click on that event, then the weather data from the previously active event was displayed in the weather data containers. I fixed this by adding try/catch blocks to all the setting of the weather data JavaScript code, so that it replaces the text contents in the weather containers to generic text, and also the user will get an alert saying that the weather data for that specific event is unavailable.
 
+- There was quite a large bug that caused the [race calendar event not to be displayed](testing-img/iphone12pro-chrome.png) on all iOS devices with smaller screen sizes. My mentor couldn't find where it was coming from in the short time frame of our meeting, so I contacted the Code Institute tutor support. The first tutor I spoke to couldn't find the issue, so he passed me through to another tutor who had more iOS experience. Tutor 'Cormac' thought it could possibly be caused by a CSS line that said `-webkit-box-flex: 0;` , but when he sent me a screenshot of that code snippet something else caught my eye. The CSS line where the webkit line originated from said `flex: 0 0 0px;` , which doesn't make sense. After changing that line to `flex: 0 1 auto;` the bug was fixed.
+
 ### Known bugs
 
-- Images don't display when using Safari 13 or older versions, this is because only Safari 14 supports the WebP image format. ([see screenshot](testing-img/ipad-safari13.png)).
+- On iOS version 10 or older the website seems to be completely broken. ([see screenshot](testing-img/iphone6S-safari-ios9.png))
 
-- The calendar event (which is necessary for navigation between events) doesn't display on (nearly) all iOS devices with smaller screen sizes. So iOS users can only see data of the closest race event. ([see screenshot](testing-img/iphone12pro-chrome.png)).
+- On iOS versions 11, 12 and 13 the images don't display because the WebP image format is only supported since iOS 14. Using WebP instead of PNG massively improved the website performance, sometimes reducing the loading time by over 40%, so it's worth sacrificing iOS 11, 12 and 13 image support for the performance gains on all other platforms, at least temporarily. ([see screenshot](testing-img/ipad7th-chrome-ios13.png))
 
-- On older iPhones the website seems to be completely broken. ([see screenshot](testing-img/iphone6S-safari9.png)).
+- On iOS 14 devices the track stats overflow into the track map image a little bit, I tried fixing this by adding a margin-top to the track stats container, but that didn't fix it. I also tried to change the flex properties of both the track map and track stats containers, but that didn't fix the issue either. ([see screenshot](testing-img/iphone11-safari-ios14.png))
 
 - Sometimes when you refresh the website multiple times in quick succession on a mobile device, the race calendar will stay expanded until you scroll or select an event.
 
