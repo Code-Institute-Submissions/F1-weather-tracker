@@ -938,6 +938,7 @@ nav h1 {
   }
 
   .track__stats {
+    padding-bottom: 20px;
     -webkit-box-flex: 1;
     -ms-flex: 1 0 25%;
     flex: 1 0 25%;
@@ -945,6 +946,10 @@ nav h1 {
 
   .track__stats__content {
     font-size: 2rem;
+  }
+
+  .weather__info__container {
+    padding-bottom: 20px;
   }
 
   .weather__title__container {
@@ -973,6 +978,10 @@ nav h1 {
     padding: 10px;
     height: 200px;
     font-size: 2rem;
+  }
+
+  .time__info__container {
+    padding-bottom: 20px;
   }
 
   #schedule__title {
