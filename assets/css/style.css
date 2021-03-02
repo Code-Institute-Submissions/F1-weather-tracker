@@ -924,7 +924,7 @@ nav h1 {
 
   .race__countdown__timer__container {
     padding: 6px;
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 
   .track__name {
@@ -1018,7 +1018,7 @@ nav h1 {
   }
 
   .race__countdown__timer__container {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .track__stats__content {
@@ -1076,7 +1076,7 @@ nav h1 {
 @media (max-width: 541px) and (orientation: portrait) {
   .race__countdown__timer__container {
     padding: 4px;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -1086,7 +1086,7 @@ nav h1 {
   }
 
   .race__countdown__timer__container {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .track__name {
@@ -1141,7 +1141,7 @@ nav h1 {
   }
 
   .race__countdown__timer__container {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .track__stats__content {
@@ -1171,7 +1171,7 @@ nav h1 {
 @media (max-width: 411px) and (orientation: portrait) {
   .race__countdown__timer__container {
     min-height: 34px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -1192,7 +1192,7 @@ nav h1 {
 
   .race__countdown__timer__container {
     min-height: 30px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .button__dashboard__container {
@@ -1265,7 +1265,7 @@ nav h1 {
 
 @media (max-width: 327px) and (orientation: portrait) {
   .race__countdown__timer__container {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -1283,7 +1283,7 @@ nav h1 {
 
   .race__countdown__timer__container {
     padding: 4px 0px;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
