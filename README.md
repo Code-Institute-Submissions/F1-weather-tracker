@@ -368,9 +368,13 @@ All numbered references below correspond with a comment in either the HTML, CSS 
 
 - Used https://ezgif.com/png-to-webp to convert PNG images to WebP image format.
 
+- Used https://realfavicongenerator.net/ to generate my favicon.
+
 ### Acknowledgements
 
-placeholder text
+- Thanks to my mentor, Rohit Sharma, for his guidance and advice throughout the project.
+
+- Thanks to tutor Cormac from Code Institute, for his help finding the bug that prevented the race calendar event from being displayed on iOS devices.
 
 **_[Back to top](#contents)_**
 
@@ -378,11 +382,9 @@ placeholder text
 
 ## Notes
 
-- A
+- In the month prior to this project I had already finished the Code Institute JavaScript learning materials, so I decided to look for some supplementary content. I ended up purchasing the ['The Complete JavaScript Course 2021: From Zero to Expert!'](https://www.udemy.com/course/the-complete-javascript-course/) by Jonas Schmedtmann. In hindsight I think this was a great decision, some lessons went more in-depth on topics already covered in the Code Institute learning materials and expanded my knowledge. This extra knowledge and the coding challenges made me go into this milestone project with a lot of confidence.
 
-- B
-
-- C
+- It would be nice if specific naming conventions could be mentioned in the project requirements document, especially what naming conventions to use in JavaScript. Everyone and everywhere I inquired (mentor, tutors, the Code Institute course material, the internet) had different opinions on what naming conventions to use. The only thing the project requirements document says about naming conventions is `criterion 2.6: Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions)`. I've used camelCase for function and boolean declarations, and I've used snake_case (with double underscore) for constants and other variables. My mentor said for example that constants in JavaScript would usually be written entirely in uppercase with underscores between words, and that digits shouldn't be used in variable names, but the [Code Institute course material](wireframes/wireframes-new/naming-conventions.png) says otherwise. Hearing various opinions on what naming conventions to use or not to use in hindsight, when nearly all the code had been written, was very confusing and frustrating. It would be better to hear up-front what naming conventions to use for an assignment, to prevent confusion and ambiguity.
 
 **_[Back to top](#contents)_**
 
