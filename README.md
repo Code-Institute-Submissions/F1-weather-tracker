@@ -206,6 +206,8 @@ None, the website uses a single page layout.
 
 - A current local time feature (tried to implement it already, but was too difficult without a back-end).
 
+- Add image support for iOS versions 11, 12 and 13. (Because of performance optimizations I'm currently using the WebP image format, which is only supported by iOS 14)
+
 **_[Back to top](#contents)_**
 
 ---
@@ -334,7 +336,7 @@ All numbered references below correspond with a comment in either the HTML, CSS 
 
 ### Code
 
-#1: Used [this code](https://javascript.info/async-await#error-handling) creating try/catch error handling block.
+#1: Used [this code snippet](https://javascript.info/async-await#error-handling) from https://javascript.info/ to create a try/catch error handling block.
 
 #2: Referenced [lecture 258 'Consuming Promises with Async/Await'](https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649375) from the Udemy course 'The Complete JavaScript Course 2021: From Zero to Expert!' by Jonas Schmedtmann to build a function that fetches my API weather data.
 
@@ -359,6 +361,12 @@ All numbered references below correspond with a comment in either the HTML, CSS 
 - Used https://coolors.co/ to create an image of my colour palette (see ['Surface'](#surface) section of the README).
 
 - Used https://autoprefixer.github.io/ to add vendor prefixes to CSS rules for better browser compatibility.
+
+- Used https://responsivedesignchecker.com/ for additional mobile responsiveness testing.
+
+- Used https://app.diagrams.net/ to create flowcharts of my JavaScript function call chains.
+
+- Used https://ezgif.com/png-to-webp to convert PNG images to WebP image format.
 
 ### Acknowledgements
 
