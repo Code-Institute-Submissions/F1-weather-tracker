@@ -27,11 +27,7 @@ const jeddah__coordinates = `21.602,39.108`;
 const UAE__coordinates = `24.467,54.603`;
 
 // weather API link
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=1f3f690721094e4397a130912211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-//const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=c65cb80ad92046feba1133126210602&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
-console.log(weather__API);
+const weather__API = `https://api.worldweatheronline.com/premium/v1/weather.ashx?key=caac914d16a4477d9f6210111211502&q=${bahrain__coordinates};${imola__coordinates};${portimao__coordinates};${barcelona__coordinates};${monaco__coordinates};${baku__coordinates};${montreal__coordinates};${castellet__coordinates};${spielberg__coordinates};${silverstone__coordinates};${budapest__coordinates};${spa__coordinates};${zandvoort__coordinates};${monza__coordinates};${sochi__coordinates};${singapore__coordinates};${suzuka__coordinates};${austin__coordinates};${mexico__coordinates};${interlagos__coordinates};${melbourne__coordinates};${jeddah__coordinates};${UAE__coordinates}&format=json&num_of_days=1&tp=1`;
 
 // weather container elements selectors
 const weather__1 = document.querySelector("#weather__info--1");
@@ -198,7 +194,6 @@ const UAE__race__start = new Date(Date.UTC(2021, 11, 12, 15, 0, 0));
 
 // register the current date as a UNIX timestamp and calculate the number of days until every individual race start
 let current__date = new Date(); // get current date
-console.log(`${current__date} is the current date`);
 let days__until__bahrain = Math.trunc((((((bahrain__race__start - current__date)/1000)/60)/60)/24));
 let days__until__imola = Math.trunc((((((imola__race__start - current__date)/1000)/60)/60)/24));
 let days__until__portimao = Math.trunc((((((portimao__race__start - current__date)/1000)/60)/60)/24));
@@ -970,7 +965,6 @@ const showActiveEventHamburgerIcon = function() {
         hideAllHamburgerIcons();
         HIC__emirates.style.display = "flex";
     } else {
-        console.log("error: no active event for showActiveEventHamburgerIcon to target");
         return;
     }
 };
@@ -1074,7 +1068,6 @@ const showActiveEventOnly = function() {
         hideAllEvents();
         emirates__event.style.display = "flex";
     } else {
-        console.log("error: no active event for showActiveEventOnly to target");
         return;
     }
 };
@@ -1094,7 +1087,7 @@ const displayActiveEventDataMobile = function() {
         weather__location__info__container.style.display = "none";
         time__info__container.style.display = "flex";
     } else {
-        console.log("error: no active mobile data display classes");
+        return;
     }
 };
 
@@ -1115,7 +1108,7 @@ const checkMainFlexDirection = function() {
         showAllEvents();
         displayActiveEventDataMobile();
     }  else {
-        console.log("error in checkMainFlexDirection function");
+        return;
     }
 };
 
@@ -1138,10 +1131,8 @@ const calculateCountdown = function (raceStart, raceLocation) {
 
     /* credits #5 (see README.md credits section) */
     if (window.getComputedStyle(website__name, null).getPropertyValue("color") === "rgb(255, 201, 40)") {
-        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
         race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days}d -- ${hours}h -- ${minutes}m`;
     } else {
-        console.log(window.getComputedStyle(website__name, null).getPropertyValue("color"));
         race__countdown__timer.textContent = `${raceLocation} race start countdown: ${days} days -- ${hours} hours -- ${minutes} minutes`;
     }
 
@@ -1199,7 +1190,6 @@ const setInitialCountdown = function() {
     } else if (emirates__event.classList.contains("active__event")) {
         calculateCountdown(UAE__race__start, "Abu Dhabi");
     } else {
-        console.log("changeCountdownTimer is broken");
         race__countdown__timer.textContent = `Error: could not start a countdown timer.`;
     }
 };
@@ -1360,12 +1350,10 @@ const displayActiveEventData = function() {
     // I know this is kinda pointless because this project has no server, but I might convert this project into a real website and working with local storage can reduce the amount of API calls to stay under the limit
     /* credits #3 (see README.md credits section) */
     const weatherDataSet = JSON.parse(localStorage.getItem('weatherData'));
-    console.log(`grabbed weatherdata from localstorage`);
+
     setInitialCountdown();
-    console.log(`set countdown timer to active race event`);
 
     if (bahrain__event.classList.contains("active__event")) {
-        console.log("bahrain has active class");
 
         hideAllTrackInfo();
         track__info__bahrain.style.display = "flex";
@@ -1385,7 +1373,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const bahrain__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[0].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for bahrain");
+
         // change weather div 1 contents
         weather__1__date.textContent = bahrain__weather__date;
         weather__1__time.textContent = `16:00`;
@@ -1439,7 +1427,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (imola__event.classList.contains("active__event")) {
-        console.log("imola has active class");
 
         hideAllTrackInfo();
         track__info__imola.style.display = "flex";
@@ -1455,7 +1442,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const imola__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[1].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for imola");
+
         // change weather div 1 contents
         weather__1__date.textContent = imola__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -1509,7 +1496,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (portimao__event.classList.contains("active__event")) {
-        console.log("portimao has active class");
 
         hideAllTrackInfo();
         track__info__portimao.style.display = "flex";
@@ -1525,7 +1511,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const portimao__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[2].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for portimao");
+
         // change weather div 1 contents
         weather__1__date.textContent = portimao__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -1579,7 +1565,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (barcelona__event.classList.contains("active__event")) {
-        console.log("barcelona has active class");
 
         hideAllTrackInfo();
         track__info__barcelona.style.display = "flex";
@@ -1595,7 +1580,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const barcelona__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[3].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for barcelona");
+
         // change weather div 1 contents
         weather__1__date.textContent = barcelona__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -1649,7 +1634,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (monaco__event.classList.contains("active__event")) {
-        console.log("monaco has active class");
 
         hideAllTrackInfo();
         track__info__monaco.style.display = "flex";
@@ -1665,7 +1649,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const monaco__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[4].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for portimao");
+
         // change weather div 1 contents
         weather__1__date.textContent = monaco__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -1719,7 +1703,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (baku__event.classList.contains("active__event")) {
-        console.log("baku has active class");
 
         hideAllTrackInfo();
         track__info__baku.style.display = "flex";
@@ -1739,7 +1722,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const baku__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[5].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for baku");
+
         // change weather div 1 contents
         weather__1__date.textContent = baku__weather__date;
         weather__1__time.textContent = `15:00`;
@@ -1793,7 +1776,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (montreal__event.classList.contains("active__event")) {
-        console.log("montreal has active class");
 
         hideAllTrackInfo();
         track__info__montreal.style.display = "flex";
@@ -1813,7 +1795,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const montreal__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[6].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for portimao");
+
         // change weather div 1 contents
         weather__1__date.textContent = montreal__weather__date;
         weather__1__time.textContent = `13:00`;
@@ -1867,7 +1849,6 @@ const displayActiveEventData = function() {
             setEmptyWeatherData();
         }
     } else if (castellet__event.classList.contains("active__event")) {
-        console.log("castellet has active class");
 
         hideAllTrackInfo();
         track__info__castellet.style.display = "flex";
@@ -1883,7 +1864,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const castellet__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[7].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for castellet");
+
         // change weather div 1 contents
         weather__1__date.textContent = castellet__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -1937,7 +1918,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (spielberg__event.classList.contains("active__event")) {
-        console.log("spielberg has active class");
 
         hideAllTrackInfo();
         track__info__spielberg.style.display = "flex";
@@ -1953,7 +1933,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const spielberg__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[8].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for spielberg");
+
         // change weather div 1 contents
         weather__1__date.textContent = spielberg__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2007,7 +1987,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (silverstone__event.classList.contains("active__event")) {
-        console.log("silverstone has active class");
 
         hideAllTrackInfo();
         track__info__silverstone.style.display = "flex";
@@ -2023,7 +2002,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const silverstone__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[9].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for silverstone");
+
         // change weather div 1 contents
         weather__1__date.textContent = silverstone__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2077,7 +2056,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (budapest__event.classList.contains("active__event")) {
-        console.log("budapest has active class");
 
         hideAllTrackInfo();
         track__info__budapest.style.display = "flex";
@@ -2093,7 +2071,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const budapest__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[10].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for budapest");
+
         // change weather div 1 contents
         weather__1__date.textContent = budapest__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2147,7 +2125,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (spa__event.classList.contains("active__event")) {
-        console.log("spa has active class");
 
         hideAllTrackInfo();
         track__info__spa.style.display = "flex";
@@ -2163,7 +2140,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const spa__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[11].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for spa");
+
         // change weather div 1 contents
         weather__1__date.textContent = spa__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2217,7 +2194,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (zandvoort__event.classList.contains("active__event")) {
-        console.log("zandvoort has active class");
 
         hideAllTrackInfo();
         track__info__zandvoort.style.display = "flex";
@@ -2233,7 +2209,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const zandvoort__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[12].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for zandvoort");
+
         // change weather div 1 contents
         weather__1__date.textContent = zandvoort__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2287,7 +2263,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (monza__event.classList.contains("active__event")) {
-        console.log("monza has active class");
 
         hideAllTrackInfo();
         track__info__monza.style.display = "flex";
@@ -2303,7 +2278,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const monza__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[13].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for monza");
+
         // change weather div 1 contents
         weather__1__date.textContent = monza__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2357,7 +2332,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (sochi__event.classList.contains("active__event")) {
-        console.log("sochi has active class");
 
         hideAllTrackInfo();
         track__info__sochi.style.display = "flex";
@@ -2373,7 +2347,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const sochi__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[14].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for sochi");
+
         // change weather div 1 contents
         weather__1__date.textContent = sochi__weather__date;
         weather__1__time.textContent = `14:00`;
@@ -2427,7 +2401,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (singapore__event.classList.contains("active__event")) {
-        console.log("singapore has active class");
 
         hideAllTrackInfo();
         track__info__singapore.style.display = "flex";
@@ -2447,7 +2420,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const singapore__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[15].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for portimao");
+
         // change weather div 1 contents
         weather__1__date.textContent = singapore__weather__date;
         weather__1__time.textContent = `19:00`;
@@ -2501,7 +2474,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (suzuka__event.classList.contains("active__event")) {
-        console.log("suzuka has active class");
 
         hideAllTrackInfo();
         track__info__suzuka.style.display = "flex";
@@ -2521,7 +2493,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const suzuka__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[16].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for suzuka");
+
         // change weather div 1 contents
         weather__1__date.textContent = suzuka__weather__date;
         weather__1__time.textContent = `13:00`;
@@ -2575,7 +2547,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (austin__event.classList.contains("active__event")) {
-        console.log("austin has active class");
 
         hideAllTrackInfo();
         track__info__austin.style.display = "flex";
@@ -2595,7 +2566,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const austin__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[17].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for austin");
+
         // change weather div 1 contents
         weather__1__date.textContent = austin__weather__date;
         weather__1__time.textContent = `13:00`;
@@ -2649,7 +2620,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (mexico__event.classList.contains("active__event")) {
-        console.log("mexico has active class");
 
         hideAllTrackInfo();
         track__info__mexico.style.display = "flex";
@@ -2669,7 +2639,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const mexico__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[18].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for mexico");
+
         // change weather div 1 contents
         weather__1__date.textContent = mexico__weather__date;
         weather__1__time.textContent = `12:00`;
@@ -2723,7 +2693,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (interlagos__event.classList.contains("active__event")) {
-        console.log("interlagos has active class");
 
         hideAllTrackInfo();
         track__info__interlagos.style.display = "flex";
@@ -2743,7 +2712,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const interlagos__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[19].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for interlagos");
+
         // change weather div 1 contents
         weather__1__date.textContent = interlagos__weather__date;
         weather__1__time.textContent = `13:00`;
@@ -2797,7 +2766,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (melbourne__event.classList.contains("active__event")) {
-        console.log("melbourne has active class");
 
         hideAllTrackInfo();
         track__info__melbourne.style.display = "flex";
@@ -2817,7 +2785,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const melbourne__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[20].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for melbourne");
+
         // change weather div 1 contents
         weather__1__date.textContent = melbourne__weather__date;
         weather__1__time.textContent = `16:00`;
@@ -2871,7 +2839,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (jeddah__event.classList.contains("active__event")) {
-        console.log("jeddah has active class");
 
         hideAllTrackInfo();
         track__info__jeddah.style.display = "flex";
@@ -2891,7 +2858,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const jeddah__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[21].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for jeddah");
+
         // change weather div 1 contents
         weather__1__date.textContent = jeddah__weather__date;
         weather__1__time.textContent = `18:00`;
@@ -2945,7 +2912,6 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else if (emirates__event.classList.contains("active__event")) {
-        console.log("emirates has active class");
 
         hideAllTrackInfo();
         track__info__emirates.style.display = "flex";
@@ -2965,7 +2931,7 @@ const displayActiveEventData = function() {
         // change the date format for the weather elements
         /* credits #4 (see README.md credits section) */
         const emirates__weather__date = DateFormatter.formatDate(new Date(weatherDataSet.data.area[22].weather[0].date), 'DD MMMM YYYY');
-        console.log("changed weather date format for emirates");
+
         // change weather div 1 contents
         weather__1__date.textContent = emirates__weather__date;
         weather__1__time.textContent = `16:00`;
@@ -3019,7 +2985,7 @@ const displayActiveEventData = function() {
         setEmptyWeatherData();
     }
     } else {
-        console.log("error: no active event");
+        return;
     }
 };
 
@@ -3034,7 +3000,6 @@ const getWeatherData = async function() {
     // store weather data in local storage converted to a string
     /* credits #3 (see README.md credits section) */
     localStorage.setItem("weatherData", JSON.stringify(weatherData));
-    console.log("added weatherdata to local storage");
 
     displayActiveEventData();
 
@@ -3084,7 +3049,6 @@ const removeActiveEventClass = function() {
 /* credits #5 (see README.md credits section) */
 const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
     if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "row") {
-        console.log(`${raceLocation} already is the active event`);
         return;
     } else if (raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === false) {
         hideAllHamburgerIcons();
@@ -3098,9 +3062,7 @@ const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
         mobileCalendarExpanded = false;
     } else if (!raceEvent.classList.contains("active__event") && window.getComputedStyle(main__homepage__container, null).getPropertyValue("flex-direction") === "column" && mobileCalendarExpanded === true) {
         removeActiveEventClass();
-        console.log("removed all active event classses");
         raceEvent.classList.add("active__event");
-        console.log(`added active class to ${raceLocation} event`);
         hideAllHamburgerIcons();
         eventHIC.style.display = "flex";
         displayActiveEventData();
@@ -3108,9 +3070,7 @@ const raceCalendarFunctionality = function (raceEvent, raceLocation, eventHIC) {
         mobileCalendarExpanded = false;
     } else {
         removeActiveEventClass();
-        console.log("removed all active event classses");
         raceEvent.classList.add("active__event");
-        console.log(`added active class to ${raceLocation} event`);
         displayActiveEventData();
     }
 };
@@ -3259,16 +3219,13 @@ emirates__event.addEventListener("click", function(){
 // event listener on the mobile button dashboard's weather button, that displays only the active event weather data on click
 weather__button.addEventListener("click", function(){
     if (weather__location__info__container.classList.contains("weather__data__active")) {
-        console.log("weather location info container already has weather__data__active class");
         return;
     } else {
         removeActiveButton();
         weather__button.id = "active__button";
         track__info__container.classList.remove("track__data__active");
         time__info__container.classList.remove("schedule__data__active");
-        console.log("removed track__data__active & schedule__data__active classes");
         weather__location__info__container.classList.add("weather__data__active");
-        console.log("added weather__data__active class to weathercontainer");
         displayActiveEventDataMobile();
     }
 });
@@ -3276,16 +3233,13 @@ weather__button.addEventListener("click", function(){
 // event listener on the mobile button dashboard's track button, that displays only the active event track data on click
 track__button.addEventListener("click", function(){
     if (track__info__container.classList.contains("track__data__active")) {
-        console.log("track info container already has track__data__active class");
         return;
     } else {
         removeActiveButton();
         track__button.id = "active__button";
         time__info__container.classList.remove("schedule__data__active");
         weather__location__info__container.classList.remove("weather__data__active");
-        console.log("removed schedule__data__active & weather__data__active classes");
         track__info__container.classList.add("track__data__active");
-        console.log("added track__data__active class to trackinfocontainer");
         displayActiveEventDataMobile();
     }
 });
@@ -3293,16 +3247,13 @@ track__button.addEventListener("click", function(){
 // event listener on the mobile button dashboard's schedule button, that displays only the active event time data on click
 schedule__button.addEventListener("click", function(){
     if (time__info__container.classList.contains("schedule__data__active")) {
-        console.log("time info container already has schedule__data__active class");
         return;
     } else {
         removeActiveButton();
         schedule__button.id = "active__button";
         track__info__container.classList.remove("track__data__active");
         weather__location__info__container.classList.remove("weather__data__active");
-        console.log("removed track__data__active & weather__data__active classes");
         time__info__container.classList.add("schedule__data__active");
-        console.log("added schedule__data__active class to timeinfocontainer");
         displayActiveEventDataMobile();
     }
 });
